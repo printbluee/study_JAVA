@@ -2,10 +2,10 @@
 public class SwitchEx02 {
 
 	public static void main(String[] args) {
-		
+
 		String fruit = "사과";
 		
-		switch(fruit) {
+		switch (fruit) {
 		case "딸기":
 			System.out.println("딸기 입니다.");
 			break;
@@ -14,6 +14,9 @@ public class SwitchEx02 {
 			break;
 		case "배":
 			System.out.println("배 입니다.");
+			break;
+		default:
+			System.out.println("[ 딸기, 사과, 배 ] 중에 입력해주세요.");
 			break;
 		}
 		

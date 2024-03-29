@@ -20,6 +20,7 @@ public class ScannerQuiz03 {
 		Scanner input = new Scanner(System.in);
 		
 		// 2. 정수 1개를 입력 받은 후 출력
+		System.out.println("정수 입력 : " );
 		int num = input.nextInt();
 		System.out.println("정수   : " + num);
 		
@@ -27,6 +28,7 @@ public class ScannerQuiz03 {
 		input.nextLine(); 
 		
 		// 4. 문자열 1개를 입력 받은 후 출력
+		System.out.println("문자열 입력 : " );
 		String str = input.nextLine();
 		System.out.println("문자열 : " + str);
 		

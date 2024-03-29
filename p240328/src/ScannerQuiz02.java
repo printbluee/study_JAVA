@@ -23,13 +23,28 @@ public class ScannerQuiz02 {
 		int num1 = input.nextInt();
 		int num2 = input.nextInt();
 		
-		// 3. 사용자에게 받은 정수 2개 비교하여 변수 result 에 저장
-		int result = (num1 > num2) ? num1 : num2;
+		// 3. 사용자에게 받은 정수 2개 비교하여 큰 값을 변수 result 에 저장
+		// 삼항 연산자 사용 
+//		int result = (num1 > num2) ? num1 : num2;
 		
-		// 4. 변수 result 출력
-		System.out.println("큰 값 >> " + result);
+		// 조건문 사용
+		// if 문 안에서 변수 선언은 선호 x
+		int result; 
 		
-		// 5. scanner 닫기(오류 방지)
+		if (num1 > num2) {
+			result = num1;
+			System.out.println("큰 값 >> " + result);
+		} else if (num1 < num2) {
+			result = num2;
+			System.out.println("큰 값 >> " + result);
+		} else {
+			System.out.println("오류 !");
+		}
+		
+		// 4. 큰 값인 변수 result 출력
+//		System.out.println("큰 값 >> " + result);
+		
+		// 5. scanner 닫기(메모리 해제)
 		input.close();
 	}
 }

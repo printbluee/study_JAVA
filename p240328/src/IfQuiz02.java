@@ -26,7 +26,7 @@ public class IfQuiz02 {
 		Scanner input = new Scanner(System.in);
 		
 		// 2. 사용자에게 입력받은 값을 변수에 저장
-		int user = input.nextInt();
+		byte user = input.nextByte();
 		
 		// 3. 조건문 실행
 		if (user == 1 || user == 3) { // user 의 값이 1 또는 3일 때
