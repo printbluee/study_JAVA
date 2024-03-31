@@ -18,7 +18,6 @@ public class SwitchQuiz04 {
 		System.out.print("가위(1), 바위(2), 보(3) 중 하나를 입력하시오 ... ");
 
 		Scanner input = new Scanner(System.in);
-		
 		int user = input.nextInt();
 		int computer = (int)(Math.random() * 3) + 1;
 		
@@ -26,62 +25,42 @@ public class SwitchQuiz04 {
 		case 1:
 			switch (computer) {
 			case 1:
-				System.out.println("유  저 : " + user);
-				System.out.println("컴퓨터 : " + computer);
-				System.out.println("비겼습니다 !");
+				System.out.println("유  저 : " + user + " / 컴퓨터 : " + computer + " ==> 비겼습니다 !" );
 				break;
 			case 2:
-				System.out.println("유  저 : " + user);
-				System.out.println("컴퓨터 : " + computer);
-				System.out.println("컴퓨터가 이겼습니다 !");
+				System.out.println("유  저 : " + user + " / 컴퓨터 : " + computer + " ==> 컴퓨터가 이겼습니다 !" );
 				break;
 			case 3:
-				System.out.println("유  저 : " + user);
-				System.out.println("컴퓨터 : " + computer);
-				System.out.println("유저가 이겼습니다 !");
+				System.out.println("유  저 : " + user + " / 컴퓨터 : " + computer + " ==> 유저가 이겼습니다 !" );
 				break;
 			}break;
 		case 2:
 			switch (computer) {
 			case 1:
-				System.out.println("유  저 : " + user);
-				System.out.println("컴퓨터 : " + computer);
-				System.out.println("유저가 이겼습니다 !");
+				System.out.println("유  저 : " + user + " / 컴퓨터 : " + computer + " ==> 유저가 이겼습니다 !" );
 				break;
 			case 2:
-				System.out.println("유  저 : " + user);
-				System.out.println("컴퓨터 : " + computer);
-				System.out.println("비겼습니다 !");
+				System.out.println("유  저 : " + user + " / 컴퓨터 : " + computer + " ==> 비겼습니다 !" );
 				break;
 			case 3:
-				System.out.println("유  저 : " + user);
-				System.out.println("컴퓨터 : " + computer);
-				System.out.println("컴퓨터가 이겼습니다 !");
+				System.out.println("유  저 : " + user + " / 컴퓨터 : " + computer + " ==> 컴퓨터가 이겼습니다 !" );
 				break;
 
 			}break;
 		case 3:
 			switch (computer) {
 			case 1:
-				System.out.println("유  저 : " + user);
-				System.out.println("컴퓨터 : " + computer);
-				System.out.println("컴퓨터가 이겼습니다 !");
+				System.out.println("유  저 : " + user + " / 컴퓨터 : " + computer + " ==> 컴퓨터가 이겼습니다 !" );
 				break;
 			case 2:
-				System.out.println("유  저 : " + user);
-				System.out.println("컴퓨터 : " + computer);
-				System.out.println("유저가 이겼습니다 !");
+				System.out.println("유  저 : " + user + " / 컴퓨터 : " + computer + " ==> 유저가 이겼습니다 !" );
 				break;
 			case 3:
-				System.out.println("유  저 : " + user);
-				System.out.println("컴퓨터 : " + computer);
-				System.out.println("비겼습니다 !");
+				System.out.println("유  저 : " + user + " / 컴퓨터 : " + computer + " ==> 비겼습니다 !" );
 				break;
 			}break;
 		default:
-			System.out.println("유  저 : " + user);
-			System.out.println("컴퓨터 : " + computer);
-			System.out.println("잘못된 숫자를 입력하셨습니다.");
+			System.out.println("유  저 : " + user + " / 컴퓨터 : " + computer + " ==> 잘못된 숫자를 입력하셨습니다." );
 			break;
 		} 
 		

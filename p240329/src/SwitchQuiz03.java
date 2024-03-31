@@ -30,40 +30,27 @@ public class SwitchQuiz03 {
 		
 		int userValue1 = input.nextInt();
 		int userValue2 = input.nextInt();
-		System.out.println(userValue1);
-		System.out.println(userValue2);
-		
 		
 		System.out.print("사칙연산 (+, -, *, /) 중에 하나나를 입력하세요 ... ");
 		input.nextLine();
-		String userSymbol = input.nextLine();
-		System.out.println(userSymbol);
-		
+		char userSymbol = input.next().charAt(0);
 		
 		switch (userSymbol) {
-		case "+":
-			
-			
+		case '+':
+			System.out.println(userValue1 + " + " + userValue2 + " = " + (userValue1 + userValue2));
 			break;
-		case "-":
-			
-			
+		case '-':
+			System.out.println(userValue1 + " - " + userValue2 + " = " + (userValue1 - userValue2));
 			break;
-		case "*":
-			
-			
+		case '*':
+			System.out.println(userValue1 + " * " + userValue2 + " = " + (userValue1 * userValue2));
 			break;
-		case "/":
-			
-			
+		case '/':
+			System.out.println(userValue1 + " / " + userValue2 + " = " + (userValue1 / userValue2));
 			break;
+		default:
+			System.out.println("잘못된 연산자를 입력했군요!");
 		}
-		
-		
-		
-		
-		
-		
 		
 		input.close();
 	}
