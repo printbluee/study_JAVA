@@ -25,42 +25,50 @@ public class IfQuiz04Refactoring {
 		
 		// 1. 사용자에게 입력받기 위해 scanner 객체 생성
 		Scanner input = new Scanner(System.in);
-		char grade;
-		char option = '0';
+		char grade = ' ';
+		char option = ' ';
 		
 		// 2. 사용자에게 입력받은 값을 각 변수에 저장
 		System.out.print("점수를 입력하세요 ... ");
 		int score = input.nextInt();
 		
-		// 3. 조건문 실행 후 출력
+		// 3-1. 조건문에 따라 option 처리
+		if (score % 10 >= 7 || score == 100) { 
+            option = '+';
+        } else if (score % 10 >= 4) {
+            option = '0';
+        } else {
+            option = '-';
+        }
+		
+		// 3-2. 조건문에 따라 grade 처리
 		if (score >= 90 && score <= 100) {
 			grade = 'A';
-			if (score % 10 >= 7 || score == 100) { // A+, A-, A0 구분
-                option = '+';
-            } else if (score % 10 <= 3) {
-                option = '-';
-            }
-			
 		} else if (score >= 80 && score <= 89) {
 			grade = 'B';
-			if (score % 10 >= 7) { // A+, A-, A0 구분
-                option = '+';
-            } else if (score % 10 <= 3) {
-                option = '-';
-            }
-			
 		} else if (score >= 70 && score <= 79) {
 			grade = 'C';
-			if (score % 10 >= 7) { // A+, A-, A0 구분
-                option = '+';
-            } else if (score % 10 <= 3) {
-                option = '-';
-            }
 		} else {
 			grade = 'F';
+			option = ' ';
 		}
 		
-		System.out.println("학점은 " + grade + option + "입니다.");
+//		System.out.println("학점은 " + grade + option + "입니다.");
+		
+		// [서식문자]
+//		형태 : % + 문자
+//		%d : 정수
+//		%f : 실수
+//		%c : 문자
+//		%s : 문자열
+		System.out.printf("\n학점은 %c%c입니다.\n", grade, option);
+		System.out.printf("정수 : %d\n", 100);
+		System.out.printf("실수 : %f\n", 100.34);
+		System.out.printf("문자 : %c\n", '문');
+		System.out.printf("문자열 : %s\n", "문자열");
+		System.out.printf("500 출력 ==> %s\n", 500);
+		
+		
 		
 		// 4. scanner 닫기(오류 방지)
 		input.close();

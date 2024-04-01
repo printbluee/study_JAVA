@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class SwitchQuiz03 {
+public class SwitchQuiz03Refactoring {
 
 	public static void main(String[] args) {
 		
@@ -35,28 +35,31 @@ public class SwitchQuiz03 {
 //		input.nextLine();
 //		char userSymbol = input.next().charAt(0); // 아직 char 로 받는건 배우지 않았음
 		String userSymbol = input.next(); 
+		int result = 0;
 		
 		// 4. 식과 값 출력
 		switch (userSymbol) {
 		case "+":
-			 System.out.println(userValue1 + userSymbol + userValue2 + " = " + (userValue1 + userValue2));
+			result = userValue1 + userValue2;
 			break;
 		case "-":
-			System.out.printf(userValue1 + userSymbol + userValue2 + " = " + (userValue1 - userValue2));
+			result = userValue1 - userValue2;
 			break;
 		case "*":
-			System.out.printf(userValue1 + userSymbol + userValue2 + " = " + (userValue1 * userValue2));
+			result = userValue1 * userValue2;
 			break;
 		case "/":
-			System.out.printf(userValue1 + userSymbol + userValue2 + " = " + (userValue1 / userValue2));
+			result = userValue1 / userValue2;
 			break;
 		default:
 			System.out.println("잘못된 연산자를 입력했군요!");
 		}
 		
+		// 5. 3*7 = 21 -> 3 * 7 = 21 로 출력
+		System.out.printf("%d %s %d = %d", userValue1, userSymbol, userValue2, result);
 		
 		
-		// 5. 메모리 해제
+		// 6. 메모리 해제
 		input.close();
 	}
 

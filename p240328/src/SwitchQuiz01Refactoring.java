@@ -23,7 +23,7 @@ public class SwitchQuiz01Refactoring {
 		Scanner input = new Scanner(System.in);
 		
 		// 2. 사용자에게 숫자 입력 받기
-		System.out.print("숫자로 월을 입력하세요.");
+		System.out.print("숫자로 월을 입력하세요. : ");
 		int month = input.nextInt();
 		String season = "";
 		
@@ -41,13 +41,12 @@ public class SwitchQuiz01Refactoring {
 				break;
 			case 9: case 10: case 11:
 				season = "가을";
-				
 				break;
 			}
 			System.out.print("계절은 " + season + "입니다.");
 			
 		} else {
-			System.out.println(month + "월 이라니!");
+			System.out.println(month + "월이라니!");
 			System.out.print("1 ~ 12 중에 입력해주세요.");
 		}
 
