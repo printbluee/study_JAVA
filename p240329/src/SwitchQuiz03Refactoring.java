@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class SwitchQuiz03 {
+public class SwitchQuiz03Refactoring {
 
 	public static void main(String[] args) {
 		
@@ -36,27 +36,49 @@ public class SwitchQuiz03 {
 //		char userSymbol = input.next().charAt(0); // 아직 char 로 받는건 배우지 않았음
 		String userSymbol = input.next(); 
 		
+		int result = 0;
+		boolean isOperator = true; // 방법 3
+		
 		// 4. 식과 값 출력
 		switch (userSymbol) {
 		case "+":
-			 System.out.println(userValue1 + userSymbol + userValue2 + " = " + (userValue1 + userValue2));
+			result = userValue1 + userValue2;
 			break;
 		case "-":
-			System.out.printf(userValue1 + userSymbol + userValue2 + " = " + (userValue1 - userValue2));
+			result = userValue1 - userValue2;
 			break;
 		case "*":
-			System.out.printf(userValue1 + userSymbol + userValue2 + " = " + (userValue1 * userValue2));
+			result = userValue1 * userValue2;
 			break;
 		case "/":
-			System.out.printf(userValue1 + userSymbol + userValue2 + " = " + (userValue1 / userValue2));
+			result = userValue1 / userValue2;
 			break;
 		default:
+			isOperator = false;
 			System.out.println("잘못된 연산자를 입력했군요!");
 		}
 		
+		// 5. 3*7 = 21 -> 3 * 7 = 21 로 출력
+		// [ +, -, *, / ] 연산자인 경우만 출력되도록 코드 작성하시오.
 		
+//		[ 방법 1 ]
+//		switch (userSymbol) { // 실행은 되지만 조건이 하나인 경우에는 잘 쓰이지 않음
+//		case "+": case "-": case "*": case "/": 
+//			System.out.printf("%d %s %d = %d", userValue1, userSymbol, userValue2, result);
+//		}
 		
-		// 5. 메모리 해제
+//		[ 방법 2 ]
+//		if (userSymbol.equals("+") || userSymbol.equals("-") || userSymbol.equals("*") || userSymbol.equals("/")) {
+//			System.out.printf("%d %s %d = %d", userValue1, userSymbol, userValue2, result);
+//		}
+		
+//		[ 방법 3 ]
+//		isOperator 자체가 t/f 이라 그냥 쓰면 됨
+		if (isOperator) {
+			System.out.printf("%d %s %d = %d", userValue1, userSymbol, userValue2, result);
+		}
+		
+		// 6. 메모리 해제
 		input.close();
 	}
 

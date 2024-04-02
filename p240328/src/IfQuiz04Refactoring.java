@@ -16,45 +16,62 @@
 // * 
 // * ====================================
 // */
-//
-//import java.util.Scanner;
-//
-//public class IfQuiz04Refactoring {
-//
-//	public static void main(String[] args) {
-//		
-//		// 1. 사용자에게 입력받기 위해 scanner 객체 생성
-//		Scanner input = new Scanner(System.in);
-//		
-//		// 2. 사용자에게 입력받은 값을 각 변수에 저장
-//		System.out.print("점수를 입력하세요 ... ");
-//		String userGrade = input.nextLine();
-//
-//		char grade;
-//		char option;
-//
-//		// userGrade 인덱스 1
-//		char userGradeOne = userGrade.charAt(0); 
-//		char userGradeTwo = userGrade.charAt(1); 
-//		
-//		
-//		// 3. 조건문 실행 후 출력
-//		if (userGrade == "9") {
-//			grade = 'A';
-//			
-//		} else if (userGrade == "8") {
-//			grade = 'B';
-//			
-//		} else if (userGrade == "7") {
-//			grade = 'C';
-//			
-//		} else if (userGrade == "0",) {
-//			grade = 'C';
-//		
+
+import java.util.Scanner;
+
+public class IfQuiz04Refactoring {
+
+	public static void main(String[] args) {
+		
+		// 1. 사용자에게 입력받기 위해 scanner 객체 생성
+		Scanner input = new Scanner(System.in);
+		char grade = ' ';
+		char option = ' ';
+		
+		// 2. 사용자에게 입력받은 값을 각 변수에 저장
+		System.out.print("점수를 입력하세요 ... ");
+		int score = input.nextInt();
+		
+		// 3-1. 조건문에 따라 option 처리
+		if (score % 10 >= 7 || score == 100) { 
+            option = '+';
+        } else if (score % 10 >= 4) {
+            option = '0';
+        } else {
+            option = '-';
+        }
+		
+		// 3-2. 조건문에 따라 grade 처리
+		if (score >= 90 && score <= 100) {
+			grade = 'A';
+		} else if (score >= 80 && score <= 89) {
+			grade = 'B';
+		} else if (score >= 70 && score <= 79) {
+			grade = 'C';
+		} else {
+			grade = 'F';
+			option = ' ';
+		}
+		
 //		System.out.println("학점은 " + grade + option + "입니다.");
-//		
-//		// 4. scanner 닫기(오류 방지)
-//		input.close();
-//	}
-//
-//}
+		
+		// [서식문자]
+//		형태 : % + 문자
+//		%d : 정수
+//		%f : 실수
+//		%c : 문자
+//		%s : 문자열
+		System.out.printf("\n학점은 %c%c입니다.\n", grade, option);
+		System.out.printf("정수 : %d\n", 100);
+		System.out.printf("실수 : %f\n", 100.34);
+		System.out.printf("문자 : %c\n", '문');
+		System.out.printf("문자열 : %s\n", "문자열");
+		System.out.printf("500 출력 ==> %s\n", 500);
+		
+		
+		
+		// 4. scanner 닫기(오류 방지)
+		input.close();
+	
+	}
+}

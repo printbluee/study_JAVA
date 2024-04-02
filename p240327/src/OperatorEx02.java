@@ -1,5 +1,5 @@
 
-public class OperatieEx02 {
+public class OperatorEx02 {
 
 	public static void main(String[] args) {
 		
