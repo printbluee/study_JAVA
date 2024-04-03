@@ -16,6 +16,7 @@ public class WhileQuiz02 {
 		 */
 		
 		// 1. 변수 초기값 설정
+<<<<<<< HEAD
 		int idx = 1;
 		
 		// 2. while 문 실행
@@ -23,5 +24,20 @@ public class WhileQuiz02 {
 			System.out.printf("2 * %d = %d\n", 2, idx, 2 * idx);
 			idx++;
 		}
+=======
+		int idx = 0;
+		int result = 0;
+		
+		// 2. while 문 실행
+		while (idx < 9) {
+			int num = 2;
+			idx++;
+			result = num * idx;
+			
+			
+			System.out.printf("%d * %d = %d\n", num, idx, result);
+		}
+
+>>>>>>> 77ec9f2505f7ebc6e1da980148f06223801a4718
 	}
 }

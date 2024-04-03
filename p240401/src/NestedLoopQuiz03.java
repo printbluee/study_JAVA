@@ -28,16 +28,29 @@ public class NestedLoopQuiz03 {
 		 * 2 + 2 => 2
 		 */
 		
+<<<<<<< HEAD
 		for (int i=1; i<=3; i++) {
             for (int j=1; j<=3; j++) {
             	if (i == j) {
             		System.out.print(1);
             	} else {
             		System.out.print(0);
+=======
+		for (int i=0; i<3; i++) {
+            for (int j=0; j<3; j++) {
+            	if (i == j) {
+            		System.out.print("1");
+            	} else {
+            		System.out.print("0");
+>>>>>>> 77ec9f2505f7ebc6e1da980148f06223801a4718
             	}
             }
             
             System.out.println();
+<<<<<<< HEAD
+=======
+            
+>>>>>>> 77ec9f2505f7ebc6e1da980148f06223801a4718
         }
 	}
 }

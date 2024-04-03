@@ -25,6 +25,7 @@ public class WhileQuiz04 {
 		
 		// 3. 초기값 설정
 		int userValue = input.nextInt(); // 사용자 입력값
+<<<<<<< HEAD
 		int radom = 0; 					// 랜덤값
  		int count = 0; 					// 횟수
 		
@@ -36,12 +37,29 @@ public class WhileQuiz04 {
 			System.out.printf("%d ", radom);
 			
 			if (userValue == radom) { // 탈출 조건
+=======
+		int computer = 0; 				// 랜덤값
+ 		int idx = 0; 					// 횟수
+		
+ 		// 4. 조건문 실행
+		while (true) {
+			idx++; // 실행될 때마다 1 증감식
+			computer = (int)(Math.random() * 10) + 1;
+			System.out.printf("%d ", computer);
+			
+			if (userValue == computer) {
+>>>>>>> 77ec9f2505f7ebc6e1da980148f06223801a4718
 				break;
 			}
 		}
 		
+<<<<<<< HEAD
 		// 5. 반복문 실행 횟수 출력
 		System.out.printf("\n%d회 실행해서 찾았다 !", count);
+=======
+		// 5. 출력
+		System.out.printf("\n%d회 실행해서 찾았다 !", idx);
+>>>>>>> 77ec9f2505f7ebc6e1da980148f06223801a4718
 		
 		// 6. 메모리 해제
 		input.close();
