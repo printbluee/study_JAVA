@@ -27,36 +27,34 @@ public class NestedLoopQuiz04 {
 		
 		// 1. scanner 객체 생성
 		Scanner input = new Scanner(System.in);
-
-//		System.out.print("짝수 단은 0, 홀수 단은 1 을 입력하세요 ... ");
-//		int userValue = input.nextInt();
 		
-		for (int num=2; num<10; num++) { // num : 2 ~ 9단
-
-            for (int i=1; i<10; i++) {
-                
-                
-                if (num%2 == 0) {
-                	
-                } else if (num%2 == 1) {
-                	
-                } else {
-                	System.out.println("잘못된 값을 입력하셨습니다.");
-                }
-                
-                System.out.printf("%d * %d = %d\n", num, i, num * i);
-                
+		// 2. 사용자에게 입력값 받기
+		System.out.print("짝수 단은 0, 홀수 단은 1 을 입력하세요 ... ");
+		int userOption = input.nextInt();
+        
+        // 3. 조건에 따라 출력하기
+        // userOption이 0 또는 1이 아닌 경우 짝,홀에 따라 조건에 맞는 단 출력
+        // int choice;
+        // if (userOption == 0) 
+		//    	choice = 2;
+		//	else 
+		//    	choice = 3;
+        
+		int choice = (userOption == 0) ? 2 : 3;
+		
+        for (int i=choice; i<10; i+=2) {
+            for (int idx=1; idx<=9; idx++) {
+            	if (userOption != 0 && userOption != 1) {
+            		System.out.println("잘못된 값을 입력하셨습니다.");
+            	} else {
+            		System.out.printf("%d * %d = %d\n", i, idx, i*idx);
+            	}
             }
-            
             System.out.println();
-            
-        }
-		
-		
-		
-		
-		
-		
+        } 
+        
+        // 4. 메모리 해제
 		input.close();
+		
 	}
 }

@@ -35,13 +35,9 @@ public class SwitchQuiz03Refactoring {
 //		input.nextLine();
 //		char userSymbol = input.next().charAt(0); // 아직 char 로 받는건 배우지 않았음
 		String userSymbol = input.next(); 
-<<<<<<< HEAD
 		
 		int result = 0;
 		boolean isOperator = true; // 방법 3
-=======
-		int result = 0;
->>>>>>> 77ec9f2505f7ebc6e1da980148f06223801a4718
 		
 		// 4. 식과 값 출력
 		switch (userSymbol) {
@@ -58,15 +54,11 @@ public class SwitchQuiz03Refactoring {
 			result = userValue1 / userValue2;
 			break;
 		default:
-<<<<<<< HEAD
 			isOperator = false;
-=======
->>>>>>> 77ec9f2505f7ebc6e1da980148f06223801a4718
 			System.out.println("잘못된 연산자를 입력했군요!");
 		}
 		
 		// 5. 3*7 = 21 -> 3 * 7 = 21 로 출력
-<<<<<<< HEAD
 		// [ +, -, *, / ] 연산자인 경우만 출력되도록 코드 작성하시오.
 		
 //		[ 방법 1 ]
@@ -85,10 +77,6 @@ public class SwitchQuiz03Refactoring {
 		if (isOperator) {
 			System.out.printf("%d %s %d = %d", userValue1, userSymbol, userValue2, result);
 		}
-=======
-		System.out.printf("%d %s %d = %d", userValue1, userSymbol, userValue2, result);
-		
->>>>>>> 77ec9f2505f7ebc6e1da980148f06223801a4718
 		
 		// 6. 메모리 해제
 		input.close();
