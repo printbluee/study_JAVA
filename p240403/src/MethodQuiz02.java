@@ -13,13 +13,8 @@ public class MethodQuiz02 {
 	
 	public static void square(int num) {
 		
-		// 1. 초기값 설정
-		int reslut = 0;
-		reslut = num * num;
-		
-		// 2. 출력
-		System.out.printf("%d의 제곱은 %d 입니다.\n", num, reslut);
-		
+		// 1. 바로 출력
+		System.out.printf("%d의 제곱은 %d 입니다.\n", num, num * num);
 	}
 	
 	public static void main(String[] args) {
