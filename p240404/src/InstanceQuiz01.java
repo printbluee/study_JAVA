@@ -6,12 +6,11 @@ class Animal {
 	String name;
 	
 	// 멤버 메소드
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
+	void setName(String name) {
 		this.name = name;
+	}
+	String getName() {
+		return name;
 	}
 }
 // =====================================================

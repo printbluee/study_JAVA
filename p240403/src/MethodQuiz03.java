@@ -33,8 +33,9 @@ public class MethodQuiz03 {
 		if (num == 1) {
 			return 1;
 		} else {
-			System.out.println("factorial(" + num + ")");
-			return num * factorial(num-1); // num이 1이 아닌 경우 다시 호출해서 num -1 하여 다시 대입 
+//			System.out.println("factorial(" + num + ")");
+			return num * factorial(num-1); 
+			// num이 1이 아닌 경우 다시 호출해서 num -1 하여 다시 대입 
 			// 3 * factorial(2) * factorial(1) = 3 * 2 * 1
 		}
 	}
@@ -42,7 +43,6 @@ public class MethodQuiz03 {
 	public static void main(String[] args) {
 		
 		// [ 메소드 호출 ]
-		factorial(3);
-//		System.out.println("5! = " + factorial(5));
+		System.out.println("3! = " + factorial(3));
 	}
 }

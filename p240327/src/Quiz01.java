@@ -17,5 +17,4 @@ public class Quiz01 {
 		System.out.println("result : " + result);
 
 	}
-
 }

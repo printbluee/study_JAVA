@@ -56,17 +56,3 @@ public class InstanceEx01 {
 		
 	}	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

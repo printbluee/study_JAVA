@@ -5,11 +5,3 @@ public class Test {
 		System.out.println("hiaaaa");
 	}
 }
-
-class One {
-	
-}
-
-class Two {
-	
-}
