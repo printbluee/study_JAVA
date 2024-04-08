@@ -22,6 +22,9 @@ public class ArrayEx03 {
 		System.out.println("arr2 >> " + arr2);
 		System.out.println("arr2[0] >> " + arr2[0]);
 		System.out.println("arr2[1] >> " + arr2[1]);
+		System.out.println("[행 길이] arr2.length >> " + arr2.length);
+		System.out.println("[인덱스 0행 : 열의 길이] arr2[0].length >> " + arr2[0].length);
+		System.out.println("[인덱스 1행 : 열의 길이] arr2[1].length >> " + arr2[1].length);
 		System.out.println();
 		
 		// 2. 값 설정
@@ -46,34 +49,26 @@ public class ArrayEx03 {
 		
 		// 3-2. 중첩 for 문: 내장변수 length 사용
 		System.out.println("중첩 for문 : 내장변수 length 사용");
-		for (int i=0; i<arr2.length; i++) {		// 행
-			for (int j=0; j<3; j++) {	// 열
-				System.out.print(arr2[i][j] + " ");
-			}
-			System.out.println();
+		for (int i = 0; i < arr2.length; i++) {			// 행 : Outer loop
+		    for (int j = 0; j < arr2[i].length; j++) {	// 열 : Inner loop  
+		        System.out.print(arr2[i][j] + " ");
+		    }
+		    System.out.println();
 		}
 		System.out.println();
 		
 		// 과제 ======================================
 		// 3-3. 중첩된 향상된 for 문
-		System.out.println("중첩된 향상된 for 문");
-		for (int i=0; i<arr2.length; i++) {		
-			for (int j=0; j<arr2[i].length; i++)
-				System.out.println(arr2[i][j]);
+		System.out.println("중첩된 향상된 for 문 (기본값 0 출력하지 않음)");
+		for (int[] row : arr2) { 
+			// System.out.println("int[] row : arr2 >> " + row); // arr2 의 주소 출력
+		    for (int value : row) {
+		        if (value != 0) { // 값이 0이 아닌 경우에만 출력
+		            System.out.print(value + " ");
+		        }
+		    }
+		    System.out.println();
 		}
-		
-		
 		
 	} 
 }
-
-
-
-
-
-
-
-
-
-
-

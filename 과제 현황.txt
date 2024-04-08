@@ -1,7 +1,7 @@
-0405 과제 현황
+0408 과제 현황
 
-1. InstanceEx06
-2. ConstructorEx01
+1. ArrayEx02 ㅇㅇ
+2. ArrayEx03
 3. 
 4. 
 5. 
