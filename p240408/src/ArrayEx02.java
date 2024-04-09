@@ -55,7 +55,7 @@ public class ArrayEx02 {
 		
 		// 2-2) 향상된 for 문
 		System.out.println("**** [학생의 정보 출력] 향상된 for문 ****");
-		for (Student student: smart) {
+		for (Student student: smart) { // 배열에 저장된 값을 가져오는 거니까 타입은 요소의 타입과 일치해야함
 			student.showInfo();
 		}
 		System.out.println();
@@ -69,7 +69,7 @@ public class ArrayEx02 {
 		System.out.println();
 		
 		// 4) 학생의 정보 출력 : showInfo() 호출
-		System.out.println("**** [학생의 정보 출력] 향상된 for문 ****");
+		System.out.println("**** age 값 변경 후 showInfo() 실행 ****");
 		for (Student student: smart) {
 			student.showInfo();
 		}
