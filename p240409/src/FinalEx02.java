@@ -49,8 +49,8 @@ public class FinalEx02 {
 		
 		// [ 과제 ] 왜 final field 에 값 설정이 안 되나요 ? 
 		// 이유 : final 필드는 초기값이 저장되면 최정값이 되어서 프로그램 실행 도중에 수정할 수 없다.
-		Item item2 = new Item();
-		item2.setCompany("롯데마트");
+//		Item item2 = new Item();
+//		item2.setCompany("롯데마트");
 		
 	}
 }

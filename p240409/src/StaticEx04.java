@@ -43,7 +43,7 @@ public class StaticEx04 {
 
 	public static void main(String[] args) {
 
-		Person p = new Person();
+//		Person p = new Person();
 		
 	}
 }
