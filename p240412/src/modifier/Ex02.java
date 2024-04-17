@@ -9,9 +9,6 @@ class Person {
 		this.age = age;
 		this.name = name;
 	}
-	
-	
-	
 }
 
 public class Ex02 {
