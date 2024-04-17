@@ -1,6 +1,7 @@
-package polymorphism;
+package abstractclass;
 
-class FruitTwo {
+// 과제 : 추상 클래스로 바꾸기
+abstract class FruitTwo { 
 	protected String name;
 	protected int count;
 	
@@ -9,7 +10,8 @@ class FruitTwo {
 		this.count = count;
 	}
 	
-	public void show() {} // 이런 걸 추상화로 만든 것
+	// 과제 : 추상 메소드로 바꾸기
+	abstract public void show(); 
 }
 
 class BananaTwo extends FruitTwo {
@@ -22,6 +24,7 @@ class BananaTwo extends FruitTwo {
 		return "[Banana] 바나나는 멸종 위기이다.";
 	}
 	
+	@Override
 	public void show() {
 		System.out.println("=================================");
 		System.out.println("현재 과일은 " + super.name + "입니다.");
@@ -40,6 +43,7 @@ class AppleTwo extends FruitTwo {
 		return "[Apple] 나는 사과다.";
 	}
 	
+	@Override
 	public void show() {
 		System.out.println(">> 사과 종류는 " + super.name + "입니다.");
 		System.out.println(">> 수량은 " + super.count + "개 입니다");

@@ -10,9 +10,6 @@ class Fruit {
 		this.name = name;
 		this.count = count;
 	}
-	
-	public void nameAndCount() {}
-	public void showInfo() {}
 }
 
 class Banana extends Fruit {
@@ -53,20 +50,17 @@ class Apple extends Fruit {
 public class Ex03 {
 
 	public static void fruitInfo(Fruit fruit) { // 다형성
-		System.out.println(fruit);
-		
 		// [과제]
 		// fruit 이 banana 객체의 주소를 저장하면, nameAndCount() 호출하고,
 		// fruit 이 apple 객체의 주소를 저장하면, showInfo() 호출
 		System.out.println("==> [fruitInfo] 메소드 실행");
 		if (fruit instanceof Banana) {
-			fruit.nameAndCount();
+			((Banana)fruit).nameAndCount();
 		} else if (fruit instanceof Apple) {
-			fruit.showInfo();
+			((Apple)fruit).showInfo();
 		}
 		System.out.println("[fruitInfo] 메소드 실행 끝 ==> \n\n");
 	}
-	
 	
 	public static void main(String[] args) {
 		

@@ -34,17 +34,10 @@ class Parent {
 	public void work() {
 		System.out.println("[Perent] 열심히 일하는 중입니다.");
 	}
-	
-	// 방법 1
-	public void status() {}
-	
-	// 방법 2
-	public void play() {}
-	public void study() {}
 }
 
 class Son extends Parent {
-	public void status() {
+	public void play() {
 		System.out.println("[Son] 신나게 놀고 있어요 ~!");
 	}
 	
@@ -55,7 +48,7 @@ class Son extends Parent {
 }
 
 class Daughter extends Parent {
-	public void status() {
+	public void study() {
 		System.out.println("[Daughter] 학원 공부하고 있어요 ~~~");
 	}
 	
@@ -104,13 +97,34 @@ public class Ex01 {
 			perent.spend(5);
 		}
 		
+		// [ 과제 ] ================================
+		// 다형성으로 구현된 객체배열의 메소드 호출하시오.
+		// : Son 객체는 play() 메소드를 
+		// : Daughter 객체는 study() 메소드를 호출하시오.
+		System.out.println("\n\n<< 향상된 for문으로 메소드 호출 >> ");
+		for (Parent perent: p3) { // 부모 타입을 자식 타입으로 바꿀꺼니까 강제형변환(downcaseting)
+			if (perent instanceof Son) { // 인스턴스의 타입으로 형변환이 되는지 확인하는 조건문
+				((Son)perent).play();
+			} else if (perent instanceof Daughter) {
+				((Daughter)perent).study();
+			}
+		}
+		
+		System.out.println(p3[0] instanceof Son);		// true
+		System.out.println(p3[1] instanceof Daughter);	// true
+		
+		System.out.println(p3[1] instanceof Son);		// false
+		System.out.println(p3[0] instanceof Daughter);  // false
+		
+		System.out.println("======================================\n");
+		
 		// 강제 형변환
 //		Son s1 = new Parent(); // error ! Type mismatch
 //		Son s2 = (Son)new Parent(); 
 //		s2.spend(1); // 실행 error ! 강제 형변환이 안됨, 다형성 x, 상속관계에서만 가능
 //		s2.paly();   // 실행 error ! 
 		
-		System.out.println("\n<< 형변환 >>");
+		System.out.println("<< 형변환 >>");
 		Son s3 = (Son)p1; // downcasting(강제) : 부모 타입 -> 자식 타입
 		s3.play();
 		s3.spend(150);
@@ -134,26 +148,6 @@ public class Ex01 {
 		System.out.println(s instanceof Son);
 		// System.out.println(s instanceof Daughter); // error ! 형제 사이라 관련이 없음
 		System.out.println(s instanceof Object);
-		
-		// [ 과제 ] ================================
-		// 다형성으로 구현된 객체배열의 메소드 호출하시오.
-		// : Son 객체는 play() 메소드를 
-		// : Daughter 객체는 study() 메소드를 호출하시오.
-		
-		System.out.println("방법1");
-		for (Parent perent: p3) {
-			perent.status();
-		}
-		
-//		System.out.println("방법2");
-//		for (Parent perent: p3) {
-//			if (perent instanceof Son) {
-//				perent.play();
-//			} else if (perent instanceof Daughter) {
-//				perent.study();
-//			}
-//		}
-		
 		
 	}
 }
