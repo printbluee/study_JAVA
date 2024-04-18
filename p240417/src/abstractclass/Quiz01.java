@@ -1,7 +1,8 @@
 package abstractclass;
 
 abstract class Animal {
-	private String name;
+	// private String name;
+	protected String name; // 상속 관계의 자식만 접근 허용
 	
 	public Animal() {
 		this("미입력");
@@ -26,7 +27,8 @@ class Cat extends Animal {
 	
 	@Override	
 	public void play() {
-		System.out.println(getName() + "는 낚싯대 놀이 중 입니다.");
+		// System.out.println(super.getName() + "는 낚싯대 놀이 중 입니다.");
+		System.out.println(super.name + "는 낚싯대 놀이 중 입니다.");
 	}
 }
 
@@ -37,8 +39,8 @@ class Dog extends Animal {
 	
 	@Override	
 	public void play() {
-		System.out.println(getName() + "는 터그 놀이 중 입니다.");
-	}
+		// System.out.println(super.getName() + "는 터그 놀이 중 입니다.");
+		System.out.println(super.name + "는 터그 놀이 중 입니다.");	}
 }
 
 public class Quiz01 {

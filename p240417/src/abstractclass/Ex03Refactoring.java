@@ -11,7 +11,7 @@ abstract class FruitTwo {
 	}
 	
 	// 과제 : 추상 메소드로 바꾸기
-	abstract public void show(); 
+	abstract public void show(); // 메서드 정의가 아니라 선언 왜냐 바디가 없기 때문
 }
 
 class BananaTwo extends FruitTwo {

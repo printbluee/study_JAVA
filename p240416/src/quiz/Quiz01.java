@@ -37,7 +37,7 @@ class Buyer {
 	int money = 1000; 	// BuyerTwo 가 가지고 있는 돈 1000
 	int bonusPoint = 0; // BuyerTwo 가 가지고 있는 보너스 포인트
 	
-	int total = 0; 		// BuyerTwo 가 구매한 총 금액
+//	int total = 0; 		// BuyerTwo 가 구매한 총 금액
 	int idx = 0;		// 장바구니의 인덱스 값 설정(-1 부터 시작, 0부터 시작하기 위해) 							
 	Product[] basket = new Product[10]; // ProductTwo 타입의 장바구니 선언(10 설정)
 	
@@ -51,7 +51,7 @@ class Buyer {
 		
 		basket[idx++] = p;				// basket 에 요소값 대입 (Tv, Computer ...)
 		
-		total += p.price;				// 구매한 제품 가격을 총 금액 대입
+//		total += p.price;				// 구매한 제품 가격을 총 금액 대입
 		money -= p.price;	 			// BuyerTwo 가 가지고 있는 돈에서 제품 가격 빼고 대입
 		bonusPoint += p.bonusPoint;		// 제품 가격의 보너스 포인트를 BuyerTwo 가 가지고 있는 보너스 포인트에 대입
 		System.out.println(p + " 을/를 구입하셨습니다."); // p = toString 메소드 실행
@@ -59,15 +59,29 @@ class Buyer {
 	
 	public void summary() {
 		
-		String reslut = "";					// 요소값을 빈문자열에 대입하여 한 문자열로 출력하기 위해 빈 문자열 선언
-		for (Product baskets: basket) {	
-			if (baskets != null) {			// 구매한 목록이 배열의 길이 보다 덜 들어왔을 때 null 값 문자열에 대입 x
-				reslut += baskets + ", ";
-			}
-		}
+		int total = 0;
+		String list = "";			// 요소값을 빈문자열에 대입하여 한 문자열로 출력하기 위해 빈 문자열 선언
 		
+		// [일반 for문]
+//		for (int i=0; i<idx; i++) { // basket.length 를 하면 null까지 돌고, idx 를 하면 조건식까지 안써도 됨
+////			if (basket[i] == null) {
+////				break;
+////			}
+//			total += basket[i].price;
+//			list += basket[i] + ", ";
+//		}
+		
+		// [향상된 for문]
+		for (Product i: basket) {
+			if (i == null) {
+				break;
+			}
+			total += i.price;
+			list += i + ", ";
+		}
+
 		System.out.printf("\n구입하신 물품의 총 금액은 %d만원 입니다.\n", total);
-		System.out.printf("구입하신 제품은 %s 입니다.\n\n", reslut);
+		System.out.printf("구입하신 제품은 %s 입니다.\n\n", list);
 	}
 }
 
@@ -85,8 +99,5 @@ public class Quiz01 {
 		b.buy(new Tv());		// basket[5]
 		
 		b.summary();			// 출력 문구 출력
-		
-		System.out.println("현재 남은 돈은 " + b.money + "만원 입니다.");
-		System.out.println("현재 보너스 점수는 " + b.bonusPoint + "점 입니다.");
 	}
 }

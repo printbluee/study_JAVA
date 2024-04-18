@@ -1,8 +1,8 @@
-0416 과제 현황
+0418 과제 현황
 
-1. p240417/src/abstractclass/Ex03Refactoring
-2. p240417/src/abstractclass/Quiz01
-3. 
+1. p240418/src/interfacetype/Ex06
+2. p240418/src/interfacetype/Ex06AbstraClass
+3. p240418/src/interfacetype/Ex06Interface
 4. 
 5. 
 6. 

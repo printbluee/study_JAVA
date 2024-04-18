@@ -8,6 +8,7 @@ package abstractclass;
  * 
  * [ 추상 메소드 ] abstract method
  * - body 가 없는 메소드 --> 미완성 메소드
+ * - body 가 없기 때문에 <메소드 정의> 가 아니라 <메소드 선언>
  * - 반드시 abstract class 내 존내
  * - abstract method 가 있는 abstract class 를 상속 받은 자식 클래스는
  *   반드시 abstract method overriding 해야 함 --> 강제성 ***
