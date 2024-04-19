@@ -38,7 +38,7 @@ class Yacht implements Vehicle {
 	@Override
 	public void take() {
 		System.out.println("요트 등록번호 : " + this.number);
-		System.out.println("요트가 한강 위를 떠다닙니다.\n");
+		System.out.println("요트가 한강 위를 떠다닙니다.");
 	}
 }
 

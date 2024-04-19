@@ -1,3 +1,4 @@
+package exception;
 
 /*
  * [예외 처리]
@@ -21,14 +22,12 @@
  * 
  */
 
-package exception;
-
 import java.util.Scanner;
 
 public class Ex02 {
 
 	public static void inputData() {
-		
+
 		System.out.println("[inputData method] ==> 시작");
 		Scanner input = new Scanner(System.in);
 		
@@ -44,11 +43,22 @@ public class Ex02 {
 			result1 = n1 / n2;
 			result2 = n1 % n2;
 			
+			// 출력하는 부분은 try 부분에 넣었기 때문에 result1 와 result2 를 try 밖에 선언함
+			// 만약 try 내에 변수 선언 한다면 실행되지 않을 때 에러가 생김 그럼 지역변수가 되어버림
 			System.out.println("몫 : " + result1);
 			System.out.println("나머지 : " + result2);
-			
-		} catch (ArithmeticException e) {
-			System.out.println("분모가 0으로 계산 불능");
+//		} catch (ArrayIndexOutOfBoundsException e){
+//			System.out.println("인덱스 확인하세요 !");
+//			System.out.println("e >> " + e);
+//		} catch (ArithmeticException e) {
+//			System.out.println("분모가 0으로 계산 불능");
+//			System.out.println("e >> " + e);
+//			e.printStackTrace();
+		} catch (Exception e) { // 다형성이 구현됨
+			System.out.println("[Exception] 영역 실행 !");
+		} finally {
+			// 예외 발생 여부와 상관없이 실행하고자 하는 코드
+			System.out.println("[finally] 예외 처리 종료");
 		}
 		
 		input.close();
