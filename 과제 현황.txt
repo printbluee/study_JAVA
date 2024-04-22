@@ -1,53 +1,54 @@
-0419 과제 현황
+0422 과제 현황
 
-1. p240419/src/exception/Quzi01
-2. p240418/src/exception/Ex03
-3. project-ver1 - 동물병원
+1. project-ver2 - 동물병원
 
-UML
--	private 
-~	default 	
-#	protected
-+	public  
+[과제]
+BookManager 클래스 메서드 추가
+- inputData() : 정보 입력
+- searchData() : 정보 검색
+- updataData() : 정보 수정
+- deleteData() : 정보 삭제
+- showBook() : 전체 정보
 
+AnimalBook 클래스 
+- main 메서드 수정
+[ 메뉴를 선택하세요 ]
+1. 정보 입력
+2. 정보 검색
+3. 정보 수정
+4. 정보 삭제
+5. 전체 정보
+6. 종료
+선택 ... 숫자 입력
 
-흰색 화살표 시작점 : 자식
-흰색 화살표 끝   점 : 부모
+1. 정보 입력
+이름과 나이 입력
 
-글꼴
-클래스명이 기울임 : 추상클래스
-메소드명이 기울임 : 추상메소드
-필드에 밑줄 있을 경우 : static 멤버
+이름 >>
+나이 >> 
 
-AnimalBook
-- manager: BookManager (static)
+2. 정보 검색
+이름으로 검색하면 해당 정보 출력
 
-+ 
-
-Bookmanager
-MAX_CNT {read Only} final 값이 정해져 있음 ==> 100 으로 설정하기
-infoStorage : AnimallInfo[100] // AnimallInfo 의 1차원 배열이 100, 설정하기
-index : int
-
-y, Y, yes, Yes, YES
-n, N, no, No, NO
-
-종료되면 저장목록 보이기
-
-AnimalBook 메인 메소드에 있ㅇ어야 할 것
-정보를 입력할까요 ? 정보 입력하세요 부분
+없으면
+해당 데이터는 없습니다.
 
 
-동물과 이름을 Bookmanager 에 infoStorage 에 저장됨
-infoStorage 이 AnimalInfo로 감
-저장 목록은 Bookmanager 에 showBook 에 저장됨
-
-showBook 출력하는건 infoStorage 에 저장된 값을 가져오는 것
-하지만 실질적인건 showAnimalInfo에서 하나씩 정보가 출력이 되고
-showBook 을 호출할 때 오는거임 (오버라이딩하기)
+3. 정보 수정
+이름으로 검색하고 나이만 값 변경
 
 
-애니몰인포가 북매니저로 가고 애니몰북이 북매니저를 가져옴
+4. 정보 삭제
+이름으로 검색하면 해당 정보 삭제
 
-과제제출할 때 압축하지 않고 올리기
-프로젝트 통으로 올리기
+삭제할 이름을 입력하세요... 혜정
+삭제가 완료되었습니다.
+
+
+5. 전체 정보
+전체 정보 출력
+
+
+6. 종료
+6 입력하면 프로그램 종료
+++ 프로그램 종료되었습니다. ++

@@ -21,9 +21,17 @@ import java.util.Scanner;
 
 
 
-class NameLengthException extends Exception {
+class NameLengthException extends Exception { // 로그 남기기
 
 	private static final long serialVersionUID = 1L;
+
+	public NameLengthException() {
+		super("잘못된 이름 입력");
+	}
+	
+	public NameLengthException(String name) {
+		super("잘못된 이름 [" + name + "] 입력");
+	}
 	
 }
 
@@ -32,15 +40,17 @@ public class Quiz01 {
 	public static void inputName() throws NameLengthException {
 		
 		Scanner input = new Scanner(System.in);
+		
 		System.out.print("이름을 입력하시오.(2글자 이상 입력) >> ");
-		String userValue = input.next();
+		String name = input.nextLine();
 		input.close();
 		
-		if (userValue.length() <= 1) {
-			throw new NameLengthException();
-		} else {
-			System.out.println("입력된 이름 : " + userValue);
-		}
+		if (name.length() < 2) {
+			throw new NameLengthException(name);
+		} 
+		
+		System.out.println("입력된 이름 : " + name);
+		
 	}
 	
 	public static void main(String[] args) {
@@ -48,7 +58,7 @@ public class Quiz01 {
 		try {
 			inputName();
 		} catch (NameLengthException e) {
-			System.out.println(e + ": 잘못된 이름 입력");
+			System.out.println(e);
 		}
 	}
 }
