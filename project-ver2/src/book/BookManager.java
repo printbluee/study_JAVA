@@ -19,8 +19,7 @@ public class BookManager {
 		System.out.print("2. 나이 : ");
 		int age = input.nextInt();
 		
-		AnimalInfo animal = new AnimalInfo(name, age);
-		infoStorage[index++] = animal;
+		infoStorage[index++] = new AnimalInfo(name, age);
 		System.out.println("데이터 입력이 완료되었습니다.\n");
 	}
 	
@@ -30,15 +29,20 @@ public class BookManager {
 		Scanner input = new Scanner(System.in);
 		
 		System.out.print("검색할 이름을 입력하세요 ... ");
-		String name = input.nextLine();
+		String name = input.next();
 		
+		boolean find = false;
 		for (int i=0; i<index; i++) {
-			if (infoStorage[i].getName().equals(name)) {
+			if (infoStorage[i] == null) {
+				continue;
+			} else if (infoStorage[i].getName().equals(name)) {
 				infoStorage[i].showAnimalInfo();
-				System.out.println("\n");
-			} else if (! infoStorage[i].getName().equals(name) ) {
-				System.out.println("해당 데이터는 없습니다.\n");
+				System.out.println();
+				find = true;
 			}
+		}
+		if (! find) {
+			System.out.println("해당 데이터는 없습니다.\n");
 		}
 	}
 	
@@ -55,9 +59,9 @@ public class BookManager {
 		for (int i=0; i<index; i++) {
 			if (infoStorage[i].getName().equals(name)) {
 				infoStorage[i].setAge(age);
-				System.out.println("수정이 완료되었습니다.");
 			} 
 		}
+		System.out.println("수정이 완료되었습니다.\n");
 	}
 	
 	// 4. 정보 삭제
@@ -70,22 +74,20 @@ public class BookManager {
 		
 		for (int i=0; i<index; i++) {
 			if (infoStorage[i].getName().equals(name)) {
-				infoStorage[i].setName(null);
-				infoStorage[i].setAge(0);
-				System.out.println("삭제가 완료되었습니다.");
+				infoStorage[i] = null;
 				break;
 			} 
 		}
+		System.out.println("삭제가 완료되었습니다.\n");
 	}
 	
 	// 5. 전체 정보
 	public void showBook() {
-		for (int i=0; i<index; i++) {
-			if (infoStorage[i].getName() != null) {
-				infoStorage[i].showAnimalInfo();
-			}
-			if (i < index-1) {
-				System.out.println("\n"); // 배열의 마지막 요소에만 화이트 라인
+		System.out.println("<< 저장 목록 >>");
+		for (AnimalInfo info : infoStorage) {
+			if (info != null) {
+				info.showAnimalInfo();
+				System.out.println();
 			}
 		}
 	}

@@ -1,5 +1,7 @@
 package test;
 
+import java.util.Scanner;
+
 /*
  * [문제] 
  * 사용자에게 정수 하나를 입력받아, 팩토리얼 값을 구하려고 한다.
@@ -16,11 +18,28 @@ package test;
  */
 
 public class Test01 {
-
+	
+	public static long factorial(int num) {
+		if (num == 1) {
+			return 1;
+		} else {
+			return num * factorial(num-1);
+		}
+	}
+	
 	public static void main(String[] args) {
 		
+		Scanner input = new Scanner(System.in);
+		int userValue = 0;
 		
+		do {
+			System.out.print("10 ~ 20 사이의 정수 입력 : ");
+			userValue = input.nextInt();
+			
+		} while (userValue < 10 || userValue > 20);
 		
+		System.out.printf(userValue + "! = " + factorial(userValue));
+		
+		input.close();
 	}
-
 }

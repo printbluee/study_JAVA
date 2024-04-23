@@ -22,10 +22,34 @@ package test;
 class ArrayStack {
 	int[] arr;
 	int top = -1;
-
+	
+	ArrayStack(int length) {
+		this.arr = new int[length];
+	}
+	
 	int peek() {
 		return arr[top];
 	}
+	
+	void push(int num) {
+		
+		if (top < arr.length-1) {
+			arr[++top] = num;
+			System.out.println("Inserted Item : " + arr[top]);
+		} else {
+			System.out.println("스택이 꽉 찼습니다! 용량 초과 !");
+		}
+	}
+	
+	int pop() {
+		if (top >= 0) {
+			return arr[top--];
+		} 
+		
+		System.out.println("스택이 비었습니다.");
+		return top;
+	}
+	
 }
 
 public class Test03 {
@@ -49,6 +73,5 @@ public class Test03 {
 		System.out.println("pop 실행 : " + stack.pop());
 		System.out.println("pop 실행 : " + stack.pop());
 		System.out.println("pop 실행 : " + stack.pop());
-		
 	}
 }
