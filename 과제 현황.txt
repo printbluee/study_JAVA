@@ -1,7 +1,15 @@
-0423 과제 현황
+0424 과제 현황
 
-1. p240423/enumtype/Quiz01
-2. project-ver2.1
+1. project-ver1 - AnimalBook.java
+1) AnimalBook 이든 BookManager이든 Scanner 인스턴스 1개만 생성하기
+2) main 메소드에서 while 문 안에 if 문 swith 문으로 바꾸기
 
-이름이 같은 동물은 제외(이름 기준)
-==> 이미 저장된 이름입니다.
+2. project-ver2
+ * 1) Scanner 인스턴스 1개만 생성
+ * 
+ * 2) AnimalBook class 
+ *    main method 내 if 문 -> switch문 으로 변경
+ *    
+ * 3) BookManager class
+ *    updataData() : 이름이 있을 경우, 나이 입력 받기
+

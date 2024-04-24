@@ -8,10 +8,7 @@ public class BookManager {
 	private AnimalInfo[] infoStorage = new AnimalInfo[MAX_CNT];
 	private int index = 0;
 	
-	public void inputData() {
-		@SuppressWarnings("resource") // 닫기 가능 유형의 자원 사용에 관련된 경고 억제
-		Scanner input = new Scanner(System.in);
-		
+	public void inputData(Scanner input) {
 		System.out.println("<< 정보를 입력하세요 >>");
 		System.out.print("1. 이름 : ");
 		String name = input.next();
