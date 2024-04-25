@@ -26,5 +26,4 @@ public class AnimalInfo {
 		System.out.println("name >> " + this.name);
 		System.out.println("age >> " + this.age);
 	}
-
 }

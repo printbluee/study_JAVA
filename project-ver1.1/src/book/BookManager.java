@@ -7,8 +7,10 @@ public class BookManager {
 	private final int MAX_CNT = 100;
 	private AnimalInfo[] infoStorage = new AnimalInfo[MAX_CNT];
 	private int index = 0;
+	public static Scanner input = new Scanner(System.in);
 	
-	public void inputData(Scanner input) {
+	
+	public void inputData() {
 		System.out.println("<< 정보를 입력하세요 >>");
 		System.out.print("1. 이름 : ");
 		String name = input.next();

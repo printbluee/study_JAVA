@@ -20,6 +20,7 @@ public class BookManager {
 		
 		infoStorage[index++] = new AnimalInfo(name, age);
 		System.out.println("데이터 입력이 완료되었습니다.\n");
+		// input.close();
 	}
 	
 	public void showBook() {

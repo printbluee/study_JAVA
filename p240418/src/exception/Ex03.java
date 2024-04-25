@@ -54,17 +54,26 @@ public class Ex03 {
 		
 		// [과제]
 		// catch (ArithmeticException e) 이 부분이 실행되는 이유 알아오기
-		// 코드에 추가적으로 catch (ArithmeticException e) 부분과 catch(Exception e) 부분에 
-		// System.out.println("e >> " + e); 찍었을 때 같은 값이 나오는데, 
-		// 코드가 위에서 아래로 실행되기 때문에 catch (ArithmeticException e) 부분에 실행이 된다.
-		// 하지만 에러가 생기는 이유는 타입이 맞지 않기 때문
+		/*
+		 * inpuData() 메소드에는 throws Exception 을 선언해서 inputData() 메소드가 호출할 때
+		 * 발생하는 어떤 예외든 처리가 된다. 하지만 특정한 예외를 명시하지 않았을 뿐이지 
+		 * ArithmeticException 도 포함된다고 알려주는 건 아닌데, 
+		 * inputData() 메소드 내부에서 ArithmeticException 가 발생하면 처리할 throws 선언 목록에 없으니
+		 * 바로 main () 메소드에서 이 예외를 처리한 것
+		 * main() 메소드에 ArithmeticException 을 처리하는 catch 블록이 있기 때문에 catch 블록이 실행된다
+		 */
 		
 		try {
+			// 예외 발생 가능한 코드
 			inputData();
+		} catch (NullPointerException e) {
+			System.out.println("실행1");
 		} catch (ArithmeticException e) {
+			System.out.println("실행2");
 			System.out.println("e >> " + e);
 			System.out.println("[main] ArithmeticException 예외 처리 구문 실행");
 		} catch(Exception e) {
+			System.out.println("실행3");
 			System.out.println("e >> " + e);
 			System.out.println("[main] Exception 예외 처리 구문 실행");
 		}

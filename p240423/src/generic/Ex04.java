@@ -29,7 +29,7 @@ class Maple extends Tree implements Available {
 
 	@Override
 	public void selfIntroduction() {
-		System.out.println("나는 단충이다 !");
+		System.out.println("나는 단풍이다 !");
 	}
 }
 
