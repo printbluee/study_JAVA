@@ -1,0 +1,10 @@
+package item;
+
+import java.util.Scanner;
+
+public class ItemView {
+	
+	// field
+	public static final Scanner input = new Scanner(System.in);
+	
+}

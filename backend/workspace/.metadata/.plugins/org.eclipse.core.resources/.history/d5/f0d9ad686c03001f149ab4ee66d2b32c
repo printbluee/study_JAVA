@@ -1,0 +1,14 @@
+import item.ItemBusinessRule;
+import item.ItemView;
+
+public class Main {
+
+	private static ItemView intemView = new ItemView();
+	
+	public static void main(String[] args) {
+
+		intemView.showMenu();
+		String userValue = 
+		
+	}
+}

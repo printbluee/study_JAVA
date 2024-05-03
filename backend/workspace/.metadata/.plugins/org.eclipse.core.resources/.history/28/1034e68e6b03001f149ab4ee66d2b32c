@@ -1,0 +1,27 @@
+package item;
+
+public class Item {
+	private int id;
+	private String itemName;
+	private Integer price;
+	private int quantity;
+	
+	public Item (int id, String itemName, Integer price, int quantity) {
+		this.id = id;
+		this.itemName = itemName;
+		this.price = price;
+		this.quantity = quantity;
+	}
+	
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	public int getId() {
+		return id;
+	}
+	
+	public void showInfo() {
+		
+	}
+}

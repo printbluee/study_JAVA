@@ -1,0 +1,12 @@
+import item.ItemBusinessRule;
+import item.ItemView;
+
+public class Main {
+
+	private static ItemBusinessRule manager = new ItemBusinessRule();
+	
+	public static void main(String[] args) {
+
+		ItemView.showMenu();
+	}
+}

@@ -1,0 +1,37 @@
+import item.ItemBusinessRule;
+import item.ItemView;
+
+public class Main {
+
+	private static ItemBusinessRule manager = new ItemBusinessRule();
+	
+	public static void main(String[] args) {
+
+		int userValue;
+		
+		menu:
+		while (true) {
+			ItemView.showMenu();
+			
+			userValue = ItemView.input.nextInt();
+			switch(userValue) {
+        	case 1:
+        		System.out.println("ㅋㅋ");
+        		break;
+        	case 2: 
+        		break;	
+        	case 3: 
+        		break;
+        	case 4: 
+        		break;
+        	case 5: 
+        		break;
+        	case 6: 
+        		break;
+        	case 7: 
+        		break menu;
+        	}
+		}
+		
+	}
+}
