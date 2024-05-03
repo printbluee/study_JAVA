@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <title>목록 태그</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>목록 태그</h1>
+  <!-- 
+    ul                       ol                    li
+    : nuordered list        : ordered list         : list item
+    : 순서가 없는 목록      : 순서가 있는 목록     : ul 과 ol 의 content 로 사용되는 태그
+    : nav 바에 많이 사용                           : 단독으로 사용하지 않음
+                                                   : css 적용하기 편해 많이 사용함
+                                                   : 부모인 ul 과 ol 없이 사용하지 않음 
+                                                    (에러는 안나 있는 경우도 있지만, 잘 짜여진 코드가 아니다)
+   -->
+
+  <h2>과일 종류</h2>
+  <ul>
+    <li>사과</li>
+    <li>샤인 머스캣</li>
+    <li>파인애플</li>
+  </ul>
+
+  <h2>송년회 순서</h2>
+  <ol>
+    <li>인사</li>
+    <li>개회 선언</li>
+    <li>대표님 인사</li>
+    <li>송년사</li>
+    <li>시상</li>
+    <li>기념 촬영</li>
+  </ol>
+
+  <!-- 
+    dl(정의 목록)   | dt(정의 용어)   | dd(정의 설명)
+    ----------------------------------------------------------
+    definition list | definition term | definition description
+   -->
+
+  <dl>
+    <dt>하늘</dt>
+    <dd>지평선이나 수평선 위로 보이는 무한대의 넓은 공간.</dd>
+    <dd>‘하느님’을 달리 이르는 말.</dd>
+
+    <!-- 여러 개의 dt 에 하나의 dd 만 올 수 없음 (구조상 x) -->
+    <dt>구름</dt>
+    <dt>달</dt>
+    <dd>공기 중의 수분이 엉기어서 미세한 물방울이나 얼음 결정의 덩어리가 되어 공중에 떠 있는 것.</dd>
+  </dl>
+
+</body>
+</html>
