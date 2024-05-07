@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <title>table 태그</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>table 태그</h1>
+
+  <table border="1" width="100%">
+    <!-- caption : 표 제목 or 설명 -->
+    <caption>과일 테이블</caption>
+    
+    <!-- colgroup : 표의 칸 비율을 고정시킬 때 사용 -->
+    <colgroup>
+      <!-- (지금은 지원 x, 자동 완성 x) -->
+      <!-- 각 열 너비 지정, 마지막은 자동으로 지정이 됨 (나머지 50%) -->
+      <col width="20%">
+      <col width="30%">
+      <col>
+    </colgroup>
+
+    <!-- thead : 열 이름 -->
+    <!-- header 를 나타낼 때, th 를 사용하는게 좋음 (필수 x) -->
+    <thead>
+      <tr>
+        <th scope="col">번호</th>
+        <th scope="col">과일명</th>
+        <th scope="col">수량</th>
+      </tr>
+    </thead>
+
+    <!-- tbody : data -->
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td rowspan="2">사과</td>
+        <td>10</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>5</td>
+      </tr>
+    </tbody>
+    
+    <!-- tfoot : 표 바닥글 요소 -->
+    <tfoot>
+      <tr>
+        <td colspan="2">총 수량</td> <td>15</td>
+      </tr>
+    </tfoot>
+  </table>
+</body>
+</html>
