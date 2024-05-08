@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>form-quiz</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>다양한 폼 입력</h1>
+  <hr>
+  <form action="index.html">
+    <div>
+      <label for="userName">성명 : </label>
+      <input type="text" name="userName" id="userName">
+    </div>
+
+    <div>
+      <label for="gender">성별 : </label>
+      <input type="radio" name="gender" id="male" value="male">
+      <label for="male">남성</label>
+      <input type="radio" name="gender" id="male" value="male">
+      <label for="male">여성</label>
+    </div>
+
+    <div>
+      <label for="job">직업 : </label>
+      <select name="job" id="job">
+        <option value="student">학생</option>
+        <option value="worker">회사원</option>
+        <option value="publicOfficial">공무원</option>
+        <option value="etc">기타</option>
+      </select>
+    </div>
+
+    <br>
+
+    <div>
+      <label for="hopeBuy">구입희망분야(복수선택 가능)</label> <br>
+      <span>- 분야 : </span>  
+
+      <input type="checkbox" name="hobby1" id="computer" value="computer" >
+      <label for="hopeBuy">컴퓨터</label>
+
+      <input type="checkbox" name="hobby2" id="economy" value="economy">
+      <label for="hopeBuy">경제</label>
+
+      <input type="checkbox" name="hobby2" id="sense" value="sense">
+      <label for="hopeBuy">상식</label>
+    </div>
+
+    <br>
+
+    <div>
+      <label for="info">비고 : </label> <br>
+      <textarea name="info" id="info" cols="30" rows="5"></textarea>
+    </div>
+
+    <hr>
+    
+    <div>
+      <input type="submit" value="신청">
+      <input type="reset" value="취소">
+    </div>
+
+
+  </form>
+  
+</body>
+
+</html>

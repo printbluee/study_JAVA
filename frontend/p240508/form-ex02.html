@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>form 태그</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>form 태그</h1>
+
+  <form action="index.html" method="get" novalidate>
+    <fieldset>
+      <legend>HTML 5</legend>
+      <div>
+        <!-- 
+          placeholder : 컨트롤에 값이 없을 때 양식 컨트롤에 표시되는 텍스트
+          autofocus : 페이지 로드될 때 초점이 되는 곳
+          required : 특정 필드 입력값이 있어야 할 경우
+          autocomplete : 자동완성 기능 끄기
+         -->
+        <label for="userName">이름 </label>
+        <input type="text" name="userName" id="userName" placeholder="이름을 입력하세요" 
+        autofocus required autocomplete="off">
+      </div>
+
+      <div>
+        <label for="userEmail">이메일 </label>
+        <input type="email" name="userEmail" id="userEmail" placeholder="이메일을 입력하세요" required>
+      </div>
+
+      <div>
+        <!-- 
+          disabled : 보이지 않는 값으로 server 에 보내지지 않음, url 값에 없음
+         -->
+        <label for="userUrl">웹 사이트 </label>
+        <input type="url" name="userUrl" id="userUrl" value="https://www.naver.com/" disabled>
+      </div>
+
+      <div>
+        <label for="order">주문 수량 </label>
+        <input type="number" name="order" id="order" min="0" max="10" value="1">
+      </div>
+
+      <div>
+        <label for="userDate">제출일 </label>
+        <input type="date" name="userDate" id="userDate" min="2024-05-05" max="2024-05-31" value="#23242bff">
+      </div>
+
+      <div>
+        <label for="userColor">색 선택 </label>
+        <input type="color" name="userColor" id="userColor">
+      </div>
+
+      <div>
+        <input type="submit" value="가입하기">
+      </div>
+    </fieldset>
+  </form>
+</body>
+
+</html>
