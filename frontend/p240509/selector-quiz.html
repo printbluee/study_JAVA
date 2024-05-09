@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[문제] 선택자</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    #header > h1 > em {
+      background-color: orange;
+    }
+
+    /* + : 인접한 형제 */
+    #header > p+p {
+      border: 3px solid black;
+    }
+
+    /* id 인 경우 자식 표현이 생략된 경우가 많음 */
+    #container #lead {
+      background-color: lime;
+    }
+
+    /* 태그를 꼭 안써도 됨 */
+    #container .lead {
+      color: red;
+    }
+
+    /* ~(틸드) : 입접하지 않아도 모든 형제 적용 */
+    #container ol~p {
+      background-color: lightblue;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="wrap">
+    <div id="header">
+      <h1>css <em>selector</em></h1>
+      <p><em>Lorem</em> ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem consequatur velit, maiores rerum odio optio consectetur cupiditate quam dicta quos eius necessitatibus, harum pariatur laborum accusamus doloribus cumque sit illo.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, tempore placeat? Modi blanditiis consectetur nobis, ipsam totam sed beatae voluptatum fuga accusamus enim cupiditate suscipit, dolorum repudiandae assumenda dicta? Labore.</p>
+    </div>
+    <!--  -->
+    <div id="container">
+      <p id="lead">Lorem ipsum dolor sit amet.</p>
+      <p class="lead">Lorem ipsum dolor sit amet.</p>
+      <div class="lead">Lorem ipsum dolor sit amet.</div>
+
+      <ol class="list">
+        <li>Lorem ipsum dolor sit amet.</li>
+        <li>At, debitis! Quidem, molestiae voluptate!</li>
+        <li>Excepturi qui corporis nesciunt natus!</li>
+        <li>Earum porro ratione corporis placeat.</li>
+        <li>Nihil iusto perferendis officia tempore!</li>
+      </ol>
+
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim quaerat inventore numquam omnis harum tempora perferendis cumque ad quae? Corrupti ratione, dignissimos itaque odit repudiandae expedita eveniet cumque porro molestiae.</p>
+      <div>Lorem, ipsum dolor.</div>
+      <p>Lorem ipsum dolor sit amet.</p>
+      <p>Lorem, ipsum dolor.</p>
+    </div>
+    <!--  -->
+  </div>
+</body>
+</html>

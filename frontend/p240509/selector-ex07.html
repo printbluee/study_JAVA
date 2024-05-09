@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[선택자] 사용법 7</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    /* 블럭 지정을 하면 크롬은 파랑, 따로 배경색을 바꿀 수 있음 */
+    /* 첫 번째 단락만 스타일 적용 */
+    div::selection {
+      background-color: powderblue;
+      color:red;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>pseudo-element</h1>
+  <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus voluptas dignissimos ab ullam nam delectus soluta quae nisi eligendi qui dicta unde esse doloremque minus dolorem quibusdam sequi, maiores ducimus?</div>
+  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. A, sit! Pariatur fugit, iste dolor, delectus nostrum expedita minus sunt adipisci porro dignissimos ut sequi ipsa quas. Molestias impedit sunt dolores.</p>
+</body>
+</html>
