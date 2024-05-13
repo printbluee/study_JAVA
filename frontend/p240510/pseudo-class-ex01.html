@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[가상 클래스]</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    /* 첫 번째 자식을 찾아가는 방법 */
+
+    /* css2 */
+    /* =========================================
+    [ 부모 ul 의 첫 번째 자식 li 에 스타일 적용]
+    type 을 요소라 생각하면 됨
+    ============================================ */
+
+    /* 부모가 누구든 첫 번째 li 에 스타일 적용 */
+    /* li:first-child {
+      background-color: yellow;
+    } */
+
+    /* 가장 큰 단점 : 꼭 ul 의 첫 번째 자식이어야 하는데, 현재 ol 이라 스타일 적용할 수 없음 */
+    /* 부모가 ul 인 엘리먼트의 첫 번째 자식 li */
+    /* ul>li:first-child {
+      background-color: yellow;
+    } */
+
+    /* css3 */
+    /* 부모가 누구든 첫 번째 li */
+    /* li:first-of-type {
+      background-color: yellow;
+    } */
+
+    /* 부모가 ul 인 li 중 첫 번째 li */
+    ul>li:first-of-type {
+      background-color: yellow;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>pseudo-class</h1>
+  <!-- 순서가 있는 목록 / 순서가 없는 목록 -->
+  <ul>
+    <ol>
+      <li>추가 항목 1</li>
+      <li>추가 항목 2</li>
+      <li>추가 항목 3</li>
+    </ol>
+    <li>1번째</li>
+    <li>2번째</li>
+    <li>3번째</li>
+  </ul>
+  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt tenetur et harum libero quos! Minus delectus placeat alias, consequuntur ipsum, adipisci porro accusamus omnis architecto, fugit harum animi fugiat numquam.</p>
+</body>
+
+</html>

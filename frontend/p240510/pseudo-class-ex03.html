@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[가상 클래스]</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    /* -------CSS2------- */
+    /* nth-child(n) : 부모의 n번째 자식 중 해당 요소 선택 */
+    /* ol>:nth-child(2) {
+      background-color: aqua;
+    } */
+
+    /* -------CSS3------- */
+    /* 부모 ol 에 2번째 자식 li 찾아가 스타일 적용 */
+    /* ol>:nth-of-type(2) {
+      background-color: aqua;
+    } */
+
+    /* 부모 ol 에 홀수 자식 */
+    /* [방법 1] */
+    /* ol>li:nth-of-type(2n+1) {
+      background-color: rgb(190, 213, 255);
+    } */
+    /* [방법 2] */
+    /* ol>li:nth-of-type(odd) {
+      background-color: rgb(190, 213, 255);
+    } */
+
+    /* 부모 ol 에 짝수 자식 */
+    /* [방법 1] */
+    ol>li:nth-of-type(2n) {
+      background-color: rgb(255, 207, 215);
+    }
+    /* [방법 2] */
+    ol>li:nth-of-type(even) {
+      background-color: rgb(255, 207, 215);
+    }
+  </style>
+</head>
+
+<body>
+  <h1>pseudo-class</h1>
+  <ol>
+    <li>항목 1</li>
+    <ul>
+      <li>추가</li>
+      <li>추가</li>
+      <li>추가</li>
+    </ul>
+    <li>항목 2</li>
+    <li>항목 3</li>
+    <li>항목 4</li>
+    <li>항목 5</li>
+    <li>항목 6</li>
+    <li>항목 7</li>
+    <li>항목 8</li>
+    <li>항목 9</li>
+    <li>항목 10</li>
+  </ol>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>텍스트</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    /* 텍스트 문자 변환 */
+    h1 {
+      /* 대문자/소문자 */
+      text-transform: uppercase;
+      text-transform: lowercase;
+
+      /* 첫 글자만 대문자 */
+      text-transform: capitalize;
+
+      background-color: aqua;
+    } 
+
+    small {
+      background-color: rgb(4, 145, 79);
+      /* 일부로 사이즈 줄임, 사이즈 조정할 때 정수값이 0 일때 의미가 없는데
+         값이 정수로 올 때, 0 으로 올 때 단위를 생략 */
+      font-size: .5em;
+
+      /* 세로 정렬 
+         baseline(기본값) | top(위로) | bottom(아래로) | 
+         middle(글꼴마다 다 다름)
+         정가운데 위치 인식하는게 어려움, 글꼴 디자인이 다 달라서 */
+      /* 영역이 있는 inline 태그만 가능 */
+      vertical-align: middle;
+    }
+
+    #p2 {
+      background-color: yellow;
+      /* 정렬해도 반응이 없는 이유
+         : p 태그는 블록 태그라 영역을 나눌 필요가 없음 */
+      vertical-align: top;
+
+      /* 가로 정렬 
+         left(기본값) | center | right | justify(균등정렬)
+         justify 단점 : 단어와 단어 사이에 공백이 넓게 생기는 경우가 있음 */
+      text-align: justify;
+
+      /* 텍스트 줄표시
+         none(기본값) | underline(밑줄) | line-through(취소선) | overline(텍스트위) */
+      text-decoration: underline;
+
+      /* 들여쓰기(첫줄만)
+         : (-) 특정 element 를 숨길 수 있음 */
+      text-indent: 20px;
+      /* text-indent: -20px; */
+
+      /* 글자 사이 간격 
+         : 가독성이 떨어질 수 있음 */
+      letter-spacing: 2px;
+
+      /* 단어 사이 간격 */
+      word-spacing: 10px;
+
+      /* 자동 줄바꿈(기본값) 해제 */
+      /* white-space: wrap; 줄바꿈 */
+      white-space: nowrap; 
+    }
+  </style>
+</head>
+
+<body>
+  <div id="wrap">
+    <h1>Heading h1 <small>comment</small></h1>
+
+    <p id="p1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt consequuntur totam qui eius minus magnam facilis sit quia, laboriosam quaerat ratione expedita, numquam distinctio. Voluptates officiis esse excepturi unde vitae.</p>
+
+    <p id="p2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur libero sed unde nam, natus placeat perspiciatis dolor iure, nobis ipsa, aliquam architecto aliquid culpa. Ab expedita pariatur accusamus enim illum.</p>
+  </div>
+</body>
+
+</html>

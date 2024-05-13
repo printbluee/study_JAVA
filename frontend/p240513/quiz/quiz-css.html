@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[문제] 스타일 적용하기</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    /* 블릿 제거 */
+    ul {
+      list-style: none;
+    }
+    /* 언더라인 제거, 폰트 기본값 검정색으로 변경 */
+    a {
+      color: black;
+      text-decoration: none;
+    }
+    /* 호버 - 배경색 노란색으로 변경, 폰트 굵게 */
+    a:hover {
+      font-weight: bold;
+      background-color: yellow;
+    }
+    /* strong - 굵기 해제 */
+    strong {
+      font-weight: normal;
+    }
+    /* em - 기울기 해제 */
+    em {
+      font-style: normal;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="wrap">
+    <ul>
+      <li><a href="#">naver</a></li>
+      <li><a href="#">daum</a></li>
+      <li><a href="#">W3C</a></li>
+    </ul>
+
+    <p><strong>Lorem</strong> ipsum dolor sit, amet consectetur adipisicing elit. Porro veniam velit commodi numquam corporis, quaerat facere est quo officia ducimus eveniet, at minima eligendi voluptate distinctio! Corrupti cum a earum.</p>
+
+    <p>Lorem <em>ipsum</em> dolor sit amet consectetur adipisicing elit. Culpa magni vitae omnis tempora debitis, dolores ullam et aspernatur, numquam recusandae deserunt ipsa accusantium consequuntur mollitia animi facere porro temporibus sapiente.</p>
+  </div>
+</body>
+</html>

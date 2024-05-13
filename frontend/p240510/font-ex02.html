@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[font] 폰트 2</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    /* https://www.w3schools.com/css/css_font.asp */
+    /* css 초기화 작업할 때, 기존 스타일을 모두 빼고 시작 */
+    /* 맑은 고딕은 sans-serif 에 속해있다  */
+    /* font-family : 폰트의 종류 */
+    body {
+      font-size: 10px;
+      /* 2개 이상 단어로 이루어져 있을 땐 '' 사용 */
+      /* 사용자는 여러 브라우저를 사용하기 때문에 기본 폰트를 앞에 쓰고,
+         만약 첫 번째 폰트가 지원안될 때 다음 폰트를 사용함 */
+      font-family: '돋음', sans-serif;
+    }
+    h1 {
+      font-size: 1.5em;
+      /* 
+      폰트 두께(무게)
+      : 폰트 자체가 디자인 되어 있기 때문에 숫자 지정의 의미가 없음
+      */
+      font-weight: normal;
+    }
+    h2 {
+      font-size: 1.2em;
+    }
+    .lead {
+      font-weight: bold;
+      /* 기울림 :
+         nomal | italic | oblique(45도)
+         https://study4silver.tistory.com/318 */
+      font-style: italic;
+
+      /* nomal | small-caps */
+      font-variant: small-caps;
+    }
+    div {
+      /* https://www.w3schools.com/css/css_font_shorthand.asp */
+      /* font 의 속성은 여러 속성을 담고 있음 */
+      /* 속성이 2단어 이상일 때 - 을 사용 */
+      /* 주의 사항 
+      : 폰트 사이즈와 폰트 글꼴 둘 중 하나라도 설정이 되어 있지 않으면, 기본값으로 설정됨
+      : 폰트 글꼴은 무조건 마지막에 정의 */
+      /* 
+      font-size: 2em;
+      font-family: 'Times New Roman', Times, serif;
+      font-weight: bold;
+      font-style: italic (잘사용 x);
+      font-variant: small-caps (잘사용 x);
+       */
+      font: italic small-caps bold 2em/2em 'Times New Roman', Times, serif;
+
+      /* 줄간격 */
+      line-height: 1.5em;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 폰트 2 - 폰트와 관련된 속성 -->
+  <h1>[h1] font style</h1>
+  <h2>[h2] font style</h2>
+  <p class="lead">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse sint molestiae aut labore tempore quaerat, sunt soluta nam sed ipsum eaque cumque dicta blanditiis, deleniti a. Dignissimos nam ipsam officia?</p>
+  <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti doloremque quae quo, ipsum ab ullam voluptate ipsam iste necessitatibus velit placeat magnam cum natus, animi laboriosam ea ad, consequuntur sed!</div>
+</body>
+
+</html>

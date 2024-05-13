@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[font] 폰트 1</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    /* 
+    body 에 font 속성을 부여하면 자식에 영향을 줌
+    css 에 상속이 되는 속성이 있는데 그 중 하나가 font
+    상위 요소를 찾기 위해 위로 타고 올라감   
+    em 단점 : 상위 요소가 em 인 경우 값이 너무 커짐 이를 해결하기 위해 rem 이 나옴
+    rem : 무조건 html  기준, body 가 스타일이 있으도 상위 요소와 관련이 없음
+
+    [단위]
+    font는 주로 px em(기본값) rem
+    절대값 단위(인쇄용)     : cm, mm, pt(포인트), pc(파이카)
+    상대값 단위(웹, 스크린) : px(1 픽셀을 1로 하는 단위) - 설정에 따라 크기가 달라짐,
+                            : em(~배, 상위 요소 기준),
+                            : rem(~배,최상위 요소[html] 기준, HTML5부터 추가)
+                            : %(비율, 상위 요소 기준[부모/조상]) - 폰트에서 잘 안씀, 이미지 사용
+    */
+    /* html {font-size: 10px;} */
+
+    /* 웹 브라우저(크롬) 기준이 아닌 html body 기준으로 해서 작아짐 */
+    body {
+      /* font-size: 2em; */
+      font-size: 2rem;
+    }
+
+    /* h1 과 p 는 관련이 없다는 것을 알기 위해 씀 */
+    /* p {font-size: 9px;} */
+
+    /* p 태그도 body 처럼 하고 싶음 */
+    p {
+      /* font-size: 1.5em; */
+      font-size: 1.5rem;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>폰트 1</h1>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, ut magnam maxime doloremque debitis nisi excepturi impedit ullam numquam repellat obcaecati qui libero quisquam earum possimus. Laborum, obcaecati! Nihil, corrupti?</p>
+  <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti doloremque quae quo, ipsum ab ullam voluptate ipsam iste necessitatibus velit placeat magnam cum natus, animi laboriosam ea ad, consequuntur sed!</div>
+</body>
+
+</html>

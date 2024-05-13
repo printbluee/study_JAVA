@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[font] 폰트 3</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-variant: small-caps;
+    }
+    /* 1em = 16px(웹 브라우저 기준) */
+    #size-px {
+      font-size: 20px;
+    }
+    #size-em {
+      font-size: 2em;
+    }
+    /* 1vw : 1% , 
+    실제 사용자가 보여지는 영역, 화면 크기에 따라 크기가 줄었다 커짐 */
+    #size-vw {
+      font-size: 5vw;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="wrap">
+    <h2>font size : px</h2>
+    <div id="size-px">Lorem ipsum dolor sit amet.</div>
+
+    <h2>font size : em</h2>
+    <div id="size-em">Lorem ipsum dolor sit amet.</div>
+
+    <h2>font size : vw(VIEWPORT WIDTH)</h2>
+    <div id="size-vw">Lorem ipsum dolor sit amet.</div>
+  </div>
+</body>
+
+</html>
