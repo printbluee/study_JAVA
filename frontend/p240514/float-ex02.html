@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>float</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    img {
+      vertical-align: top;
+    }
+    /* .thumb 부모인 .img_list 에 가상 element 사용하기 */
+    #wrap .img_list {
+      background-color: red;
+      /* [방법 2] */
+      /* auto 해도 됨 (자동) */
+      overflow: hidden;
+    }
+    /* .thumb 다음 element 를 다시 원래 자리로 밀어내기 위해 */
+    /* float 의 흐름을 끊는 가장 기본적인 방법 */
+    /* [방법 1] */
+    /* #wrap .img_list::after {
+      content: "흐름 끊기";
+      clear: left;
+      display: block;
+    } */
+    #wrap .thumb {
+      float: left;
+      border: 3px solid black;
+    }
+    /* [방법 3] - 권장하지 않음 */
+    /* #wrap .thumb {float: left;} 가 left 면 똑같이 left */
+    /* #wrap .append {
+      clear: left;
+    } */
+  </style>
+</head>
+
+<body>
+  <div id="wrap">
+    <h1>float example</h1>
+    <div class="img_list">
+      <div class="thumb">
+        <img src="https://placehold.co/200?text=A" alt="이미지">
+      </div>
+    </div>
+    <p class="append">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est rerum id, ipsa aut iste vel odit iure culpa accusamus libero officia minima voluptatem temporibus, nesciunt itaque soluta. Culpa, optio nostrum.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est rerum id, ipsa aut iste vel odit iure culpa accusamus libero officia minima voluptatem temporibus, nesciunt itaque soluta. Culpa, optio nostrum.</p>
+  </div>
+</body>
+</html>

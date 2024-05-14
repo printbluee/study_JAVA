@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[문제] table</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    .tbl {
+      /* table 태그는 상속 가능 - text-align center 해도 스타일 적용됨 */
+      /* table 전체에 border 설정하지 않음 */
+      /* border: 1px solid black; */
+
+      /* [cell 사이 여백]
+      separate(기본값) | collapse(붕괴,무너지다)     
+      */
+      border-collapse: collapse;
+      width: 800px;
+
+      /* 모든 열이 균등하게 사이즈 가질 것 */
+      table-layout: fixed;
+    }
+    .tbl caption {
+      /* 캡션 숨기기 */
+      /* element 가 가지고 있는 영역이 있기 때문에 무언가를 숨길 때,
+         생각을 하고 구조 구성해야함 */
+      /* display: none; */
+
+      /* 웹 브라우저 기준으로 저 멀리 보내버리면 영역은 남아있음 ^.^ */
+      /* px 은 티 아나니까 em 으로 많이 표현함 */
+      text-indent: -200em;
+      line-height: 0;
+    }
+    /* 부모가 tbl 클래스인 th 와 td */
+    .tbl th, .tbl td {
+      border: 1px solid black;
+      /* 텍스트 가운데 정렬 */
+      text-align: center;
+    }
+    /* [문제] 홀수행 배경색 노란색으로 바꾸기 */
+    tbody tr:nth-of-type(2n+1){
+      background-color: yellow;
+    }
+    /* 비어있는 sell 감추기 */
+    /* border-collapse: collapse; 설정 되어 있으면 스타일 적용이 안됨
+       제약이 좀 있어 많이 사용하지는 않음 */
+    .ex {
+      empty-cells: hide;
+    }
+
+  </style>
+</head>
+
+<body>
+  <h1>테이블</h1>
+  <table class="tbl">
+    <caption>table caption</caption>
+    <thead> 
+      <tr>
+        <th scope="col">table header cell-1</th>
+        <th scope="col">table header cell-2</th>
+        <th scope="col">table header cell-3</th>
+        <th scope="col">table header cell-4</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>table data cell-1</td>
+        <td>table data cell-2</td>
+        <td>table data cell-3</td>
+        <td>table data cell-4</td>
+      </tr>
+      <!-- tr>td{table data cell-$@5}*4 // @5 가 5부터 시작 -->
+      <tr>
+        <td>table data cell-5</td>
+        <td>table data cell-6</td>
+        <td>table data cell-7</td>
+        <td>table data cell-8</td>
+      </tr>
+      <tr>
+        <td>table data cell-9</td>
+        <td>table data cell-10</td>
+        <td class="ex"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>table data cell-1</td>
+        <td>table data cell-2</td>
+        <td>table data cell-3</td>
+        <td>table data cell-4</td>
+      </tr>
+      <!-- tr>td{table data cell-$@5}*4 // @5 가 5부터 시작 -->
+      <tr>
+        <td>table data cell-5</td>
+        <td>table data cell-6</td>
+        <td>table data cell-7</td>
+        <td>table data cell-8</td>
+      </tr>
+      <tr>
+        <td>table data cell-9</td>
+        <td>table data cell-10</td>
+        <td class="ex"></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+
+</html>

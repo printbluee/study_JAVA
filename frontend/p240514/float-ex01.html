@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[float]</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    #wrap {
+      background-color: yellow;
+      width: 800px;
+      /* 일반적으로 쓰임, 가운데 정렬 */
+      margin: 0 auto;
+    }
+    #wrap h1 {
+      padding: 15px 0;
+    }
+    /* float : 둥둥 떠다니다
+             : 해당이 되는 영역을 웹 브라우저에 붕 뜨는데, 붕 뜬 만큼 다음 element 가 오면서 당겨짐
+               (하지만 떨어지더라도 붕 떠있는 element 영역에는 자리 차지 하지 않음)
+             : 무조건 inline 형태로 됨 */
+    #wrap .thumb {
+      float: left;
+      margin: 0 15px 15px 0;
+    }
+    /* 이미지 아래로 테스트 정렬 */
+    #wrap .text {
+      margin-left: 215px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="wrap">
+    <h1>float example</h1>
+    <!-- 레이아웃이나 메뉴(nav) 등 많이 사용하게 됨 -->
+    <div class="thumb">
+      <!-- 더미 이미지 -->
+      <img src="https://placehold.co/200/blue/white?text=Sample" alt="이미지">
+    </div>
+    <div class="text">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic ea, ab, beatae sunt delectus magnam omnis ad vero facere eaque natus modi sit numquam, saepe totam? Optio consequatur soluta corrupti.</p>
+      <div>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam reiciendis eaque vero rerum repudiandae et nihil accusamus delectus excepturi doloribus omnis incidunt ipsum corrupti blanditiis distinctio velit, temporibus commodi maxime.</div>
+        <div>Magnam quae neque explicabo numquam officiis officia voluptate dolor modi quisquam ullam non, dolorum sequi incidunt sint, ducimus voluptatum eos magni architecto saepe ratione voluptas laudantium doloribus? Atque, voluptatibus eius.</div>
+        <div>Ab pariatur alias unde perferendis officia rem, quae facere amet nihil incidunt odit aperiam architecto! Quo laborum dignissimos repudiandae ut maxime reiciendis pariatur odit perferendis nesciunt hic! Et, iure in!</div>
+        <div>Suscipit laboriosam ad doloribus obcaecati soluta beatae laborum eius quae quaerat, nesciunt, et unde ipsum est in aut excepturi nostrum eos adipisci dolor? Quasi, deleniti minus tenetur nulla veritatis perferendis!</div>
+        <div>Laudantium ex, suscipit natus a dolorum, alias tempore, reiciendis sed eveniet incidunt animi! Minus aliquam nam eum nemo labore voluptatem nesciunt, quia sit quas fugit alias animi! Fugiat, sunt rem?</div>
+        <div>Illo unde illum, porro repellendus a et beatae modi blanditiis ab hic. Placeat voluptatum quam ut odio dolorum aspernatur non ea, facilis sed blanditiis voluptate fugiat, dolores exercitationem, mollitia vitae!</div>
+        <div>Ipsa saepe cum dolor quod consequatur in modi aperiam accusamus, laborum dicta non pariatur similique doloremque suscipit id rerum distinctio, consequuntur mollitia obcaecati? Voluptatum ut amet sequi reiciendis suscipit totam?</div>
+        <div>Neque ut enim esse perspiciatis est blanditiis tempore voluptas aperiam repellat cupiditate, iure, ipsam culpa sapiente, totam eveniet recusandae laborum eos. Delectus et nisi, quos qui velit cumque quas neque.</div>
+        <div>Excepturi molestias in nisi? Eum autem nostrum, veritatis, vero provident adipisci praesentium, dicta aliquam perferendis porro perspiciatis illo corporis recusandae fuga officiis! Alias, suscipit a. Aspernatur incidunt libero sunt exercitationem.</div>
+        <div>Minus suscipit obcaecati vitae perferendis consequatur eligendi ipsum maxime non dicta sint repudiandae exercitationem alias nostrum ab beatae optio vero nisi, eaque odit blanditiis odio aspernatur mollitia. Consequuntur, cupiditate debitis?</div>
+        <div>Alias aspernatur fuga neque labore fugit, corporis voluptate esse dolorum. Animi voluptatem unde odio quisquam. Veniam, facere excepturi ex libero dicta maiores porro nisi quasi nulla, sed quidem alias laudantium.</div>
+        <div>Consectetur quisquam aperiam amet illo assumenda! Voluptate dolores excepturi ad vero, reiciendis similique! Ea maxime, sunt cupiditate autem necessitatibus modi accusamus suscipit dolorem aperiam dolor libero, quasi aut architecto quisquam.</div>
+        <div>Odit dolor iure nobis maxime asperiores excepturi quae dignissimos, expedita soluta alias. Minus laudantium fugit voluptate quos quibusdam corporis, in, doloribus, vero eos accusamus ea magni quam ipsa rerum. Cupiditate!</div>
+        <div>Porro, accusantium pariatur illo possimus nam unde similique sequi ipsam facere distinctio numquam. Consequatur incidunt voluptate iste unde vitae. Tempora illum dignissimos natus ipsum assumenda officia aut voluptatum inventore quibusdam.</div>
+        <div>Id harum quam ullam fugit dicta unde porro, eligendi voluptas architecto delectus iste eius magni sint corrupti explicabo rem iusto! Cum, odit. Qui ipsa accusamus laudantium, perferendis aperiam accusantium corporis.</div>
+        <div>Modi, recusandae architecto eos animi vel temporibus quis. Adipisci enim, necessitatibus, ipsa excepturi suscipit ducimus recusandae labore accusantium nihil quia nulla dignissimos perspiciatis alias odio blanditiis dolorem, voluptatem pariatur illo!</div>
+        <div>Aliquid voluptate quam magni doloribus, temporibus molestias autem corrupti placeat veritatis enim sint maxime adipisci, saepe fuga amet! Doloribus animi similique nesciunt quisquam omnis unde alias eveniet nostrum iure veniam!</div>
+        <div>Ducimus, voluptatum ex, eum sunt eligendi vero corrupti dolorum consequuntur dolorem tenetur libero explicabo dolor. Quidem sit, eos at nemo et excepturi optio tempore natus magnam impedit, assumenda nulla ullam?</div>
+        <div>Consequuntur nesciunt distinctio laudantium, quaerat libero, officia commodi magnam necessitatibus beatae sed possimus! Fugiat nesciunt, voluptates aliquam minima nemo voluptate consectetur suscipit nulla a unde odit autem quas sint! Voluptate.</div>
+        <div>Itaque iusto magni voluptatum vero totam sapiente, qui quos minima? Temporibus quos tempore deserunt suscipit? Aspernatur repellat aliquid consequuntur, optio minima quam reiciendis quod saepe cumque error quasi sunt quas!</div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

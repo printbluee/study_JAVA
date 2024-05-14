@@ -8,13 +8,21 @@
 
   <style>
     /* 블릿 제거 */
-    ul {
+    /* 모든 리스트에 블릿을 쓰지 않겠다 - 초기화 작업 */
+    ul, ol, li {
       list-style: none;
     }
     /* 언더라인 제거, 폰트 기본값 검정색으로 변경 */
+    /* a 태그와 가상 클래스 */
+    /* [방법 1] */
+    /* a:link, a:visited{
+      color: black;
+      text-decoration: none; 
+    } */
+    /* [방법 2] */
     a {
       color: black;
-      text-decoration: none;
+      text-decoration: none; 
     }
     /* 호버 - 배경색 노란색으로 변경, 폰트 굵게 */
     a:hover {
@@ -34,11 +42,11 @@
 
 <body>
   <div id="wrap">
-    <ul>
+    <ol>
       <li><a href="#">naver</a></li>
       <li><a href="#">daum</a></li>
       <li><a href="#">W3C</a></li>
-    </ul>
+    </ol>
 
     <p><strong>Lorem</strong> ipsum dolor sit, amet consectetur adipisicing elit. Porro veniam velit commodi numquam corporis, quaerat facere est quo officia ducimus eveniet, at minima eligendi voluptate distinctio! Corrupti cum a earum.</p>
 

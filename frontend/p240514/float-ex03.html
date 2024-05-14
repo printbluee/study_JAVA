@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[float]</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    img {
+      /* 부모와 border 맞추기 위해 정렬  */
+      vertical-align: top;
+    }
+    #wrap .img_list::after {
+      content: "";
+      clear: right;
+      display: block;
+    }
+    #wrap .thumb {
+      float: right;
+      border: 3px solid skyblue;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="wrap">
+    <h1>float example</h1>
+    <div class="img_list">
+      <div class="thumb">
+        <img src="https://placehold.co/200?text=A" alt="이미지">
+      </div>
+      <div class="thumb">
+        <img src="https://placehold.co/200?text=B" alt="이미지">
+      </div>
+      <div class="thumb">
+        <img src="https://placehold.co/200?text=C" alt="이미지">
+      </div>
+      <div class="thumb">
+        <img src="https://placehold.co/200?text=D" alt="이미지">
+      </div>
+    </div>
+    <p class="append">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est rerum id, ipsa aut iste vel odit iure culpa accusamus libero officia minima voluptatem temporibus, nesciunt itaque soluta. Culpa, optio nostrum.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est rerum id, ipsa aut iste vel odit iure culpa accusamus libero officia minima voluptatem temporibus, nesciunt itaque soluta. Culpa, optio nostrum.</p>
+  </div>
+</body>
+</html>

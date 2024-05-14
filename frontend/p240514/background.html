@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[backgroung]</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    .one {
+      width: 1800px;
+      height: 1000px;
+      background-image: url("img/apple.webp");
+      background-repeat: no-repeat;
+      background-color: skyblue;
+      background-size: 800px;
+      background-position: center center;
+    }
+    /* background-image 로 이미지 넣었을 때 이미지 사이즈 조정이 가능하고,
+       tag 를 통해 넣었다면 사이즈 조정 x */
+    .two {
+      background-color: blue;
+      /* <img> tag 이미지 크기 조정되지 않음 */
+      background-size: 400px;
+
+      /* 구로조 들어온 이미지는 너비와 높이를 크기 조정 해야 함 */
+      /* [사이즈 조정 방법 1] */
+      width: 400px;
+      height: 400px;
+
+      /* [object-fit]
+      - fill       : 영역에 가득 차게
+      - contain    : 이미지가 잘리는 부분 없이 모두 표현, 여백이 생길 수 있음
+      - cover      : 이미지가 찌그러지지 않는 한도 내에서 가장 크게
+                   : 이미지 잘리는 부분이 생길 수 있음 (균등하게 잘림)
+      - none       : 원래 이미지 크기 유지하면서, 가운데 보여지도록 자동 설정
+      - scale-down : none 또는 contain 중 더 적절한 방향으로 이미지 크기 조정
+      */
+      object-fit: scale-down;
+      
+      /* CSS 로 넣어준 게 아니라 스타일 적용이 안됨 */
+      background-position: top right;
+    }
+    </style>
+</head>
+
+<body>
+  <h1>CSS 와 tag 를 통해 이미지 삽입 방법</h1>
+  
+  <div class="one">여기에 이미지 표시</div>
+  <div>
+    <img src="img/apple.webp" alt="실험군 이미지" class="two">
+    <!-- [사이즈 조정 방법 2] -->
+    <!-- <img src="img/apple.webp" width="400px" alt="실험군 이미지" class="two"> -->
+  </div>
+  <div>
+    <img src="img/apple.webp" alt="대조군 이미지">
+  </div>
+</body>
+</html>
