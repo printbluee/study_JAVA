@@ -1,0 +1,14 @@
+
+class Student {
+	
+	public void printInfo() {
+		
+	}
+}
+
+public class ej_quiz01 {
+
+	public static void main(String[] args) {
+		
+	}
+}

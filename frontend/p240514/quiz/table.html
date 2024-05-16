@@ -28,7 +28,7 @@
       /* display: none; */
 
       /* 웹 브라우저 기준으로 저 멀리 보내버리면 영역은 남아있음 ^.^ */
-      /* px 은 티 아나니까 em 으로 많이 표현함 */
+      /* px 은 티 안나니까 em 으로 많이 표현함 */
       text-indent: -200em;
       line-height: 0;
     }
@@ -39,16 +39,18 @@
       text-align: center;
     }
     /* [문제] 홀수행 배경색 노란색으로 바꾸기 */
-    tbody tr:nth-of-type(2n+1){
+    tbody > tr:nth-of-type(2n+1) td:first-child {
       background-color: yellow;
     }
+    /* tbody > tr:nth-of-type(2n+1) {
+      background-color: yellow;
+    } */
     /* 비어있는 sell 감추기 */
     /* border-collapse: collapse; 설정 되어 있으면 스타일 적용이 안됨
        제약이 좀 있어 많이 사용하지는 않음 */
     .ex {
       empty-cells: hide;
     }
-
   </style>
 </head>
 

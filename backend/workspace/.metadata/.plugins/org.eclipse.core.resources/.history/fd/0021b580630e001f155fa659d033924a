@@ -1,0 +1,26 @@
+
+public class quiz03 {
+
+	public static void menu(int donNum, int kalNum, int kingNum) {
+		int donPrice = 9900;
+		int kalPrice = 10000;
+		int kingPrice = 5000;
+		
+		int don = donPrice * donNum;
+		int kal = kalPrice * kalNum;
+		int king = kingPrice * kingNum;
+		
+		int totalPrice = don + kal + king;
+		
+		System.out.printf("돈까스 x %d = %d\n", donNum, don);
+		System.out.printf("칼국수 x %d = %d\n", kalNum, kal);
+		System.out.printf("왕만두 x %d = %d\n", kingNum, king);
+		System.out.println("=================");
+		System.out.printf("총합 :    %d", totalPrice);
+	}
+	
+	public static void main(String[] args) {
+		
+		menu(1,5,0);
+	}
+}

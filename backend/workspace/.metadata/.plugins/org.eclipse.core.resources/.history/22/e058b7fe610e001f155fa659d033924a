@@ -1,0 +1,15 @@
+
+public class quiz02 {
+
+	public static void main(String[] args) {
+		
+		int idx = 0;
+		for (int i=1; i<100; i+=2) {
+			System.out.print(i + " ");
+			idx++;
+			if (idx % 5 == 0) {
+				System.out.println();
+			}
+		}
+	}
+}

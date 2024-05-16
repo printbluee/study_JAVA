@@ -1,0 +1,35 @@
+
+class Student {
+	
+	String major;
+	int studentNumber;
+
+	Student(String major, int studentNumber) {
+		this.major = major;
+		this.studentNumber = studentNumber;
+	}
+	
+	public void setMajor(String major) {
+		this.major = major;
+	}
+	
+	public String getMajor() {
+		return major;
+	}
+	
+	public void printInfo() {
+		System.out.printf("전공 : %2s", major);
+		System.out.printf("전공 : %2d", studentNumber);
+	}
+}
+
+public class ej_quiz01 {
+
+	public static void main(String[] args) {
+		System.err.println("<학생 A 정보>");
+		
+		System.err.println("<학생 B 정보>");
+		
+		System.err.println("학생 B 전과 신청");
+	}
+}

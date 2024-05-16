@@ -1,0 +1,28 @@
+
+import java.util.Scanner;
+
+public class tyquiz0514 {
+
+	public static void main(String[] args) {
+
+		// Scanner 객체 생성
+		Scanner sc = new Scanner(System.in);
+
+		int [][] arr;
+		int userRow = 0;
+		int userCol = 0;
+		
+		int userValue;
+		int minValue = 1;
+		int maxValue = 10;
+		char radom = (char)((int)(Math.random()*26)+65);
+		
+		while (true) {
+			
+		}
+		
+		
+		// 메모리 해제
+//		sc.close();
+	}
+}

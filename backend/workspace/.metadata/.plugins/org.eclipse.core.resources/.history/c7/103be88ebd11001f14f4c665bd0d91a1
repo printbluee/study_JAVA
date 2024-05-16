@@ -1,0 +1,41 @@
+
+import java.util.Scanner;
+
+public class tyquiz0514 {
+
+	public static void main(String[] args) {
+
+		// Scanner 객체 생성
+		Scanner sc = new Scanner(System.in);
+
+		int [][] arr;
+		int userRow = 0;
+		int userCol = 0;
+		
+		int userValue;
+		int minValue = 1;
+		int maxValue = 10;
+		char radom = (char)((int)(Math.random()*26)+65);
+		
+		do {
+			System.out.print("행의 크기를 입력하세요. (정수 1 ~ 10 사이의 수) : ");
+			userValue = sc.nextInt();
+			
+			if (userValue >= minValue || userValue <= maxValue) {
+				userRow = userValue;
+			}
+			
+			System.out.print("열의 크기를 입력하세요. (정수 1 ~ 10 사이의 수) : ");
+			userValue = sc.nextInt();
+			
+			if (userValue >= minValue || userValue <= maxValue) {
+				userCol = userValue;
+			}
+			
+		} while (userValue <= minValue || userValue <= maxValue);
+		
+		
+		// 메모리 해제
+//		sc.close();
+	}
+}

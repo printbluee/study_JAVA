@@ -1,2 +1,58 @@
 @charset "UTF-8";
 
+/* [내가 한 css] */
+/* ul, li {
+  list-style: none;
+}
+ul {
+  list-style: none;
+  display: inline-block;
+  overflow: hidden;
+}
+li {
+  margin-right: 6px;
+  width: 80px;
+  height: 50px;
+  float: left;
+  border: 2px solid black;
+  text-align: center; 
+  line-height: 50px;
+}
+a:link, a:visited {
+  display: block;
+  color: black;
+  text-decoration: none;
+}   */
+
+/* [강사님이 하신 css] */
+/* 리셋(초기화) 작업 */
+/* 다음 body css  복사 (https://www.daum.net/) */
+/* 블릿 제거 된 것 아님, 작업 따로 해야함, 밖 영역으로 빠져나가 제거된 것처럼 보인 것 뿐 */
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, textarea, p, blockquote, th, td, input, select, button {
+  margin: 0;
+  padding: 0;
+}
+ul, ol, li {
+  list-style: none;
+}
+a:link {
+  color: black;
+  text-decoration: none;
+}
+/* 스타일 적용 */
+/* li 에 flaot(left) 설정했으니 부모인 ul 에 float(left) 해제 */
+#header ul::after {
+  content: "";
+  clear: left;
+  display: block;
+}
+#header ul li {
+  float: left;
+}
+#header ul li a {
+  border: 2px solid black;
+  padding: 0 30px; /* hover 가 되기 위해서 */
+  margin: 0 5px; /* 붙어있는 box 를 margin 을 줘서 간격을 줌 */
+  line-height: 34px; /* 테두리가 커지지 않은 이유 : a 태그라서 (inline 태그) */
+  display: block;
+}

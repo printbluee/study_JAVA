@@ -1,6 +1,7 @@
 @charset "UTF-8";
 
-#wrap {
+/* [내가 한 css] */
+/* #wrap {
   width: 300px;
   margin: 0 auto;
   background-color: yellow;
@@ -15,7 +16,7 @@
   clear: left;
   display: block;
 }
-#main #left-manu {
+#main #left-menu {
   float: left;
   width: 50px;
   height: 150px;
@@ -35,4 +36,54 @@
 #wrap #footer {
   height: 50px;
   background-color: gray;
+} */
+
+/* [강사님이 하신 css] */
+#wrap {
+  width: 300px;
+  margin: 0 auto;
+  background-color: yellow;
+}
+#navigation {
+  width: 300px;
+  height: 50px;
+  background-color: red;
+}
+#main {
+  height: 150px;  
+  background-color: lightgreen;
+}
+/* main 자식 element 에 float 를 해줬기 때문에 부모 element 에 플롯 해제  */
+#main::after {
+  /* [방법 1] - 깔끔 */
+  content: "";
+  display: block;
+  clear: both;
+  /* [방법 2] - 권장 x */
+  /* overflow: hidden; */
+}
+#main #left-menu {
+  float: left;
+  width: 50px;
+  height: 150px;
+  background-color: greenyellow;;
+}
+#main #content {
+  background-color: blue;
+  /* height: 150px; 보통 레이아웃 잡을 때 height 보다는 같이 float 하기 */
+  float: right;
+}
+#main #content #contain {
+  background-color: hotpink;
+  width: 250px;
+  height: 100px;
+}
+#main #content #comment {
+  background-color: aqua;
+  width: 250px;
+  height: 50px;
+}
+#footer {
+  height: 50px;
+  background-color: aliceblue;
 }
