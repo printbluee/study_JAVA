@@ -65,7 +65,7 @@ hr {
   position: relative; /* logo의 부모 기준을 잡기 위해서 position 을 자기 자리를 유지하는 relative 사용 */
   /* 배너 이미지 영역 확보 */
   padding-bottom: 150px;
-  /* background: url("../img/b_about.png") no-repeat right bottom; */
+  background: url("../img/b_about.png") no-repeat right bottom;
   background: no-repeat right bottom;
 }
 
@@ -162,7 +162,7 @@ hr {
 }
 #footer a {
   color: #555;
-text-decoration: none;
+  text-decoration: none;
 }
 #footer a:hover {
   color: #2a2a2a;

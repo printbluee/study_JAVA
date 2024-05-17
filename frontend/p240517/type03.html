@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[JavaScript] 자료형</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+  <style>
+
+  </style>
+<body>
+  <h1>문자열 관련 함수</h1>
+  <script>
+    // const 와 finall 결이 비슷함
+    const today = 'Good~';
+
+    // 문자열 길이
+    console.log('문자열 길이 >> ' + today.length);
+
+    //. 특정 문자 변경
+    // - 일치하는 첫 번째만 변경
+    console.log(today.replace('o', 'ap-'));
+    // - 일치하는 모두 변경
+    console.log(today.replaceAll('o', 'ap-'));
+
+    // 특정 위치의 문자 추출
+    // 1. 문자열.substring (시작 인덱스, 끝 인덱스)
+    console.log(today.substring(1, 4));
+    console.log('음수 인덱스 : ' + today.substring(1, -1)); // 처리 못함(지원안됨)
+    
+    // 2. 문자열.slice(시작 인덱스, 끝 인덱스)
+    console.log(today.slice(1, 5));
+    console.log(today.slice(1, -1));
+    console.log(today.slice(1)); // 시작 인덱스부터 끝까지
+    console.log(today.slice(-4));
+    console.log('-4 ~ 0 : ' + today.slice(-4, 0)); // 잘못됨
+
+    // 특정 문자 기준으로 분리(쪼개기)
+    // : 배열로 리턴
+    // : 기준으로 사용된 문자는 요소에 없음
+    // const today = 'Good~';
+    console.log(today.split('d'));
+
+    // 특정 문자 추가
+    // 문자열.padStart(문자열 전체 길이, '추가할 문자')
+    console.log(today.padStart(10, '*'));
+    console.log(today.padEnd(10, '*'));
+
+    // 특정 문자 찾기 : true/false 리턴
+    console.log('d : ' + today.includes('d'));
+    console.log('G : ' + today.includes('G'));
+    console.log('Go : ' + today.includes('Go'));
+    console.log('go : ' + today.includes('go'));
+
+    // 특정 문자의 위치(index) 리턴
+    // - 있음 : 탐색된 첫 번째 문자의 인덱스 리턴
+    // - 없음 : -1 리턴
+    console.log(today.indexOf('o'));
+    console.log(today.indexOf('Go'));
+    console.log(today.indexOf('d'));
+    console.log(today.indexOf('H'));
+
+    // 반복
+    // repeat(반복할 횟수)
+    console.log(today.repeat(3));
+    console.log('재호'.repeat(3));
+
+    // 대소문자 변경
+    console.log(today.toUpperCase());
+    console.log(today.toLowerCase());
+
+    // 공백 제거
+    const say = '    hi ~  !    ';
+    console.log(say);
+    console.log('|' + say + '|');
+    console.log('|' + say.trimStart() + '|');
+    console.log('|' + say.trimEnd() + '|');
+    console.log('|' + say.trim() + '|'); // 양쪽 공백 제거
+  </script>
+</body>
+</html>
