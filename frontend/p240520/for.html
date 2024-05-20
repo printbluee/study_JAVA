@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[제어문-반복문] for</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>for문</h1>
+  <!-- 
+    [문법]
+    : for문 안에서 변수 선언할 거면 var(전역변수)보다는
+      let(지역변수)를 쓰는 것이 좋음
+      ex) for (let 초기값; 조건식; 증감식)
+      
+    for (초기값; 조건식; 증감식) {
+      명령어;
+    }
+  -->
+  <script>
+    // var num = 1;
+    for (let num=1; num<11; num++) {
+      document.write(num);
+      document.write('<br>');
+    }
+  </script>
+</body>
+</html>

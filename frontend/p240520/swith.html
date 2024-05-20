@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[제어문-조건문] swith문</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>swith문</h1>
+  <!-- 
+    [특이점]
+    - 자바는 정수만 올 수 있는데, 자바스크립트는 실수도 올 수 있음
+   -->
+
+  <script>
+    var data = 2.5;
+    var one = 1;
+    
+    switch(data) {
+      case one:
+        document.write('1이다.');
+        break
+      case 2:
+        document.write('2이다.');
+        break
+      case 2.5:
+        document.write('2.5이다.');
+        break
+      default:
+        document.write('기타');
+    }
+  </script>
+</body>
+</html>

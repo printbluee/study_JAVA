@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[문제 4] 반복문</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <script>
+    var userValue = prompt('출력할 3의 배수 개수는 ?');
+    let idx = 1;
+
+    while (true) {
+      let result = 3 * idx;
+      document.write(result, ' ');
+      if (idx == userValue) {
+        break;
+      }
+      idx++;
+    }
+  </script>
+</body>
+</html>

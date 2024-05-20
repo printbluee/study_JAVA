@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <title>[확인창]</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>확인창</h1>
+  <!-- [문제]
+  true 와 false 는 변수를 사용해서 쓰기
+    확인 버튼을 클릭하면, 
+  '리턴값은 true 이고, 확인을 클릭했습니다.' 를 화면에 출력
+  취소 버튼을 클릭하면,
+  '리턴값은 false 이고, 취소를 클릭했습니다.' 를 화면에 출력
+  -->
+  <script>
+    // 사용자가 무엇을 눌렀는지 확인할 수 있음
+    var answer = confirm('입력을 완료했나요 ?');
+
+    // [방법 1]
+    var check = (answer) ? "확인" : '취소';
+    document.write(`리턴값은 ${answer}이고, ${check}을/를 클릭했습니다.`);
+    
+    // [방법 2]
+    if (answer) {
+      document.write(`리턴값은 ${answer}이고, 확인을 클릭했습니다.`);
+    } else {
+      document.write(`리턴값은 ${answer}이고, 취소를 클릭했습니다.`);
+    }
+    // document.write(answer); // true or false
+  </script>
+</body>
+</html>

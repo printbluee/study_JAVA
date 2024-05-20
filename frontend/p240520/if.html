@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[제어문-조건문] if문</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>if문</h1>
+  <!-- 
+    [문법]
+    # 조건 1개
+    if (조건식) {
+      명령어;
+      명령어;
+    }
+
+    # 조건 2개
+    if (조건식) {
+      true일 때 명령어;
+    } else {
+      false 일 때 명령어;
+    }
+
+    # 조건 3개
+    if (조건식 1) {
+      명령어;
+    } else if (조건식 2) {
+      명령어;
+    } else if (조건식 3) {
+      명령어;
+    }
+  -->
+
+  <script>
+    var num = 3;
+
+    // num % 2 값이 0 또는 1인데
+    // if (1) 이 되면 자바스크립트가 자체적으로 논리값으로 변환하여
+    // true 또는 false 됨 (좋은 형태는 아니지만, 문법상 가능)
+    if (num % 2 ==1) {
+      document.write('홀수');
+    } else {
+      document.write('짝수');
+    }
+  </script>
+</body>
+</html>

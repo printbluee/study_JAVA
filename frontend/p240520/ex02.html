@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[객체] 구조 분해 할당</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>[객체] 구조 분해 할당 - 2</h1>
+
+  <script>
+    const info = { nickname : '홍길동', age : 25 };
+    
+    // [함수 선언식] ==============================
+    console.log("[함수 선언식]");
+    // 1) 매개변수 : 1개
+    console.log("1) 매개변수 : 1개");
+
+    function show_info(args) { // 타입 지정 x, 반환형 x 
+      // console.log(args);
+      console.log("nickname >>", args.nickname);
+      console.log("age >>", args.age);
+    }
+    console.log('\n');
+
+    // 2) 매개변수 : 객체의 구조분해
+    console.log("2) 매개변수 : 객체의 구조분해");
+    // { nickname, age } = { nickname:nickname, age:age } 값이 생략된 것
+    function show_info({ nickname, age }) {
+      console.log("nickname >>", nickname);
+      console.log("age >>", age);
+    }
+    console.log("\n");
+
+     // 2-1) 매개변수 : 객체의 구조분해
+     // -> 변수명을 원하는 변수명으로 지정
+     console.log("2-1) 매개변수 : 객체의 구조분해");
+
+     function show_info({ nickname:new_nickname , age:new_age }) {
+      console.log("nickname >>", new_nickname);
+      console.log("age >>", new_age);
+     }
+
+    // 함수 호출
+    show_info(info);
+  </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[문제 6] 조건문</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <script>
+    var userAge = prompt('나이를 입력하세요 ...');
+    var ageCheak = parseInt(userAge / 10);
+
+    switch (ageCheak) {
+      case 0:
+        document.write('어린이입니다.');
+        break;
+      case 1:
+        document.write('10대 입니다.');
+        break;
+      case 2:
+        document.write('20대 입니다.');
+        break;
+      case 3:
+        document.write('30대 입니다.');
+        break;
+      case 4:
+        document.write('40대 입니다.');
+        break;
+      case 5:
+        document.write('50대 입니다.');
+        break;
+      default:
+        document.write('어르신입니다.');
+        break;
+    }
+  </script>
+</body>
+
+</html>

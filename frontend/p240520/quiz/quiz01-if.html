@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[문제 1] if문</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <script>
+    var id = 'aaa';
+    var pw = '1234';
+
+    var userId = prompt('아이디 입력 : ');
+    var userPw = prompt('비밀번호 입력 : ');
+
+    if (userId != id) {
+      alert('아이디 확인 요망');
+    } else if (userPw != pw) {
+      alert('비밀번호 확인 요망');
+    } else {
+      document.write('환영합니다.');
+    }
+
+    //   var check = (userId != id || userPw == pw) ? "아이디" : '패스워드';
+    //   alert(`${check} 확인 요망`);
+  </script>
+</body>
+</html>

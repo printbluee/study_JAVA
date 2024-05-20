@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[경고창]</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>경고창</h1>
+
+  <script>
+    // ip:port 내용
+    // 순서 : h1 > '1번째 출력' > alert > '2번째 출력'
+    // 특정 라인에서 코드 멈추기 : breakpoint
+    // 중지점은 태그랑 상관 x
+    // 단계별 실행 : F8
+    document.write('1번째 출력<br>');
+    var answer = alert("경고창입니다."); // undefined
+    document.write('answer >> ', answer)
+    document.write('<br>2번째 출력');
+  </script>
+</body>
+</html>

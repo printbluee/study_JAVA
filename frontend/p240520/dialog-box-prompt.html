@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <title>[입력창]</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>입력창</h1>
+
+  <script>
+    // script 기준으로 외부에서 값이 들어올 때, 무조건 String
+    // 아무런 입력도 안하고, 확인 버튼 눌렀을 때 --> 빈문자열
+    // 취소 버튼 눌렀을 때                       --> null
+    // 취소 : 문자열 생성조차 안돼서 null 로 저장
+    var answer = prompt('오늘 날씨는 ?');
+    document.write('답변 ... ', answer);
+  </script>
+</body>
+</html>

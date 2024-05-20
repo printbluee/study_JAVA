@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[문제 2] switch문</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <script>
+    var num1 = prompt('정수 1개 입력 : ');
+    var num2 = prompt('정수 1개 입력 : ');
+    var operator = prompt('연산자 1개 입력 : ');
+
+    var change_num1 = parseInt(num1);
+    var change_num2 = parseInt(num2);
+
+    switch (operator) {
+		case "+":
+			result = change_num1 + change_num2;
+			break;
+		case "-":
+			result = change_num1 - change_num2;
+			break;
+		case "*":
+			result = change_num1 * change_num2;
+			break;
+		case "/":
+      result = change_num1 / change_num2;
+      break;
+    case "%":
+      result = change_num1 % change_num2;
+			break;
+		default:
+			System.out.println("잘못된 연산자를 입력하셨습니다.");
+		}
+    document.write(`${num1} ${operator} ${num2} = `, parseInt(result));
+
+  </script>
+</body>
+</html>
