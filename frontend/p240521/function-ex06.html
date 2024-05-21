@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[rest parameter]</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>rest parameter</h1>
+  <!-- [특징]
+    : 타입은 무조건 배열로 저장
+    : 일반적인 매개변수가 오고, 앞 또는 마지막에 ...rest parameter 가 와야함(마지막 사용)
+  -->
+
+  <script>
+    // rest parameter [문법] : ...변수명
+    // 누적합 따로 구하기
+    // 1. 함수 정의
+    function sum(a, b, ...args) { // ...args : 요소 x, 타입 배열(타입 고정) -> 빈 배열
+      let reslut = a + b;
+      console.log('args : ', args);
+      console.log('합 >> ', reslut)
+    }
+
+    // 2. 함수 호출
+    sum(4, 7);
+    sum(2, 3, 5);
+    sum(1, 2, 7, 10, 15);
+  </script>
+</body>
+</html>

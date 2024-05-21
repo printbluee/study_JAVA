@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[함수 정의 및 호출]</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>[함수 정의 및 호출]</h1>
+
+  <script>
+    // 3-2. 함수 호출
+    // 지역변수, 초기화 할 수 있는게 없어서 undefined 가 됨
+    info();
+    info('박보검');
+    info('홍길동', 25);
+    info('이미자', 32, '운동'); // 매개변수를 더 받아도 error 가 아님
+
+    // 3-1. [함수 정의] 매개변수 있고, 리턴값 없음
+    // << 특징 >>
+    // - 매개변수와 인수의 자료형이 동일한지 검사하지 않음
+    // - 매개변수의 개수와 인수의 개수가 같은지 검사하지 않음
+    // - 매개변수의 개수가 인수의 개수보다 적으면 undefined 저장
+    function info(name, value) {
+      console.log('name >> ', name);
+      console.log('value >> ', value);
+      console.log('------------------------------------');
+    }
+  </script>
+</body>
+</html>

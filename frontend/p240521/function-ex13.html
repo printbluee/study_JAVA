@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>화살표 함수</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>화살표 함수</h1>
+
+  <script>
+    // 화살표 함수 : arrow function (JAVA Lamvba)
+    // 기본적으로 익명 함수를 변환한 것, 변수 꼭 써야함
+    // var sum = function(a, b) {
+    //   return a + b;
+    // }
+      
+    // 1) body 의 {} 생략, return 생략
+    // : body 내 명령어가 1개일 때, body 의 {} 생략 가능
+    // : => 오른쪽 값은 무조건 return
+    // 매개변수와 바디 사이에 => 화살표 모양 넣기
+    // var sum = (a, b) => a + b;
+    
+    // 2) body 의 {} 명시
+    // : 리턴하려면, 무조건 return 키워드 명시
+    // {} 가 들어오는 순간 자동으로 return 이 안됨
+    // => 썼다는 자체가 익명 함수
+    var sum = (a, b) => {
+      return a + b;
+    } 
+    
+
+    var result = sum(4, 6);
+    console.log('result >> ', result);
+
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+</body>
+</html>

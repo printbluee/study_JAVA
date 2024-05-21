@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[arguments]</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>arguments</h1>
+
+  <script>
+    // 1. 함수 정의
+    function avg() {
+      var total = 0;
+
+      console.log('>>> avg() 실행');
+      console.log('arguments : ', arguments);
+      console.log('arguments 길이 : ', arguments.length);
+
+      for (let i=0; i<arguments.length; i++) {
+        console.log(`arguments[${i}] : ${arguments[i]}`)
+        total += arguments[i];
+      }
+      console.log('총합 : ', total);
+    }
+
+    function avg() {
+      // 평균 구하기
+      var total = 0;
+
+      for (let i=0; i<arguments.length; i++) {
+        // console.log(`arguments[${i}] : ${arguments[i]}`)
+        total += arguments[i];
+      }
+      var mean = (total / arguments.length).toFixed(2); // .toFixed(고정할 자리수)
+      return mean;
+    }
+
+    // 2. 함수 호출
+    var reslut = avg(2, 3, 5);
+    console.log('avg(2, 3, 5) 호출 결과 : ', reslut);
+
+    // console.log('[함수 밖] arguments : ', arguments) error !
+  </script>
+</body>
+</html>

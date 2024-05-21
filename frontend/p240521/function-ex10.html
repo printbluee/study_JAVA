@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[중첩 함수] 1</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>[중첩 함수] 1</h1>
+  <!-- [중첩 함수] 함수 정의 내 함수 정의 -->
+
+  <script>
+    // outer function(createHello), inner function(hello)
+    function createHello() {
+      console.log('>>> 함수 시작');
+
+      function hello(name) { // 
+        console.log('... hello() 함수 시작');
+        console.log(name + '님, 안녕하세요 !')
+        console.log('... hello() 함수 종료');
+      }
+      // 호출 방법 1. 함수 내 함수 호출
+      // hello();
+      console.log('>>> 함수 종료');
+
+      // 호출 방법 2. 함수 내에 return 값으로 함수 호출
+      return hello;
+    }
+
+    var result = createHello();
+    result('홍길동');
+    console.log('... 프로그램 종료 ...')
+  </script>
+</body>
+</html>

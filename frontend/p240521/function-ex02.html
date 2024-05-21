@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[함수 정의 및 호출]</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>[함수 정의 및 호출]</h1>
+
+  <script>
+    // 2-1. [함수 정의] 매개변수 없고, 리턴값 있음
+    function stringReturn() {
+      console.log('[함수 실행 시작]') // 확인을 위해 작성
+      return '즐거운 하루';
+      console.log('[함수 실행 종료]') // 위 코드에서 return 이 되어 있기 때문에 함수 종료, 의미 x
+    }
+    // 2-2. 함수 호출
+    stringReturn(); // console.log 를 찍은 게 아니라 안보여질 뿐, 호출 실행 됐음
+    var reslut = stringReturn();
+    console.log('reslut >> ', reslut);
+  </script>
+</body>
+</html>

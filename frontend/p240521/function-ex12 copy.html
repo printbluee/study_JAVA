@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[중첩 함수] 3 copy</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>[중첩 함수] 3 copy</h1>
+
+  <script>
+    // 함수 정의
+    function loopHello() {
+      let count = 0;
+
+      var s = setInterval(function () {
+        count++; // 5월 22일 수업때 자세히 이야기
+        console.log(`${count} : Hello`)
+
+        if (count == 10) {
+          clearInterval(s); // 중지
+        }
+      } , 1000)
+    }
+
+    // 함수 호출
+    loopHello();
+  </script>
+</body>
+
+</html>
