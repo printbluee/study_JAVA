@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[호이스팅(hoisting)] 1</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>호이스팅(hoisting) 1</h1>
+  <!-- 
+    [호이스팅]
+    : 인터프리터가 변수(와 함수 등)의 메모리 공간을 미리 할당
+    : 호이스팅 시 변수(외 함수 등)는 undefined 초기화
+    : 선언과 초기화를 분리 (변수 기준)
+   -->
+
+  <script>
+    // script 자체가 global 영역
+    // 할당되어야 하는 것들을 미리 할당하는데, 라인 처리가 되지 않아서 초기값을 설정되지 못함
+    // 그래서 값은 undefined 로 들어옴
+
+    // [global scope(글로벌 영역)]
+    console.log('변수 선언 전 접근');
+
+    var a_var;
+    console.log('a_var 선언 후');
+    console.log('a_var :', a_var);
+    
+    var a_hi = '안뇽'; // 변수 선언 후 초기화 
+    console.log('a_hi :', a_hi);
+  </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[scope] 2</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>scope 2</h1>
+
+  <script>
+    // [전역변수]
+    var a_global = 1;
+
+    // 함수 정의
+    function a_scope_test() {
+      console.log('[전역변수] a_global >> ', a_global);
+
+      // [지역변수]
+      // console.log('[지역변수] 선언 전 : a_local_one >> ', a_local_one); 
+      // (var)값이 undefined / (let) error 값이 없음
+      // var a_local_one = 10;
+      let a_local_one = 10;
+      console.log('[지역변수] 선언 후 : a_local_one >> ', a_local_one);
+      // console.log('[지역변수] a_local_one >> ', this.a_local_one);
+
+      // 조건문
+      if (a_global == 1) { 
+        // [지역변수]
+        let a_local_two = 100;
+        console.log('[지역변수] if문 내 a_local_two >> ', a_local_two);
+      } 
+      // console.log('[지역변수] if문 밖 a_local_two >> ', a_local_two);
+      // (var)값이 undefined / (let) error 값이 없음 
+    }
+
+    // 함수 호출
+    a_scope_test();
+    // console.log('[지역변수] a_scope_test() 밖에서 a_local_one >> ', a_local_one); // 메모리 사라져서 사용(접근)할 수 없음 !
+
+    console.log('=== script 종료 ===');
+  </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>Lexical Scope 2</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>렉시컬 스코프 2</h1>
+
+  <script>
+    var a_num = 5;
+
+    function a_you() {
+      var a_num = 500;
+      console.log('== [a_you() 함수 내] a_need() 호출 ==');
+      a_need();
+    }
+
+    function a_need() {
+      console.log('a_need() 함수 내 변수 a_num 접근', a_num)
+    }
+
+    console.log('== a_you() 호출 ==');
+    a_you();
+
+    console.log('== a_need() 호출 ==');
+    a_need();
+
+    console.log('... script 영역 끝 ...');
+  </script>
+</body>
+</html>

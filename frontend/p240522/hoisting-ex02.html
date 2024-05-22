@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[호이스팅(hoisting)] 2</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>호이스팅(hoisting) 2</h1>
+  <!-- 
+    [var, let, const]
+    - var 는 함수 레벨 스코프, let 과 const 는 블랙 레벨 스코프
+    - var 는 선언된 변수를 선언 전에 접근 가능
+    - let 과 const 는 불가능 (error) 
+    - var 는 이미 선언된 이름과 같은 이름의 변수를 여러 개 선언 가능 (덮어 씌워짐)
+    - let 과 const 는 불가능 (error)
+    - var 와 let 은 변수 선언과 동시에 초기화를 하지 않아도 되지만,
+      const 는 반드시 초기값을 설정해야 함
+    - var 와 let 은 값 변경이 가능하지만,
+      const 는 값 변경 불가능
+    
+    [scope]
+    - global scope (전역 스코프)
+      : <script> 내 선언된 변수
+      : 어디서든지 접근 가능
+
+    - local scope (지역 스코프)
+      : {} 내 선언된 변수
+      : 해당 영역 내에서만 접근 가능
+      : function level scope - var
+      : block level scope    - let, const
+   -->
+
+  <script>
+    console.log('[변수 선언 전 접근]');
+    console.log('a_var : ', a_var);
+    // console.log('a_let : ', a_let);
+    // console.log('a_const : ', a_const);
+
+    var a_var = 5;
+    let a_let = 10;
+    // 상수(const)
+    // : cf) 리터럴 Literal
+    // : 선언과 동시에 초기화
+    const a_const = 20; 
+
+    console.log('[변수 선언 후 접근]');
+    console.log('a_var : ', a_var);
+    console.log('a_let : ', a_let);
+    console.log('a_const : ', a_const);
+
+    // 값 변경
+    var a_var = 100;
+    // let a_let = 200; // error ! 재선언
+    a_let = 200; // 영역이 다르기 때문에 가능
+    // const a_const = 300; // error ! 재선언
+    // a_const = 300;
+
+    console.log('[값 변경 후 접근]');
+    console.log('a_var : ', a_var);
+    console.log('a_let : ', a_let);
+    console.log('a_const : ', a_const);
+
+  </script>
+</body>
+</html>

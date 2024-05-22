@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[scope] 3</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>scope 3</h1>
+
+  <script>
+    // 전역변수
+    var a_one = 1;
+    let a_two = 2; 
+    const a_three = 3;
+
+    for (let a_i=0; a_i<3; a_i++) { 
+      console.log('a_i >> ', a_i);
+    }
+
+    if (a_one == 1) {
+      let a_four = 4;
+      console.log('a_four >> ', a_four);
+    } 
+    
+    function sum() {
+      var a_five = 5;
+      console.log('a_five >> ', a_five);
+    }
+
+    console.log('a_one : ', a_one);
+    console.log('a_two : ', a_two);
+    console.log('a_three : ', a_three);
+
+  </script>
+</body>
+</html>
