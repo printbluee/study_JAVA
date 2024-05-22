@@ -34,7 +34,7 @@ a {
   line-height: 40px; /* height 만큼 */
   top: -40px; /* height 만큼 */
   /* left: 0; */
-  /* z-index: 999; */
+  z-index: 999;
 }
 #skip-menu a:focus {
   /* focus 될 때 top 위치 변경 */
