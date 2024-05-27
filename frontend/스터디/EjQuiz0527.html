@@ -56,14 +56,14 @@
     // var = 함수레벨의 전역 변수
     function a_varible() {
       console.log(a_num1)
-      var a_num1 = 100;
+      var a_num1 = 100; // 함수 레벨 스코프 전역변수
       
-      console.log(a_num2) // 표시
-      let a_num2 =200;
+      console.log(a_num2) 
+      let a_num2 =200; // 블럭 레벨 스코프 지역변수
     }
     // 함수 호출
     a_varible();
-    
+
   </script>
 </body>
 </html>
