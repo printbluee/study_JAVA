@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[배열 함수] find</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>JavaScript 배열 함수 예제 - find, filter 함수</h1>
+
+  <script>
+    const friends = [
+      {
+        name: '홍길동',
+        age: 32,
+        job: '코인러',
+        married: true,
+      },
+      {
+        name: '박보검',
+        age: 32,
+        job: '랩퍼',
+        married: false,
+      },
+      {
+        name: '조승연',
+        age: 32,
+        job: '2년차 유부남',
+        married: true,
+      }
+    ];
+
+    const info = function(obj) {
+      console.log(`name : ${obj.name}, job : ${obj.job}`);
+    };
+    
+    // 첫번째 유부남 찾기
+    const findGuy = friends.find(friend => friend.married == true);
+    console.log(findGuy);
+
+    // 모든 유부남 찾기
+    const allFindGuy = friends.filter(friend => friend.married == true);
+    console.log(allFindGuy);
+
+    // info() 사용하여 모든 유부남 찾기
+    allFindGuy.forEach(info);
+  </script>
+</body>
+
+</html>

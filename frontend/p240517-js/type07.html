@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[JavaScript] 자료형</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>객체 축약 표현</h1>
+
+  <script>
+    // 객체 형태
+    const obj = {
+      key : '값',  // property
+    };
+
+    // 1. 키와 값이 같은 경우
+    const name = '박보검';
+    const age = 30;
+
+    // 1-1. 키와 값을 모두 설정
+    // const info = {
+    //   name : name,
+    //   age : age,
+    // };
+
+    // 1-2. 축약 표현
+    // : 키와 값이 같다면, 값 생략 가능
+    const info = {name, age};
+    console.log(info);
+    console.log('객체 info 의 property name >> ', info.name);
+    console.log('객체 info 의 property name >> ', info['name']);
+
+    // 2. 값이 함수인 경우
+    // 익명 함수, 이름이 있는 거 자체가 의미가 없음
+    // hello() -> 생략 가능
+
+    // 2-1. 원래 형태
+    // const say = {
+    //   hi : function () {
+    //     console.log('ㅎㅇ 반가룽 ~');
+    //   }
+    // }
+
+    // 2-2. 축햑 형태
+
+    const say = {
+      hi () {
+        console.log('ㅎㅇ 반가룽 ~')
+      }, 
+      nickname : '홍길동', 
+    }
+
+    say.hi(); // hi 가 key
+    console.log('닉네임 : ', say.nickname);
+
+  </script>
+</body>
+</html>

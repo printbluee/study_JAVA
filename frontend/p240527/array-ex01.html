@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[배열 함수] 1</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>배열 함수</h1>
+
+  <script>
+    // [find]
+    // 조건에 맞는 요소(속성) 하나만 찾음
+    // 즉, 조건에 맞는 요소(속성)를 찾으면 탐색 중지
+    // find 에서는 for문 기능이 있음, 순회를 돔
+    // 찾고자 하는 조건을 넣고, return 을 해줘야 원하는 값을 받을 수 있음
+    // 조건에 맞는 요소 1개만 retunrn
+    // 조건에 맞는 요소(속성)가 있으면, 해당 요소 리턴
+    // 조건에 맞는 요소(속성)가 없으면, undefined 리턴
+    // [문법] 배열.find(function(value[, index[, array]])) [] 생략 가능하다는 뜻
+    // value = 요소 / index = 요소의 인덱스 / array = 배열의 주소
+    
+    var arr = ['하나', '둘', '셋', '넷', '다섯']; 
+
+    // 길이가 2개인 요소 찾기
+    // 1. 매개변수 value 만 쓸 때, value 는 생략 불가능
+    const find_result_one = arr.find(value => value.length == 2);
+    console.log('find_result_one : ', find_result_one);
+    
+    // 2. 매개변수 다 사용할 때
+    const find_result_two = arr.find((value, index, array) => {
+      console.log('value : ', value);
+      console.log('index : ', index);
+      console.log('array : ', array);
+      return value.length == 2; // true 가 되는 순간 return
+    })
+    console.log('find_result_two : ', find_result_two);
+
+  </script>
+</body>
+</html>

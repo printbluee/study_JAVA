@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[closure] 2</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>클로저</h1>
+
+  <script>
+    // 클로저 형태 x ================================================
+    // : 전역변수는 global 영역에 들어가기 때문에 클로저 형태가 아님
+    //   클로저 형태는 지역변수를 가져다 사용하는 것
+    // [전역변수]
+    var count = 1;
+    
+    // [함수 선언식]
+    function addCount() {
+      count++;
+      console.log('addCount() 내 count 출력 : ', count);
+    }
+    
+    console.log('count >> ', count);
+    addCount();
+    addCount();
+    console.log('count >> ', count);
+  </script>
+</body>
+</html>

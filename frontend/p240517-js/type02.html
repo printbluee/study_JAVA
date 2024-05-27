@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[JavaScript] 자료형</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>템플릿 리터럴 : 백틱 사용</h1>
+  <script>
+    /*
+    [문자열] ==================================================================
+    * 템플릿 리터럴 : 백틱 사용
+    : 이중 따옴표나 작은 작은표 대신 백틱(`)을 사용해서 표현
+    : 작은 따옴표와 혼동할 수 있으나, 백틱은 일반적으로 키보드 tab 키 위에 있음
+    : 플래이스 홀더를 이용한 &{expression} 으로 표현식 사용ㅇ
+    ===========================================================================
+    */
+    var age = 35;
+    var name = '홍길동';
+
+    var msg1 = '저는 '+ name + '이고, 나이는' + age + '세 입니다.';
+    var msg2 = `저는 ${name}이고, 나이는${age}세 입니다.`
+    console.log(msg1);
+    console.log(msg2);
+  </script>
+</body>
+</html>

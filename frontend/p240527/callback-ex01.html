@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[callback 함수] 1</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>callback 함수</h1>
+  <!-- 
+    [콜백 함수]
+    가장 큰 이유 : 비동기 처리 때문
+    # 매개변수가 함수명 받음
+      => 함수 내에서 함수 호출
+      자바스크립트에서 변수에 함수를 받는 것처럼 생각하면 됨 (JS 에서 흔한 일)
+    # 함수 내부 처리 결과값을 외부 함수로 내보낼 때
+      => return 과 비슷
+    # 주로 비동기 처리
+
+    [문법]
+    funtion 함수명(callback) { // callback 인수(인자) 라 불림
+      callback();
+    }
+   -->
+  <script>
+    // [함수 선언식] 리턴 사용
+    // function add(num1, num2) {
+    //   return num1 + num2;
+    // }
+
+    // [함수 호출]
+    // var result = add(2, 5);
+    // console.log('result >> ', result);
+  
+    // [함수 선언식] 
+    console.log('--- add 함수 시작 ---');
+    function add(num1, num2, callback) { // callback : 매개변수
+      var result = num1 + num2;
+      callback(result);
+      console.log('--- add 함수 종료 ---');
+    }
+    
+    function addResult(value) {
+      console.log('... addResult 함수 시작 ...');
+      console.log('덧셈 결과 >> ', value);
+      console.log('... addResult 함수 종료 ...');
+    }
+    
+    function addResultTwo(value) {
+      console.log('___ addResultTwo 함수 시작 ___');
+      console.log('합 : ', value);
+      console.log('___ addResultTwo 함수 종료 ___');
+    }
+
+    // [함수 호출]
+    // add(1, 4); // error ! callback is not a function, 값 설정 undefined 됨
+    add(1, 4, addResult);
+    add(2, 5, addResultTwo);
+  </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[배열 함수] 4</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>배열 함수</h1>
+
+  <script>
+    // 배열 even 의 요소를 1 증가 후, (본사본)출력 ============
+    console.log('== 배열 even 의 요소를 1 증가 후, (본사본)출력 ==');
+    const even = [2, 4, 6, 8, 10];
+    
+    // [forEach] 
+    console.log('[forEach]');
+    // 1) 익명 함수 
+    console.log('1) 익명 함수');
+    even.forEach(function (args) {
+      console.log(args + 1);
+    });
+    
+    // 2) 화살표 함수
+    console.log('2) 화살표 함수');
+    even.forEach(args => console.log(args + 1));
+    console.log('\n');
+    
+    // [map]
+    console.log('[map]');
+    console.log('map_result >> ');
+    console.log(even.map(args => args + 1));
+    console.log('\n');
+    
+    // 배열 even 의 요소를 1 증가 =============================
+    console.log('== 배열 even 의 요소를 1 증가 후 ==');
+    
+    // 배열 even 의 요소를 변경
+    even.forEach((value, index, array) => {
+      array[index] = value + 1;
+    });
+    console.log('even >>');
+    console.log(even);
+
+
+
+  </script>
+</body>
+</html>

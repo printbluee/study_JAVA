@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[배열 함수] 5</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>배열 함수</h1>
+
+  <script>
+    // 배열
+    const student = ['홍길동', '박보검', '이미자'];
+
+    // 함수 표현식
+    const info = function(value, index) {
+      console.log(`value : ${value}, index : ${index}`);
+      return [value, index]; // 추가
+    };
+
+    // [일반 for문과 forEach() 함수 비교]
+    console.log('<< for문 >>');
+    for(let index=0; index<student.length; index++) {
+      info(student[index], index); // info() 함수 호출
+    }
+    
+    console.log('<< forEach() >>');
+    // student.forEach(info); // info() 함수 호출
+    const forEach_result = student.forEach(info);
+    console.log(forEach_result); 
+    // undefined
+    // : return 이 없으면 undefined 로 저장
+
+    // cf) map() 함수
+    console.log('<< map() >>');
+    // student.map(info); // info() 함수 호출
+    const map_result = student.map(info);
+    console.log(map_result); 
+    // (3) [undefined, undefined, undefined]
+    // : callback 함수 사용할 때 return  사용
+    // : info() 에서 return 을 해주지 않아서
+    //   만약 배열 형태로 값을 하고 싶을 때 info()의 <// 추가> 부분 확인
+  </script>
+</body>
+</html>

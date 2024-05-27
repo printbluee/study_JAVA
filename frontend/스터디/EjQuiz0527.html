@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>자바스크립트 문제</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <h1>자바스크립트 문제 - 함수, 배열, 반복문을 사용하여 문제풀기</h1>
+  <script>
+    // * 함수 형태와 종류는 자율적으로 사용하여 풀기!.
+    // 1. 함수를 호출해 인수 a와b의 곱을 출력하시오 (값을 리턴받기)
+    console.log('1. 함수를 호출해 인수 a와 b의 곱을 출력하시오.');
+    function multiply(num1, num2) {
+      return num1 * num1;
+    }
+    var result = multiply(3, 5);
+    console.log('a와 b의 곱 : ', result);
+    console.log('\n');
+    
+    // 2. 문자열을 대문자로 변환하는 함수를 '찾아보고' 호출하여 해당 문자열을 대문자로 출력하시오.
+    console.log('2. 문자열을 대문자로 변환하는 함수를 <찾아보고> 호출하여 해당 문자열을 대문자로 출력하시오.');
+    var str = 'merry christmas';
+    console.log(str.toUpperCase());
+    console.log('\n');
+    
+    // 3. 배열 내 5개의 값에 10을 곱하는 함수를 호출하시오.
+    // 출력 형태 : [10,20,30,40,50]
+    // 배열 요소를 순회하면서 특정 작업을 하기 위해 map() 사용
+    // 복사본을 리턴하여 원래 데이터를 영향을 주지 않았고, 화살표 함수 사용
+    console.log('3. 배열 내 5개의 값에 10을 곱하는 함수를 호출하시오.');
+    const arr = [1, 2, 3, 4, 5];
+    const decuple = arr.map(arr => (arr * 10)); 
+    console.log('decuple >> ');
+    console.log(decuple);
+    console.log('\n');
+
+    // 4. 해당 배열을 5개씩 2개의 배열로 나눠 출력하시오.
+    // arr2A와 arr2B는 0을 지우고 값을 넣어주기 
+    console.log('4. 해당 배열을 5개씩 2개의 배열로 나눠 출력하시오.');
+    const arr2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    
+    const arr2A = arr2.slice(0, 5);   // [1, 2, 3, 4, 5]
+    const arr2B = arr2.slice(5);   // [6, 7, 8, 9, 10]
+    console.log('arr2A :', arr2A);
+    console.log('arr2B :', arr2B);
+    console.log('\n');
+    
+    // 5. num1 과 num2가 각각 어떤 변수인지 명시하고, 함수 호출시 에러가 발생한다면 이유를 설명하시오.
+    console.log('5. num1 과 num2가 각각 어떤 변수인지 명시하고, 함수 호출시 에러가 발생한다면 이유를 설명하시오.');
+    // : 함수 안에 변수 선언했기 때문에 num1 과 num2 는 지역변수이며,
+    //   함수 호출 코드가 없어 에러가 발생하지 않지만, 함수 호출하는 코드를 작성한다면
+    //   에러가 발생한 부분은 <// 표시> 한 부분, 그 이유는 함수 실행 후 변수은 메모리 할당되었지만, 
+    //   라인 처리가 되지 않아서 초기값을 설정하지 못함
+
+    // var = 함수레벨의 전역 변수
+    function a_varible() {
+      console.log(a_num1)
+      var a_num1 = 100;
+      
+      console.log(a_num2) // 표시
+      let a_num2 =200;
+    }
+    // 함수 호출
+    a_varible();
+    
+  </script>
+</body>
+</html>

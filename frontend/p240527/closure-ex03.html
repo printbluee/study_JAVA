@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[closure] 3</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>클로저</h1>
+
+  <script>
+    // 클로저 형태 o ================================================
+    // [함수 선언식]
+    function creatCount() {
+      console.log('=== creatCount() 함수 시작 ===');
+      var count = 0; // 상위 스코프의 지역변수, 별도로 따로 관리되는 형태
+
+      console.log('지역변수 count >> ', count);
+      console.log('=== creatCount() 함수 종료 ===');
+
+      // inner() 에서 쓰는 상위 스코프의 지역변수만 ! 기억하고 다른 건 기억x
+      // 근데 이 코드에서는 계속 호출이 되는데 기억을 하고 있어야 해서 이러한 개념을 클로저
+      // 폐쇄적임, 닫혀있음
+      // 해당 지역변수는 다른 곳에서 사용 x
+      // var count = 0; 
+      // 함수 내에 지역변수를 선언안하는 이유
+      // : 매번 실행될 때마다 count = 0 이 먼저 실행되기 때문에 값이 초기화됨
+      // return function () {
+      //   count++; 
+      //   return count;
+      // }
+      return () => ++count;
+      // 후증가를 하면 결과값이 다름
+
+      // 함수 내에 addCount() 호출하지 않아 이름이 의미가 없음
+      // return addCount;
+    }
+    // 문제가 생기는 점 : 함수가 따로 실행될 때
+
+    var returnAddCount = creatCount();
+
+    for(let i=0; i<3; i++) {
+      console.log(i+1, "회 : returnAddCount() 호출 >> ", returnAddCount());
+    }
+    // returnAddCount();
+    // returnAddCount();
+    // returnAddCount();
+    console.log('... script 영역 종료 ...')
+  </script>
+</body>
+</html>

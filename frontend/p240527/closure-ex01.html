@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[closure] 1</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>클로저</h1>
+  <!-- 
+    [클로저] closure
+    # 함수 내부에서 만든 지역변수가 사라지지 않고 계속 유지하는 상태
+    # 클로저 : 함수와 그 함수가 정의 되었을 때의 렉시컬 환경의 조합
+    # 클로저는 자신이 생성될 때 환경(Lexical environment)을 기억하는 함수
+    
+    # 상태를 말할 때 클로저 형태라고 말함
+    # scope chain
+    # 복사본
+    # 닫혀 있다고 말함
+   -->
+
+  <script>
+    function outer() {
+      var count = 1;
+
+      function inner() {
+        count++;
+        console.log('count >> ', count);
+      }
+      console.log('[outer 지역변수 count] >> ', count);
+      return inner;
+    }
+
+    // inner() 에서 사용한 count(복사본)
+    // inner 주소를 갖고 실행, inner 의 local 이 된 것 (outer() 아님)
+    // inner 에 저장된 count 가 저장되어 있는 값을 가지고 옴
+    var result = outer();
+    result(); 
+    result(); 
+    result(); 
+
+    // outer() 에서 사용한 count(원본)
+    // outer 가 실행되면, count 가 지역 변수라 당연히 1이 나옴
+    outer();
+    result();
+    console.log('... script 영역 종료 ...')
+  </script>
+</body>
+</html>

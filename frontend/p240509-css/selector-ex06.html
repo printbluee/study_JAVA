@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[선택자] 사용법 6</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    /* 여러 단락 중 첫 단락, 첫 단어의 첫 문자를 크게 강조하고 싶을 때 */
+    /* first-letter : 첫 번째 문자 인식 */
+    p::first-letter {
+      font-size: 2em;
+      font-weight: bold;
+      color: aqua;
+    }
+    /* 너비가 어떻게 되든 첫번째 줄에 배경색 넣기 */
+    div::first-line {
+      color: blue;
+      background-color: yellow;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>pseudo-element</h1>
+  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error illum labore odit minus iure dolor maxime veritatis ipsa quae, ad, corrupti dicta molestiae repellat quam aliquid quasi quaerat esse nesciunt.</p>
+  <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ut quasi aspernatur libero beatae ea eligendi provident voluptates molestiae nisi ipsa, adipisci eum fugit possimus natus ab. Dolore, nemo autem!</div>
+</body>
+</html>

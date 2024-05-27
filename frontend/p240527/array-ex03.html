@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[배열 함수] 3</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>배열 함수</h1>
+
+  <script>
+    var arr = ['하나', '둘', '셋', '넷', '다섯']; 
+
+    // [map]
+    // 배열 요소를 순회하면서, 특정 작업(기능) 수행(실행)
+    // 배열 리턴
+    // 복사본을 리턴, 원래 데이터는 영향 x
+    // 실제 원하는 기능은 인수로 넣어주는 형태, 외부에서 넣어주는 게 콜백 함수
+    // [문법] 배열.map(function(value[, index[, array]]))
+
+    console.log('[map]');
+    const map_result = arr.map(value => value + '! 좋아요!');
+    // 확인할 때 데이터 타입을 구분하기 위해서 문자열과 데이터를 따로 출력함
+    console.log('map_result >> ');
+    console.log(map_result);
+    console.log('arr >> ');
+    console.log(arr); // 원본은 그대로 있는 걸 확인하면서 알 수 있는 점은 map 은 복사본
+
+    // [forEach]
+    // 배열 요소를 순회하면서, 특정 작업(기능) 수행(실행)
+    // 리턴 없음 (undefined)
+    // [문법] 배열.forEach(function(value[, index[, array]]))
+    console.log('[forEach]');
+    const forEach_result = arr.forEach(value => console.log(value + '! 좋아요!'));
+    console.log('forEach_result >> ');
+    console.log(forEach_result);
+    console.log('arr >> ');
+    console.log(arr); // 원본은 그대로 있는 걸 확인하면서 알 수 있는 점은 forEach 은 복사본
+  </script>
+</body>
+</html>
