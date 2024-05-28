@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>DOM - 이벤트 1</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <h1 id="greeting">Hello ~~ (。・ω・。)</h1>
+  
+  <!-- 기본 type값 : submit(이동) -->
+  <!-- 
+    [방법 1] 예전에 많이 사용,
+    문제점 : 유지보수 쉽지 않음(함수명 바꾸면 다 바꿔야함)
+    textChange() 은 자바스크립이기 때문에 (;) 생략 가능하지만,
+    직관성을 위해 붙이는 경우 있음
+  -->
+  <button type="button" onclick="textChange();">텍스트 변경</button> 
+  <button type="button" onclick="textBefore();">텍스트 복구</button> 
+  <hr>
+  <button type="button" id="one">[jQuery] 텍스트 변경</button>
+  <button type="button" id="two">[jQuery] 텍스트 복구</button>
+  <script src="js/dom-ex03.js"></script>
+
+  <!-- 자바스크립트 파일 읽기 전에 없으면, 사용 x -->
+  <!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> -->
+</body>
+</html>

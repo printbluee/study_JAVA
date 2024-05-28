@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <title>this keyword</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>this in a Method</h1>
+
+  <script>
+    const person = {
+      firstName: "John",
+      lastName: "Doe",
+      id: 5566,
+      fullName: function () {
+        return this.firstName + " " + this.lastName;
+      }
+    };
+    console.log('fullName : ', person.fullName());
+    console.log('id : ', person['id']);
+  </script>
+</body>
+</html>
