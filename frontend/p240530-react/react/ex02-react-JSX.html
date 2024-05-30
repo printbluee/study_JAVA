@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[React] JSX</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+        text-align: center;
+    }
+    form {
+        margin-bottom: 20px;
+    }
+    .main-card button {
+        position: relative;
+        left: -45px;
+        bottom: 15px;
+    }
+    .favorites {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+    .favorites img {
+        width: 150px;
+    }
+</style>
+</head>
+
+<body>
+  <!-- element 추가 -->
+  <div id="food-li-insert"></div>
+
+  <!-- React를 실행. -->
+  <!-- 주의: 사이트를 배포할 때는 "development.js"를 "production.min.js"로 대체하세요. -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+  <script type="text/babel">
+    console.log('*** 처음으로 배우는 리액트 ***')
+
+    // react element
+    // 한 줄인 경우 () 생략 가능
+    const h1 = <h1>상품 1 페이지</h1>
+    
+    // img 태그에  / 닫기
+    const form = (
+      <form action="">
+        <input type="text" name="name" placeholder="상품명을 입력하세요."/>
+        <button type="submit">추가</button>
+      </form>
+    );
+    
+    const mainCard = (
+      <div class="main-card">
+        <img src="img/food-one.jpg" alt="올리브 오일" width="400"/>
+        <button type="button">🤍</button>
+      </div>
+    );
+
+    const foodItem = (
+      <li>
+        <img src="img/food-two.jpg" alt="핫케이크" />
+      </li>
+    );
+    
+    const hi = '오늘도 즐거운 하루 ㅋ';
+
+    function test(args) {
+      return '인수 >> ' + args;
+    }
+
+    // () 안에는 HTML Tag 만 오는 영역이라 javascript 문법이 오면 error
+    // 만약 사용할 경우 {} 
+    // JSX 에서 주석처리 {/* */}
+    const favorites = (
+      <ul class="favorites">
+        {/* 2 * 5 */}
+        {/* hi */}
+        {/* test('안녕하십니까 !') */}
+        {foodItem}
+        {foodItem}
+        {foodItem}
+      </ul>
+    );
+    
+    // 보통 render 넣기 전 작업
+    // 아래 코드가 error 인 이유 
+    // : () 안에는 무조건 element 는 1개만 와야함, 만약 넣을 거면 부모를 만들어준다. 2번째 코드 참고
+    // const app = (
+    //   { mainCard } 
+    //   { favorites }
+    // );
+    // 2개 이상의 요소 렌더링 하고자 할 때
+    const app = (
+      <div>
+        { h1 }
+        { form }
+        { mainCard } 
+        { favorites }
+      </div>
+    );
+
+    // li 가 추가될 위치(element)
+    const foodListInsert = document.querySelector('#food-li-insert');
+
+    // 리액트를 이용하여 element 추가
+    // 17버전까지
+    // ReactDOM.render(foodItem, foodListInsert);
+
+    // 18버전부터
+    // body 기준으로 추가
+    // render 는 1개의 element 만 가능
+    ReactDOM.createRoot(foodListInsert).render(app); 
+
+  </script>
+</body>
+</html>

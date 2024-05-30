@@ -15,7 +15,7 @@ const ul = document.querySelector('ul');
 btn_modal.addEventListener('click', () => { 
   modal.classList.add('active'); 
   overlay.classList.add('active') ; 
-  modal_input.value = null; // 모달창 입력값 비우기
+  modal_input.value = ''; // 모달창 입력값 비우기
 });  
 // [모달창 비활성화]
 close_elements.forEach(element => {

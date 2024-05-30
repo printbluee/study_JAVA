@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[컴포넌트(component)] 연습</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <div id="main"></div>
+  <hr>
+
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+  <script type="text/babel">
+    function greeting(name) {
+      return `안녕하세요. ${ name }님`;
+    }
+    // 호출했으나, 웹 브라우저에 표현 안 됨
+    greeting('조승연');
+
+    // [react element]
+    // 변수에 담은건데, 함수로 만들기 이 작업이 컴포넌트
+    const greetingContent = (
+      <h1>{ greeting('조승연') }</h1>
+    );
+
+    // [component] 함수
+    // : 2가지 방법(class/function) 이 있는데 function 을 더 사용하니 function 만 배움
+    // : 컴포넌트 이름은 반드시 대문자로 시작
+    // props : 프로퍼티
+    // ({props, description}) : 구조분해할당된 것
+    function Greeting({title, description}) {
+      // JS 영역
+      // 매개변수가 2개 이상의 값을 받으면 객체 형태로 받게 됨
+      console.log('title >> ', title)
+      console.log('title type>> ', typeof title)
+      // JSX 영역
+      return (
+        <div>
+          <h1>{title}</h1>
+          <h2>{description}</h2>
+        </div>
+      );
+    }
+    // {} error : 상위 element 가 안와서
+    // const app = (
+    //   Greeting()
+    // );
+    // : 컴포넌트는 태그처럼 사용이 가능함
+    // : 태그처럼 사용 가능하면 <> 안에도 사용 가능, 그럼 {} 안해도 됨
+    // const app = (
+    //   <div>
+    //     {Greeting()}
+    //     <Greeting></Greeting>
+    //     <Greeting/>
+    //   </div>
+    // );
+    // <Greeting(tag) title(속성)="두 번째"(값)/>
+    const app = (
+      <div>
+        {Greeting('첫 번째', 'one')}
+        <Greeting title="두 번째" description='two'/>
+      </div>
+    );
+  
+    const main = document.getElementById('main');
+    ReactDOM.createRoot(main).render(app);
+  </script>
+</body>
+</html>

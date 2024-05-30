@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <title>[React] JSX</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+        text-align: center;
+    }
+    form {
+        margin-bottom: 20px;
+    }
+    .main-card button {
+        position: relative;
+        left: -45px;
+        bottom: 15px;
+    }
+    .favorites {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+    .favorites img {
+        width: 150px;
+    }
+</style>
+</head>
+
+<body>
+  <div id="food-li-insert"></div>
+
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+  <script type="text/babel">
+    const Title = () => <h1>상품 1 페이지</h1>
+
+    const Form = function() {
+      return (
+        <form action="">
+          <input type="text" name="name" placeholder="상품명을 입력하세요."/>
+          <button type="submit">추가</button>
+        </form>
+      )
+    }
+
+    const MainCard = () => {
+      return (
+        <div class="main-card">
+          <img src="img/food-one.jpg" alt="올리브 오일" width="400"/>
+          <button type="button">🤍</button>
+        </div>
+      );
+    }
+
+    const FoodItem = () => {
+      return (
+        <li>
+          <img src="img/food-two.jpg" alt="핫케이크" />
+        </li>
+      );
+    }
+
+    const Favorites = () => {
+      return (
+        <ul class="favorites">
+          <FoodItem />
+          <FoodItem />
+          <FoodItem />
+        </ul>
+      );
+    }
+
+    const app = (
+      <div>
+        <Title/>
+        <Form />
+        <MainCard />
+        <Favorites />
+      </div>
+    );
+
+    const foodListInsert = document.querySelector('#food-li-insert');
+    ReactDOM.createRoot(foodListInsert).render(app); 
+  </script>
+</body>
+</html>
