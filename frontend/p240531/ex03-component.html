@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[리액트] 컴포넌트</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+  <div id="text"></div>
+  <hr>
+
+  <script type="text/babel">
+    // 리액트 엘리먼트를 변수에 저장
+    // 1-1. h1 엘리먼트
+    const h1 = <h1>안녕하세룽</h1>
+    
+    // 1-2. ul 엘리먼트
+    const ul = (
+      <ul>
+        <li>첫 번째</li>
+        <li>두 번째</li>
+      </ul>
+    );
+    const app = (
+      <div>
+        {h1}
+        {ul}
+      </div>
+    );
+
+    /* 
+    2. 컴포넌트 생성
+    [문법] 
+    * 함수 선언식를 예로 문법 설명한 것
+    function 대문자로시작(props 라 불림) {}
+      // props : properties(속성들) 약자
+      // props 의 타입은 객체(object) - {키 : 값}
+      return (
+        // 리액트 엘리먼트
+    )}
+    */
+    // [방법 1] ---------------------------------------
+    // // props : { props : props }
+    // function H1(props) {
+    //   // Javascript 영역
+    //   console.log('H1() 실행');
+    //   console.log('props >> ', props);
+    //   return <h1>안녕하세요. { props.nickname }님</h1>
+    // }
+    // // 공부할 때 개발자 도구 소스탭에서 확인해보기
+    // const name = '박보검'
+    // const componentApp = (
+    //   <div>
+    //     <H1 nickname="홍길동"></H1>
+    //     <H1 nickname={name}/>
+    //     {H1({nickname : '조승연'})}
+    //     </div>
+    //   );
+    // [방법 2] ---------------------------------------
+    // 구조분해할당
+    function H1({nickname}) {
+      // Javascript 영역
+      console.log('H1() 실행');
+      console.log('nickname >> ', nickname);
+      return <h1>안녕하세요. { nickname }님</h1>
+    }
+
+    const Ul = () => {
+      return (
+        <ul>
+          <li>첫 번째</li>
+          <li>두 번째</li>
+        </ul>
+      );
+    }
+
+    const componentApp = (
+      <div>
+        <H1 nickname="홍길동"></H1>
+        <H1 nickname={name}/>
+        {H1({nickname : '조승연'})}
+        <Ul/>
+      </div>
+    );
+    
+
+    const insert = document.getElementById('text');
+    ReactDOM.createRoot(insert).render(componentApp);
+  </script>
+</body>
+</html>

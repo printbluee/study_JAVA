@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>상품 1페이지</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      text-align: center;
+    }
+    form {
+      margin-bottom: 20px;
+    }
+    .main-card button {
+      position: relative;
+      left: -45px;
+      bottom: 15px;
+    }
+    .favorites {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .favorites img {
+      width: 150px;
+    }
+  </style>
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+  <div id="food-li-insert"></div>
+
+  <script type="text/babel">
+    const H1 = (props) => {
+      return <h1>상품 {props.children} 페이지</h1>
+    }
+
+    const Form = ({handlerFormSubmit}) => {
+      // Javascript 영역
+      // 변수에 값을 넣지 않는 이유 : 함수 실행이 끝나면 지역이라 사라져서
+
+      // [상태 추가] ===================================
+      // const counterState = React.useState(1); // 배열 형태
+      
+      // couterState 의 첫 번째 요소 저장 : 초기값
+      // const counter = counterState[0];
+      
+      // couterState 의 두 번째 요소 저장 : 함수
+      // 첫 번째 요소가 초기값이고, 두 번째 요소가 함수니까 값수정을 하니까 set을 주로 한다
+      // const setCounter = counterState[1];
+      // console.log(`counter : ${counter}, setCounter : ${setCounter}`);
+      // console.log(setCounter)
+
+      // couterState 의 첫 번째 요소, 두 번째 요소 구조분해할당
+      // const [counter, setCounter] = React.useState(1);
+      // console.log('핸들러 상위 영역 counter 출력', counter);
+
+      // function handlerFormSubmit() {
+      //   event.preventDefault();
+      //   console.log('추가 버튼 클릭');
+
+      //   // [상태값 설정] ==============================
+      //   // 핸들러 내에서 상태값 변경
+      //   // handlerFormSubmit() 실행 후 아래 코드가 실행이 되기 때문에
+      //   // 저장된(반영된) 값은 항상 그 전 값이라는 것을 인지해야함 !!!! (순서가 있다는 것 !)
+      //   setCounter(counter + 1);
+
+      //   // [상태값 확인] ===============================
+      //   // console.log('couterState :', counterState);
+      //   console.log('핸들러 내 counter 출력', counter);
+      // }
+      return (
+        <form action="" onSubmit={handlerFormSubmit}>
+          <input type="text" name="name" placeholder="상품명을 입력하세요"/>
+          <button type="submit">추가</button>
+        </form>
+      );
+    }
+    
+    /* component */
+    // 좋아요 버튼을 구현하기 위해 함수 안에 함수 정의할 것
+    // 함수 내 함수를 정의하면 변수로 저장되기 때문에 () 생략
+    const MainCard = ({img, handlerHeartClick}) => {
+      // Javascript 영역
+      // function handlerHeartClick() {
+      //   console.log('하트 클릭 !');       
+      // }
+      function handlerHeartMouseOver() {
+        console.log('하트 스쳐지나감 !')
+      }
+      return (
+        <div className="main-card">
+          <img 
+            src={img} 
+            alt="올리브 오일" 
+            width="400"
+          />
+          <button 
+            onClick={handlerHeartClick} 
+            // onMouseOver={handlerHeartMouseOver}
+            >🤍
+          </button>
+        </div>
+      );
+    }
+
+    const FoodItem = ({img}) => {
+      return (
+        <li> 
+          <img 
+            src={img} 
+            alt="음식"
+            style={{ width : '150px', height : '100px', backgroundSize : 'contain' }}
+          />
+        </li>
+      );
+    }
+
+    // img 가 여러 개인 경우 배열 형태로 관리
+    const Favorites = ({ favorites }) => {
+      // const foodOne = "img/food-one.jpg";
+      // const foodTwo = "img/food-two.jpg";
+      // const foodTree = "img/food-three.jpg";
+      // const food = [foodOne, foodTwo, foodTree];
+      return (
+        <ul className="favorites">
+          {/* <FoodItem img="img/food-one.jpg"/> */}
+          {/* <FoodItem img="img/food-two.jpg"/> */}
+          {/* FoodItem({ img : "img/food-three.jpg" }) */}
+          {
+            // forEach 와 map 차이점 다시 공부하기 ...
+            // forEach 는 실행 후 return 이 되지 않음
+            // 이것만 했을 때 DOM 은 만들어지지만, 경고가 뜬다.
+            // react.development.js:199 Warning: Each child in a list should have a unique "key" prop
+            // 해결 방안 : 만들어진 값이 똑같기 때문에 구분을 해줘야 함 (나중에 값을 삭제 구분이 안돼서 어떤 것을 삭제할지 모름), key 값 넣어주기
+            // 현재 key 의 값이 좋은 형태는 아님 경로로 key값을 주는게 말 x 
+          }
+          {favorites.map(food => (<FoodItem img={food} key={food} />))}
+        </ul>
+      );
+    }
+
+    // 상태 끌어올리기 
+    // Form 기능이 H1 에 반영되어야 되기 때문에 Form 에 기능 추가
+    // const app = (
+    //   <div>
+    //     <H1> 입니다.</H1>
+    //     <Form /> 
+    //     <MainCard img="img/food-one.jpg" />
+    //     {Favorites()}
+    //   </div>
+    // );
+
+    /* component : 상태 끌어올리기(lifting state up) */
+    const App = () => {
+      const foodOne = "img/food-one.jpg";
+      const foodTwo = "img/food-two.jpg";
+      const foodThree = "img/food-three.jpg";
+      const [favorites, setFavorites] = React.useState([foodOne, foodTwo]);
+
+      const [counter, setCounter] = React.useState(1);
+      console.log('핸들러 상위 영역 counter 출력', counter);
+
+      function handlerFormSubmit(event) {
+        event.preventDefault();
+        console.log('추가 버튼 클릭');
+
+        // [상태값 설정] ==============================
+        // 핸들러 내에서 상태값 변경
+        // handlerFormSubmit() 실행 후 아래 코드가 실행이 되기 때문에
+        // 저장된(반영된) 값은 항상 그 전 값이라는 것을 인지해야함 !!!! (순서가 있다는 것 !)
+        setCounter(counter + 1);
+
+        // [상태값 확인] ===============================
+        // console.log('couterState :', counterState);
+        console.log('핸들러 내 counter 출력', counter);
+      }
+      
+      function handlerHeartClick() {
+        console.log('하트 클릭 !');
+        setFavorites([...favorites, foodThree]);  
+      }
+
+      return (
+        <div>
+          <H1>{counter}</H1>
+          <Form handlerFormSubmit={handlerFormSubmit}/> 
+          <MainCard 
+            handlerHeartClick={handlerHeartClick} 
+            img="img/food-one.jpg"
+          />
+          <Favorites favorites={favorites} />
+        </div>
+      );
+    }
+
+    const foodLiInsert = document.querySelector('#food-li-insert');
+    // ReactDOM.createRoot(foodLiInsert).render(app);
+    ReactDOM.createRoot(foodLiInsert).render(<App />);
+  </script>
+</body>
+</html>

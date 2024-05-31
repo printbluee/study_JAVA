@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>상품 1페이지</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      text-align: center;
+    }
+    form {
+      margin-bottom: 20px;
+    }
+    .main-card button {
+      position: relative;
+      left: -45px;
+      bottom: 15px;
+    }
+    .favorites {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .favorites img {
+      width: 150px;
+    }
+  </style>
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+  <div id="food-li-insert"></div>
+
+  <script type="text/babel">
+    /* react element */
+    // const h1 = <h1>상품 1페이지</h1>
+    /* component */
+    function H1(props) {
+      // console.log(props)
+      return <h1>상품 1페이지{ props.children }</h1>
+    }
+  
+    /* react element */
+    // const form = (
+    //   <form action="">
+    //     <input type="text" name="name" placeholder="상품명을 입력하세요"/>
+    //     <button type="submit">추가</button>
+    //   </form>
+    // );
+    /* component */
+    const Form = () => {
+      return (
+        <form action="">
+          <input type="text" name="name" placeholder="상품명을 입력하세요"/>
+          <button type="submit">추가</button>
+        </form>
+      );
+    }
+
+    /* react element */
+    // const mainCard = (
+    //     <div className="main-card">
+    //       <img src="img/food-one.jpg" alt="올리브 오일" width="400"/>
+    //       <button>🤍</button>
+    //     </div>
+    //     );
+    /* component */
+    const MainCard = ({img}) => {
+      return (
+        <div className="main-card">
+          <img 
+            // src="img/food-one.jpg" 
+            src={img} 
+            alt="올리브 오일" 
+            width="400"
+          />
+          <button>🤍</button>
+        </div>
+      );
+    }
+
+    /* react element */
+    // const foodItem = (
+    //   <li> 
+    //     <img src="img/food-one.jpg" alt="음식"/>
+    //   </li>
+    // );
+    /* component */
+    // [방법 1]
+    // const FoodItem = (props) => {
+    //   console.log('props >> ', props);
+    //   return (
+    //     <li> 
+    //       <img src={props.img} alt="음식"/>
+    //     </li>
+    //   );
+    // }
+    // [방법 2]
+    const FoodItem = ({img}) => {
+      return (
+        <li> 
+          {
+            // [styling] ================
+            // : css 설정 가능 -> {}
+            // : {} 내 {} 사용 (자바스크립트{} 내 css{})
+            // : inline style
+            // : value 는 string 지정
+            // ==========================
+          }
+          <img 
+            src={img} 
+            alt="음식"
+            style={{ width : '150px', border : '3px solid green' }}
+          />
+        </li>
+      );
+    }
+
+    /* react element */
+    // const favorites = (
+    //   <ul className="favorites">
+    //     <FoodItem />
+    //     <FoodItem />
+    //     <FoodItem />
+    //   </ul>
+    // );
+    // /* component */
+    const Favorites = () => {
+      return (
+        <ul className="favorites">
+          <FoodItem img="img/food-one.jpg"/>
+          <FoodItem img="img/food-two.jpg"/>
+          {FoodItem({ img : "img/food-three.jpg" })}
+        </ul>
+      );
+    }
+
+    const app = (
+      <div>
+        {/* h1 */}
+        <H1></H1>
+        <H1>입니다!</H1>
+        {/* form */}
+        <Form />
+        {/* mainCard */}
+        <MainCard img="img/food-one.jpg" />
+        {/* favorites */}
+        {Favorites()}
+      </div>
+    );
+
+    const foodLiInsert = document.querySelector('#food-li-insert');
+    ReactDOM.createRoot(foodLiInsert).render(app);
+  </script>
+</body>
+</html>

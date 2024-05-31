@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>상품 1페이지</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      text-align: center;
+    }
+    form {
+      margin-bottom: 20px;
+    }
+    .main-card button {
+      position: relative;
+      left: -45px;
+      bottom: 15px;
+    }
+    .favorites {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .favorites img {
+      width: 150px;
+    }
+  </style>
+  <!-- 파일만 읽기 때문에 head 영역에 있어도 무방 -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+  <!-- react element 추가될 element -->
+  <div id="food-li-insert"></div>
+
+  <!-- babel : 자바스크립트 컴파일러  -->
+  <script type="text/babel">
+    /* 
+    [React] JSX
+    : Javascript + XML
+    : Javascript 내 HTML 작성 가능
+    : () 내 작성
+    : HTML 태그 내 Javascript 작성하려면, {} 사용
+    : 작성된 HTML 을 < React element > 라고 함
+    */
+
+    // 리액트 엘리먼트
+    const h1 = <h1>상품 1페이지</h1>
+    const form = (
+      <form action="">
+        <input type="text" name="name" placeholder="상품명을 입력하세요"/>
+        <button type="submit">추가</button>
+      </form>
+    );
+    const mainCard = (
+      <div className="main-card">
+        <img src="img/food-one.jpg" alt="올리브 오일" width="400"/>
+        <button>🤍</button>
+      </div>
+    );
+    const foodItem = (
+      <li> 
+        <img src="img/food-one.jpg" alt="음식"/>
+      </li>
+    );
+    const favorites = (
+      <ul className="favorites">
+      {foodItem}
+      {foodItem}
+      {foodItem}
+      </ul>
+    );
+    
+    // 2개 이상의 리액트 엘리먼트 렌더링하고자 할 때
+    const app = (
+      <div>
+        {h1}
+        {form}
+        {mainCard}
+        {favorites}
+      </div>
+    );
+
+    // 리액트 엘리먼트가 추가될 위치
+    const foodLiInsert = document.querySelector('#food-li-insert');
+
+    // 리액트 이용하여 엘리먼트 추가
+    ReactDOM.createRoot(foodLiInsert).render(app);
+  </script>
+</body>
+</html>
