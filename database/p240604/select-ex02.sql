@@ -2,22 +2,21 @@
 use world;
 
 /*
-[SQL] ==============================================
+[SQL] 
 - 크게 3개로 나뉘어짐
 - 쿼리 튜닝, 성능 최적화
-- 정의어(DDL) : create, drop, alter ...
-- 조작어(DML) : select(★), insert, update, delete ... # 제일 많이 사용
-- 제어어(DCL) : grant, revoke, commit, rollback ...
-====================================================
+- 정의어(DDL) : create(생성), drop(삭제), alter(변경) ...
+- 조작어(DML) : select(조회★), insert(추가), update(수정), delete(삭제) ... # 제일 많이 사용
+- 제어어(DCL) : grant(부여), revoke(회수), commit(완료), rollback(취소) ...
+drop 과 delete 삭제지만, 다른 결의 삭제, 각각 하는 역할이 다름
 */ 
 
 /*
-[조작어] select - 조회/검색 ============================
+[조작어] select - 조회/검색
 << select statement >> select 문
 # select 필드명1, 필드명; [ select clause ] select 절
 # from 테이블명;		  [ from   clause ] from   절	
 # where 조건; (생략 가능) [ where  clause ] where  절
-========================================================
 */
 
 ## DB 선택
@@ -69,10 +68,9 @@ select emp_no, title from titles;
 
 
 /* 
-[LIMIT] ================================================
+[LIMIT] 
 - 문법 1 : limit 몇 개;
 - 문법 2 : limit offset, 몇 개;
-========================================================
 */
 select * from employees; # 전체 조회할 때
 select * from employees limit 3; # 시작부터 3개까지 조회하고 싶을 때

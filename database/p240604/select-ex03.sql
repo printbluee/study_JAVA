@@ -1,3 +1,12 @@
+# DB 선택
+use employees;
+select * from employees;
+desc employees;
+
+# first_name(varchar(14)) : 문자열에 연산을 할 경우 문자열이 0 이 됨 (MySQL 에서 처리) 
+select emp_no, emp_no + 1, first_name, first_name + 1
+from employees;
+
 /*
 [산술 연산자] + - * /
 1. 단순 계산
@@ -7,8 +16,9 @@ select 컬럼명 from 테이블명;
 */
 
 # 1. 단순 계산
+# select 에 컬럼을 쓴다는 것은 데이터가 있다는 뜻인데, 만약 컬럼이 없는 것이면, 조건이 컬럼이 됨
 select 10 + 10;
-select 20 - 10, 30 * 3, 40 / 2;
+select 20 - 10,  30 * 3,  40 / 2;
 
 # 2. 특정 컬럼 데이터 연산
 select emp_no, salary, salary + 10 from salaries;
