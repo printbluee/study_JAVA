@@ -32,16 +32,23 @@ select dept_name, emp_no
 from dept_manager dm, departments dp
 where dm.dept_no = dp.dept_no;
 
-# 3-1) 부서의 현재 매니저 정보 조회
+# [문제 3-1] 부서의 현재 매니저 정보 조회
+# dept_manager 와 departments 의 join 조건은 dept_no
+# 근데 어느 테이블의 dept_no 인지 알기 위해서 별칭(ALIAS) 사용 ! 
 select dept_name as '부서명', emp_no as '사번'
 from dept_manager dm, departments dp
 where dm.dept_no = dp.dept_no and to_date like '9999-01-01';
 
-# 3-2) 사원의 사번, 이름, 직책 조회
+# [문제 3-2] 사원의 사번, 이름, 직책 조회
 # 	   단, 현재 직책만 조회
 select emp.emp_no, first_name, title
 from employees emp, titles t 
-where emp.emp_no = t.emp_no and t.to_date like '9999-01-01';
+where emp.emp_no = t.emp_no and t.to_date = '9999-01-01';
 
-
-
+# 0611(과제)
+# [문제 3-3] 부서의 현재 매니저 정보 조회 (부서명, 사번, 이름, 성별) 
+select dept_name as '부서명', dm.emp_no as '사번', first_name, gender
+from dept_manager dm, departments dp, employees em
+where dm.dept_no = dp.dept_no 
+	and dm.emp_no = em.emp_no
+	and to_date like '9999-01-01';
