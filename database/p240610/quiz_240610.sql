@@ -93,17 +93,20 @@ from dept_emp;
 # 0611(과제)
 # 3-1) 인라인 뷰
 select de.emp_no, de.dept_no
-from dept_emp de, (select emp_no
-						from employees
-                        where birth_date > '1960-01-01') as em
-where de.emp_no = em.emp_no;
+from dept_emp de, 
+	(select emp_no from employees where birth_date >= '1960-01-01') as em
+where de.emp_no = em.emp_no; # 조인 조건
+
+# year 함수를 써서 가공됨 -> 모든 데이터에 적용하느라 시간이 걸림, 비추
+select de.emp_no, de.dept_no
+from dept_emp de, 
+	(select emp_no from employees where year(birth_date) >= 1960) as em
+where de.emp_no = em.emp_no; # 조인 조건
 
 # 3-2) 중첩 서브쿼리
 select emp_no, dept_no
 from dept_emp
-where emp_no in (select emp_no
-					from employees
-					where birth_date > '1960-01-01');
+where emp_no in (select emp_no from employees where birth_date >= '1960-01-01');
 
 select em.emp_no, dept_no
 from employees em, dept_emp dp
