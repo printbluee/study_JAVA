@@ -239,3 +239,31 @@ show variables like '%version%';
 # MySQL port 포트 확인
 show variables like '%version%';
 show variables like 'port';
+
+
+/* 
+temp6 테이블 생성
+<컬럼의 정보> 
+id   : temp2의 one 컬럼을 참조하는 외래키, null 허용 안함
+name : varchar, 길이 30, null 허용 안함
+age  : int, 1 이상, null 허용 안함
+*/
+use test;
+create table temp6 (
+	id int not null,
+    name varchar(30) not null,
+	age int not null,
+    foreign key(id) references temp2(one),
+    check(age >= 1)
+);
+show tables like 'temp%';
+desc temp6;
+
+insert into temp6 values(1, '홍길동', 25);
+insert into temp6 values(3, '박보검', 35); # Error Code: 1452. Cannot add or update a child row: a foreign key constraint fails (`test`.`temp6`, CONSTRAINT `temp6_ibfk_1` FOREIGN KEY (`id`) REFERENCES `temp2` (`one`))
+insert into temp6 values(1, '이미자', 55);
+insert into temp6(name, age) values('구름', 100); # Error Code: 1364. Field 'id' doesn't have a default value
+
+select * from temp2;
+select * from temp6;
+
