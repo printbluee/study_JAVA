@@ -1,0 +1,24 @@
+package generic;
+
+class Cool<T> {
+	private T count;
+	
+	// 
+	T[] array = new T[10];
+	
+	public Cool() {}
+	
+	public Cool(T count) {
+		this.count = count;
+	}
+	
+}
+
+public class Ex04 {
+
+	public static void main(String[] args) {
+
+		
+		
+	}
+}

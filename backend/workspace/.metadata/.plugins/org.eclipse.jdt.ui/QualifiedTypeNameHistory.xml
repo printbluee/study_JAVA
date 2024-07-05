@@ -1,18 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="ParentTwo"/>
-    <fullyQualifiedTypeName name="Student"/>
-    <fullyQualifiedTypeName name="Parent"/>
-    <fullyQualifiedTypeName name="Police"/>
-    <fullyQualifiedTypeName name="Circle"/>
-    <fullyQualifiedTypeName name="final_ex.Child"/>
-    <fullyQualifiedTypeName name="java.lang.Package"/>
-    <fullyQualifiedTypeName name="polymorghism.Parent"/>
-    <fullyQualifiedTypeName name="polymorphism.Thing"/>
-    <fullyQualifiedTypeName name="polymorphism.Person"/>
-    <fullyQualifiedTypeName name="java.lang.Object"/>
-    <fullyQualifiedTypeName name="java.util.prefs.BackingStoreException"/>
-    <fullyQualifiedTypeName name="polymorphism.Product"/>
     <fullyQualifiedTypeName name="java.awt.Button"/>
     <fullyQualifiedTypeName name="polymorphism.Buyer"/>
     <fullyQualifiedTypeName name="polymorphism.Computer"/>
@@ -35,9 +22,7 @@
     <fullyQualifiedTypeName name="javax.swing.DefaultBoundedRangeModel"/>
     <fullyQualifiedTypeName name="exception.NameLengthException"/>
     <fullyQualifiedTypeName name="java.lang.UnknownError"/>
-    <fullyQualifiedTypeName name="java.lang.Override"/>
     <fullyQualifiedTypeName name="singleton.Pattern"/>
-    <fullyQualifiedTypeName name="java.lang.System"/>
     <fullyQualifiedTypeName name="book.BookManager"/>
     <fullyQualifiedTypeName name="book.AnimalInfo"/>
     <fullyQualifiedTypeName name="enumtype.CalTest"/>
@@ -49,10 +34,6 @@
     <fullyQualifiedTypeName name="enumtype.SeasonTwo"/>
     <fullyQualifiedTypeName name="enumtype.NumberTwo"/>
     <fullyQualifiedTypeName name="generic.TestTwo"/>
-    <fullyQualifiedTypeName name="generic.Tree"/>
-    <fullyQualifiedTypeName name="generic.Available"/>
-    <fullyQualifiedTypeName name="generic.Maple"/>
-    <fullyQualifiedTypeName name="generic.ClassSuper"/>
     <fullyQualifiedTypeName name="generic.Thing"/>
     <fullyQualifiedTypeName name="java.lang.Readable"/>
     <fullyQualifiedTypeName name="enumtype.Shoes"/>
@@ -60,4 +41,23 @@
     <fullyQualifiedTypeName name="item.ItemView"/>
     <fullyQualifiedTypeName name="item.Item"/>
     <fullyQualifiedTypeName name="item.ItemBusinessRule"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="javax.swing.text.html.HTMLEditorKit.InsertHTMLTextAction"/>
+    <fullyQualifiedTypeName name="generic.InstanceType"/>
+    <fullyQualifiedTypeName name="generic.Tree"/>
+    <fullyQualifiedTypeName name="generic.Maple"/>
+    <fullyQualifiedTypeName name="generic.Available"/>
+    <fullyQualifiedTypeName name="java.security.PublicKey"/>
+    <fullyQualifiedTypeName name="generic.ClassSuper"/>
+    <fullyQualifiedTypeName name="generic.Child"/>
+    <fullyQualifiedTypeName name="java.lang.ArrayIndexOutOfBoundsException"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.lang.Override"/>
+    <fullyQualifiedTypeName name="java.lang.CloneNotSupportedException"/>
+    <fullyQualifiedTypeName name="java.lang.reflect.Array"/>
+    <fullyQualifiedTypeName name="array.Person"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="collection.list.LinkedListEx01"/>
+    <fullyQualifiedTypeName name="java.lang.Object"/>
+    <fullyQualifiedTypeName name="java.util.HashSet"/>
 </qualifiedTypeNameHistroy>

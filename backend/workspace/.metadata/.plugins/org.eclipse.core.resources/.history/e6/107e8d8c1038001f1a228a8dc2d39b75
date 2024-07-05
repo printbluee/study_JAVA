@@ -1,0 +1,35 @@
+package generic;
+
+
+class TestTwo {
+	private Object element;
+
+	public Object getElement() {
+		return element;
+	}
+
+	public void setElement(Object element) {
+		this.element = element;
+	}
+}
+
+public class Ex03 {
+
+	public static void main(String[] args) {
+		
+		TestTwo t = new TestTwo();
+		t.setElement(5);
+		System.out.println(t.getElement());
+		
+		// int t_value = t.getElement();
+		Integer t_value = (Integer) t.getElement();
+		System.out.println(t_value);
+		
+		TestTwo str = new TestTwo();
+		str.setElement("안녕");
+		System.out.println(str.getElement());
+		
+		String set_value = (String) str.getElement();
+		System.out.println(set_value);
+	}
+}

@@ -1,0 +1,17 @@
+package inner;
+
+class OuterTwo {
+	String name = "홍길동";
+	
+	public void show() {
+		
+	}
+	
+}
+
+public class Ex02 {
+
+	public static void main(String[] args) {
+
+	}
+}

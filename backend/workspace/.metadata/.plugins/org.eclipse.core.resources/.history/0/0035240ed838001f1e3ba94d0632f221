@@ -1,0 +1,18 @@
+package generic;
+
+class Parent<T> {
+	private T item;
+	
+	public Parent() {}
+	
+	public void checkType(T t) {
+		System.out.println("[Parent] Type >> " + t.getClass());
+	}
+}
+
+public class Ex02 {
+
+	public static void main(String[] args) {
+
+	}
+}

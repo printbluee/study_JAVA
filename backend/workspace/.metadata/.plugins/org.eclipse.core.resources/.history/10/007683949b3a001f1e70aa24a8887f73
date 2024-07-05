@@ -1,0 +1,54 @@
+package inner;
+
+import inner.Outer.Inner;
+
+class OuterTwo {
+	String name = "홍길동";
+	
+	public void show() {
+		System.out.println("[Outer class] show() 실행");
+	}
+	
+	// =================================================
+	// Inner 로 해도 되는데 이전 파일이랑 구분하기 위해서
+	class InnerTwo {
+		String name = "INNER";
+		String innerid = "1111";
+		
+		public String getName() {
+			return name;
+		}
+		public void setName(String name) {
+			this.name = name;
+		}
+		
+		public void showName() {
+			System.out.println("[Inner class] outer member : name filed");
+		}
+	}
+}
+
+public class Ex02 {
+
+
+	public static void main(String[] args) {
+
+		// [Inner class] InnerTwo 인스턴스 생성
+		 OuterTwo out = new OuterTwo();
+		 OuterTwo.InnerTwo in = out.new InnerTwo();
+		
+		// 위 두 줄을 한 줄 코드로 변경
+		// OuterTwo.InnerTwo in = new OuterTwo().new InnerTwo();
+		// System.out.println(in);
+		
+		in.showName();
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+}

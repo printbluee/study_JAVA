@@ -1,0 +1,176 @@
+package collection.list;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ArrayList.Itr;
+
+/*
+ * [컬렉션] collection
+ * : 자료 구조(data) + 알고리즘(method)
+ * : field + method
+ * : 여러 데이터를 묶어서 관리 및 사용을 쉽게 하기 위한 구조
+ * : 관리하는 목적을 배열과 같지만, 제공하는 기능(메소드)이 배열보다 다양
+ * 
+ * [컬렉션 프레임워크] collection framework
+ * : 컬렉션 클래스와 인터페이스의 집합
+ * : 프로그래밍 편리성, 통합된 API(라이브러리, 모듈 즉 이미 만들어진 파일)
+ *   구조로 인한 효율성 증가
+ * 
+ * ---------------------------------------------------------------------------------------
+ * 							 |  순 서  |   중복허용  | 구현 클래스
+ * ---------------------------------------------------------------------------------------
+ * collection<E>  |  List<E> |    O    |      O      | ArrayList, LinkedList, Stack, Queue
+ * 				  |  Set<E>	 |	  X    |      X      | HashSet, TreeSet
+ * ---------------------------------------------------------------------------------------
+ * Map<K, V>				 |    X    | key   : X   | HashSet, TreeSet
+ * 									   | value : 0   |
+ * ---------------------------------------------------------------------------------------
+ */
+
+public class ArrayListEx01 {
+
+	public static void main(String[] args) {
+
+		// ArrayList 객체 생성
+		ArrayList<String> arrayList = new ArrayList<String>();
+		
+		
+		// 저장된 요소 존재 여부
+		System.out.println("비어있나요? >> " + arrayList.isEmpty()); // true
+		
+		
+		// [요소 추가 전 개수]  | size() : 목록의 요소 수를 반환
+		System.out.println("[요소 추가 전] 저장된 요소 개수 >> " + arrayList.size()); // 0
+		
+		// 요소 추가 | add(E e) : 지정한 요소를 목록의 끝에 추가(선택적 작업)
+		// 현재 타입이 String 이라 문자열 넣어준 것
+		arrayList.add("하나"); 
+		arrayList.add("둘"); 
+		arrayList.add("셋"); 
+		arrayList.add("넷"); 
+		
+		// [요소 추가 후 개수] | size() : 목록의 요소 수를 반환
+		System.out.println("[요소 추가 후] 저장된 요소 개수 >> " + arrayList.size()); // 4
+		
+		
+		// 특정 위치에 저장된 요소 접근 | get(int index) : 목록의 지정된 위치에 있는 요소를 반환
+		System.out.println("인덱스 0 >> " + arrayList.get(0)); // 하나
+		System.out.println("인덱스 2 >> " + arrayList.get(2)); // 셋
+		// System.out.println("인덱스 4 >> " + arrayList.get(4)); error ! : 저장된 인덱스가 없음
+		
+		
+		// 이전에 동물병원에서 반복문을 돌려 확인했는데 이미 만들어진 API 를 활용하여 간편해짐 !
+		// 객체 포함 여부 확인 
+		// : 요소 1개 | contains(Object o) : 목록에 지정된 요소가 포함된 경우 true를 반환
+		System.out.println("'둘' 있나요 ? >> " + arrayList.contains("둘"));	  // true
+		System.out.println("'여섯' 있나요 ? >> " + arrayList.contains("여섯")); // false
+		
+		// : 여러 개 | containsAll(Collection<?> c) : 목록에 지정한 컬렉션의 요소가 모두 포함된 경우 true를 반환
+		// interface 이니까 자식 클래스를 넣어줌으롤 다형성 구현
+		
+		// System.out.println("'하나, 셋' 있나요 ? >> " + arrayList.containsAll(arrayList));
+		// 위 코드가 너무 기니까 ArrayList 초기화 해줌 !
+		// [ArrayList 초기화]
+		// 1. ArrayList.asList() : 공부 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		// 2. List.of()          : 공부 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		ArrayList<String> checkOne = new ArrayList<String>(Arrays.asList("하나", "셋"));
+		System.out.println("'하나, 셋' 있나요 ? >> " + checkOne); // [하나, 셋]
+	
+		ArrayList<String> checkTwo = new ArrayList<String>(List.of("하나", "셋"));
+		System.out.println("'하나, 셋' 있나요 ? >> " + checkTwo); // [하나, 셋]
+		
+		
+		// [출력] 
+		// 원래 주소가 나와야 하는데 배열의 데이터값이 나오는 이유
+		// : 자바는 객체를 출력할 때 객체 자체를 System.out.println() 에 전달하면 
+		//   해당 객체의 'toString()' 메서드가 호출되어 객체의 내용이 문자열로 변환되어 출력됨
+		System.out.println("arrayList >> " + arrayList); // [하나, 둘, 셋, 넷]
+		System.out.println("arrayList >> " + arrayList.toString()); // [하나, 둘, 셋, 넷]
+		
+		
+		// [저장된 요소 전체 출력]
+		// 1. 일반 for문
+		System.out.println("<< 요소 전체 출력 1 >>");
+		for(int idx=0; idx<arrayList.size(); idx++) {
+			System.out.println(arrayList.get(idx));
+		}
+		
+		// 2. 향상된 for문
+		// (Enhanced for loop / for-each loop)
+		System.out.println("<< 요소 전체 출력 2 >>");
+		for(String idx : arrayList) {
+			System.out.println(idx);
+		}
+		
+		// 3. toArray() : 모든 요소를 포함하는 배열을 반환
+		// Object 를 사용하면 단점이 저장된 인스턴스가 배열이 아닌 형태면 형변환을 해주어야 함
+		System.out.println("<< 요소 전체 출력 3 >>");
+		System.out.println(arrayList.toArray()); 
+		for(Object obj : arrayList.toArray()) {
+			System.out.println(obj);
+		}
+		
+		// 4. iterator() : 컬렉션의 요소 위에 반복기를 반환
+		// 알아두어야 함
+		// 인터페이스를 통한 다형성 
+		// : iterator() 메소드는 Iterator 인터페이스를 구현한 구체적인 반복기 객체를 반환
+		// inner class
+		System.out.println("<< 요소 전체 출력 4 >>");
+		System.out.println(arrayList.iterator()); 
+		Iterator<String> iter = arrayList.iterator();
+		System.out.println("iter.hasNext() >> " + iter.hasNext()); // true
+		while(iter.hasNext()) {
+			System.out.println(iter.next());
+		}
+		
+		System.out.println("[iter] 두 번째 사용");
+		// 출력이 안됨
+		System.out.println("iter.hasNext() >> " + iter.hasNext()); // false
+		while(iter.hasNext()) {
+			System.out.println("두 번째 >> " + iter.next());
+		}
+		
+		/*
+		 * [ Iterator 인터페이스, 구현체(Itr), iterator() 메소드 ]
+		 * iterator() 메소드는 Iterator 인터페이스를 구현하는 클래슬 보면
+		 * 구현체인 Itr 인스턴스를 생성하여 반환함 (return new Itr();)
+		 * 즉 객체를 생성해서 리턴을 하니까 호출 할 때마다 매번 다른 인스턴스를 생성하는 것 !
+		 * 또 각각 구현이 되니까 서로의 상태에 영향을 주지 않도록 보장이 됨
+		 * 
+		 * Itr 클래스
+		 * : Iterator 인터페이스의 hasNext() 와 next() 메소드를 오버라이딩하여 구현
+		 * : 배열을 순회하면서 다음 요소를 반환하고, 요소가 남아있는지 확인하는 기능을 제공
+		 * 
+		 * Itr 클래스의 멤버 변수 cursor 를 보면 private 으로 선언되어 있는데
+		 * cursor 변수가 외부에서 직접 접근 금지하고, 캡슐화를 통해 클래스 내부에서만 사용할 수 있도록
+		 * 제한 했다.
+		 * cursor 변수는 반복 과정에서 현재 위치를 나타냄
+		 * next() 메소드를 호출할 때마다 위치가 증가하여 다음 요소를 가리킴
+		 * 
+		 * Iterator 인테페이스를 통해 컬렉션 내의 요소를 안전하게 순회(서로의 상태에 영향을 주지 않으니까)
+		 * hasNext() 메소드로 다음 요소가 있는지 확인하고, next() 메소드를 호출하여 실제 요소를 가져옴
+		 * 
+		 * 위 코드로 Iterator  타입의 인스턴스는 일회용이라 생각하면 됨
+		 * Iterator() 메소드를 사용하여 컬렉션을 순회할 때 한 번 hasNext 메소드를 호출하여 
+		 * 모든 요소를 확인했으니까 더 이상 요소가 남아있지 않아 false 를 반환하고 그 역할은 그대로 끝남
+		 * 즉 한 번만 사용 가능함
+		 * 
+		 * 그래서 다시 사용하고 싶으면 새로 만들어야 함 !
+		 */
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+}

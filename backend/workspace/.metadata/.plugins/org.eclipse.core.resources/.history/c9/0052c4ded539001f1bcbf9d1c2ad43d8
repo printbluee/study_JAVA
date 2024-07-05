@@ -1,0 +1,69 @@
+package collection.list;
+
+import java.util.LinkedList;
+
+public class LinkedListEx01 {
+
+	public static void main(String[] args) {
+		
+		// 리스트 생성
+		LinkedList<String> linkedList = new LinkedList<String>();		
+		
+		// 저장된 요소 여부
+		System.out.println("비어있나요 ? >> " + linkedList);
+		
+		// 요소 추가
+		linkedList.add("하나");		
+		linkedList.add("둘");		
+		linkedList.add("셋");		
+		linkedList.add("하나");		
+		
+		
+		System.out.println("비어있나요 ? >> " + linkedList);
+		
+		// 요소 개수
+		System.out.println("저장된 요소 개수 >> " + linkedList.size());
+
+		// 요소 전체 출력
+		System.out.println("요소 전체 출력 >> " + linkedList);
+		
+		// 특정 위치에 저장된 요소 출력
+		// 특정한 위치로 가고, 인덱스를 사용한다는 것은 무조건 순서가 있다는 것
+		System.out.println("인덱스 0 >> " + linkedList.get(0));
+		
+		// 객체 존재(포함) 여부
+		System.out.println("'둘' 있나요 ? >> " + linkedList.contains("둘"));
+		System.out.println("'둘' 있나요 ? >> " + linkedList.contains("넷"));
+		System.out.println("\n");
+		
+		
+		// [저장된 요소 전체 출력]
+		System.out.println("저장된 요소 전체 출력 >> " + linkedList);
+		System.out.println("\n");
+		
+		// 1. for문
+		System.out.println("\n<< 1. for문 >> ");
+		for(int idx=0; idx < linkedList.size(); idx++) {
+			System.out.println(linkedList.toString());
+		}
+		System.out.println("\n");
+		
+		// 2. 향상된 for문
+		System.out.println("<< 2. 향상된 for문 >> ");
+		System.out.println("\n");
+		
+		
+		// 3. toArray()
+		System.out.println("<< 3. toArray() >> ");
+		System.out.println("\n");
+		
+		
+		// 4. iterator()
+		System.out.println("<< 4. iterator() >> ");
+		
+		
+		
+		
+		
+	}
+}

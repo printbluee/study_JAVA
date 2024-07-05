@@ -1,0 +1,43 @@
+package inner;
+
+/*
+ 
+=========================================
+[inner class가 outer class의 멤버 접근 가능]
+inner class로 생성된 여러 개 객체가 있다면,
+outer class로 생성된 객체의 멤버를 따로 사용하나요?
+공유 하나요?
+*/
+
+
+class Outerthree {
+    String outerName;
+
+    class InnerThree {
+        String innerName;
+
+        public void setOuterName(String name) {
+
+        }
+        public void setInnerName(String name) {
+
+        }
+        public void showAllName() {
+            System.out.println("[outer field]");
+            System.out.println("[inner field]");
+
+        }
+    }
+
+}
+
+
+
+public class Ex03 {
+
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+
+    }
+
+}

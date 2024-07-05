@@ -1,0 +1,29 @@
+package generic;
+
+/* 
+ * [Generic] 제네릭 ============
+ * : type 을 일반화 (generalize)
+ * : 컴파일할 때 type 결정
+ * : type 을 외부에서 결정(지정)
+ * : JDK 1.5 부터 도입
+ * ===========================
+ */
+
+class Test<T> {
+	private int element;
+
+	public int getElement() {
+		return element;
+	}
+
+	public void setElement(int element) {
+		this.element = element;
+	}
+}
+
+public class Ex02 {
+
+	public static void main(String[] args) {
+
+	}
+}

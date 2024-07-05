@@ -1,0 +1,12 @@
+package collection.map;
+
+import java.util.HashMap;
+
+public class Ex01 {
+
+	public static void main(String[] args) {
+
+		HashMap<K, V>
+		
+	}
+}

@@ -1,0 +1,37 @@
+package generic;
+
+
+class TestTwo {
+	private Object element;
+
+	public Object getElement() {
+		return element;
+	}
+
+	public void setElement(Object element) {
+		this.element = element;
+	}
+}
+
+public class Ex03 {
+
+	public static void main(String[] args) {
+		
+		TestTwo t = new TestTwo();
+		t.setElement(5);
+		System.out.println(t.getElement());
+		
+		// int t_value = t.getElement(); Object 에 int 넣을 수 없다 !
+		Integer t_value = (Integer) t.getElement(); // 형변환
+		System.out.println(t_value);
+		
+		TestTwo str = new TestTwo();
+		str.setElement("안녕");
+		System.out.println(str.getElement());
+		
+		String set_value = (String) str.getElement(); // 형변환
+		System.out.println(set_value);
+		
+		// 사용할 때 형변환이 필요하기 때문에 제네릭을 사용함으로써 편리해짐 !
+	}
+}

@@ -1,0 +1,33 @@
+package inner;
+
+class OuterFour {
+	
+	class InnerFour {
+		int num;
+		
+		public InnerFour(int num) {
+			this.num = num;
+		}
+		
+		public void showNum() {
+			System.out.println("[Inner class] num >> " + this.num);
+		}
+		
+	}
+}
+
+public class Ex04 {
+
+	public static void main(String[] args) {
+
+		OuterFour outer = new OuterFour();
+		
+		OuterFour.InnerFour in = outer.new InnerFour(5);
+		in.showNum();
+		
+		
+		
+		
+		
+	}
+}

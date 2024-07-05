@@ -1,0 +1,13 @@
+package generic;
+
+// 인터페이스에 ~한다라는 의미로 Available 를 대부분 사용
+interface Available
+
+public class Ex05 {
+
+	public static void main(String[] args) {
+
+		
+		
+	}
+}

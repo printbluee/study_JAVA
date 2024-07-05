@@ -1,0 +1,28 @@
+package generic;
+
+
+class TestTwo<T> {
+	private Object element;
+
+	public Object getElement() {
+		return element;
+	}
+
+	public void setElement(Object element) {
+		this.element = element;
+	}
+}
+
+public class Ex03 {
+
+	public static void main(String[] args) {
+		
+		TestTwo t = new TestTwo();
+		t.setElement(5);
+		System.out.println(t.getElement());
+		
+		TestTwo str = new TestTwo();
+		str.setElement("안녕");
+		System.out.println(str.getElement());
+	}
+}

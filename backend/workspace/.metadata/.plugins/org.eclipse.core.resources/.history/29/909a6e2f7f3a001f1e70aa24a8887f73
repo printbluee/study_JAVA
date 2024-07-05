@@ -1,0 +1,38 @@
+package collection.map;
+
+import java.util.HashMap;
+
+public class Ex01 {
+
+	public static void main(String[] args) {
+
+		HashMap<String, Integer> hashMap = new HashMap<String, Integer>();
+		
+		// 요소 개수
+		System.out.println("[요소 추가 전] 개수 >> " + hashMap.size());
+		
+		// 요소 추가
+		hashMap.put("하나", 1);
+		hashMap.put("둘", 2);
+		hashMap.put("셋", 3);
+		hashMap.put("하나", 100); // 마지막 요소가 들어감
+		hashMap.put("넷", 4);
+		
+		
+		// 요소 전체 출력
+		// {} 형태
+		// System.out.println("hashMap >> " + hashMap);
+		System.out.println("hashMap >> " + hashMap.toString());
+		
+		// 요소 개수
+		System.out.println("[요소 추가 후] 개수 >> " + hashMap.size());
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+}

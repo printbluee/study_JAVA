@@ -1,0 +1,18 @@
+package array;
+
+public class Ex05 {
+
+	public static void main(String[] args) {
+
+		String[] str = new String[3];
+		
+		str[0] = "하나";
+		str[1] = "둘";
+		str[2] = "셋";
+		
+		System.out.println("str 길이 >> " + str.length);
+		System.out.println("str 에 저장된 요소 >> " + str);
+		
+		
+	}
+}

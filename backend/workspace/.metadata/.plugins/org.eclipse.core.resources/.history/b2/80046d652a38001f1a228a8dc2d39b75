@@ -1,0 +1,31 @@
+package generic;
+
+class Parent <T> {
+	
+	private T item;
+	
+	public Parent() {}
+	
+	public Parent(T item) {
+		this.item = item;
+	}
+}
+
+// 자식도 제네릭 타입으로 받기
+class Child<T> extends Parent<T> {
+	
+	// 제네릭 메소드 x
+	public void showType(T t) {
+		System.out.println("Type >> " + t);
+	}
+}
+
+public class Ex08 {
+	
+	public static void main(String[] args) {
+		
+		Child<String> c = new Child<String>();
+		c.showType("홍길동");
+		
+	}
+}

@@ -1,0 +1,21 @@
+package inner;
+
+class OuterFour {
+	
+	class InnerFour {
+		int num;
+		
+		public InnerFour(int num) {
+			this.num = num;
+		}
+	}
+}
+
+public class Ex04 {
+
+	public static void main(String[] args) {
+
+		
+		
+	}
+}

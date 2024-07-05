@@ -1,0 +1,22 @@
+package collection.hashset;
+
+import java.util.HashSet;
+
+public class Ex01 {
+
+	public static void main(String[] args) {
+		
+		HashSet<String> hashset = new HashSet<String>();
+		
+		// 저장된 요소 여부
+		System.out.println("비어있나요 ? " + hashset.isEmpty());
+		
+		// 요소 추가
+		hashset.add("하나");
+		
+		// 요소 개수
+		System.out.println("저장된 요소 개수 >> " + hashset.size());
+		
+		
+	}
+}

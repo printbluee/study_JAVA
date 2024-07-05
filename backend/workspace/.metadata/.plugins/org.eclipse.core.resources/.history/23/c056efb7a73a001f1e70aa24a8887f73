@@ -1,0 +1,26 @@
+package inner;
+
+class OuterFive {
+	
+	/*
+	 * [static inner class] ========================
+	 * : 외부에서 Outer class 의 객체 생성 없이 Inner class 접근 가능
+	 * : instance 와 static 의 모든 field 선언과 method 정의 가능
+	 * 
+	 */
+	
+	static class InnerFive {
+		
+	}
+	
+}
+
+
+public class Ex05 {
+
+	public static void main(String[] args) {
+
+		
+		
+	}
+}

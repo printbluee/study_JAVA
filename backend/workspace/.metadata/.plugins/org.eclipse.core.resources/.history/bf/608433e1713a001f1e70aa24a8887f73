@@ -1,0 +1,78 @@
+package collection.hashset;
+
+import java.util.HashSet;
+import java.util.Iterator;
+
+public class Ex01 {
+
+	public static void main(String[] args) {
+		
+		HashSet<String> hashset = new HashSet<String>();
+		
+		// 저장된 요소 여부
+		System.out.println("비어있나요 ? " + hashset.isEmpty()); // true
+		
+		// 요소 추가
+		hashset.add("하나");
+		hashset.add("둘");
+		hashset.add("셋");
+		hashset.add("하나"); 
+		
+		// 요소 개수
+		System.out.println("저장된 요소 개수 >> " + hashset.size());
+		
+		// 요소 전체 출력
+		// set() : 중복 제거, 순서 보장 x
+		System.out.println("요소 전체 출력 >> " + hashset );            // [둘, 하나, 셋]
+		System.out.println("요소 전체 출력 >> " + hashset.toString() ); // [둘, 하나, 셋]
+		
+		// 저장된 요소 여부
+		System.out.println("비어있나요 ? " + hashset.isEmpty()); // false
+		
+		// 객체 포함(존재) 여부
+		// 주소를 비교 
+		System.out.println("'둘' 있나요 ? " + hashset.contains("둘")); // true
+		System.out.println("'여섯' 있나요 ? " + hashset.contains("여섯")); // false
+		
+		// [저장된 요소 전체 출력]
+		System.out.println("<< toArray() >>");
+		for(Object obj : hashset) {
+			System.out.println(obj);
+		}
+		
+		System.out.println("향상된 for문");
+		for(String str : hashset) {
+			System.out.println(str);
+		}
+		
+		System.out.println("iterator()");
+		Iterator<String> iter = hashset.iterator();
+		while(iter.hasNext()) {
+			System.out.println(iter.next());
+		}
+		
+		/*
+		 * HashSet 은 요소 추가하기 전 이미 저장된 요소과 비교하는 절차를 거침 
+		 * 1. 해당 요소에 hashCode() 메소드 호출하여 반환된 해시(해쉬) 값으로 검색할 범위 결정
+		 * 2. 해당 범위 내의 요소들 equals() 이퀄스 메소드로 비교
+		 * 즉, Hashset 에서 add() 메소드를 사용하여, 중복없이 새 요소를 추가하기 위해 
+		 *     HashCode() 와 equals() 메소드를 상황에 맞게 오버라이딩 해야하 함
+ 		 */
+		
+		System.out.println("요소 '셋' 추가 >> " + hashset.add("셋"));
+		System.out.println("요소 추가 후 길이 >> " + hashset.size()); // 3
+		
+		// String 에 hashCode 가 들어있음
+		// 메모리 주소라고 말할 뿐, 해시코드
+		iter = hashset.iterator(); // 일회용
+		while(iter.hasNext()) {
+			String s = iter.next();
+			System.out.println(s + ", " + s.hashCode());
+		}
+		
+		System.out.println("하나.hashCode() : " + 하나.hashCode());
+		
+		
+		
+	}
+}

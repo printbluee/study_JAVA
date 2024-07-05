@@ -1,0 +1,52 @@
+package collection.map;
+
+import java.util.HashMap;
+
+class Person {
+	
+	private String name; 
+	private int age;
+	
+	public Person(String name, int age) {
+		this.name = name;
+		this.age = age;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+}
+
+public class Ex02 {
+
+	public static void main(String[] args) {
+
+		Person hong = new Person("홍길동", 25);
+		Person park = new Person("박보검", 35);
+
+		// [유형 1]
+		// 기본 타입은 못옴 ex) int
+		HashMap<Integer, Person> one = new HashMap<Integer, Person>();
+		
+		one.put(1, hong);
+		one.put(2, park);
+		
+		System.out.println(one.);
+		
+		
+		
+		
+	}
+}

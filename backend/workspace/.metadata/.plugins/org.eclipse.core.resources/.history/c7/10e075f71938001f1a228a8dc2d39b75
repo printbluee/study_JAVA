@@ -1,0 +1,60 @@
+package generic;
+
+interface Available {
+	
+	void selfIntroduction();
+}
+
+class Tree {
+	
+	private String sort;
+	private int age;
+	
+	public Tree(String sort, int age) {
+		this.sort = sort;
+		this.age = age;
+	}
+	
+	public void info() {
+		System.out.printf("[INFO] 종류 : %s, 나이 : %d\n\n", sort, age);
+	}
+}
+
+class Maple extends Tree implements Available {
+	
+	public Maple(String sort, int age) {
+		super(sort, age);
+	}
+	
+	@Override
+	public void selfIntroduction() {
+		return "나는 단풍나무이다."
+//		System.out.println("나는 단풍나무이다.");
+	}
+}
+
+class Pine extends Tree implements Available {
+	
+	public Pine(String sort, int age) {
+		super(sort, age);
+	}
+	
+	@Override
+	public void selfIntroduction() {
+		return "나는 소나무이다."
+//		System.out.println("나는 소나무이다.");
+	}
+}
+
+public class Ex05 {
+	
+	public static void callSelfIntroduction(T t) {
+		t.selfIntroduction();
+		
+	}
+
+	public static void main(String[] args) {
+		
+		
+	}
+}

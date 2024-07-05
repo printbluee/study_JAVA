@@ -1,0 +1,19 @@
+package generic;
+
+interface Space<T> {
+	void youKnow(T item);
+	
+}
+
+class Star<T> implements Space<T> {
+	
+}
+
+public class Ex03 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

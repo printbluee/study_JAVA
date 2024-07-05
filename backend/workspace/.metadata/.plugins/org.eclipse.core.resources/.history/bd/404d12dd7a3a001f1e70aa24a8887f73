@@ -1,0 +1,90 @@
+package collection.hashset;
+
+import java.util.HashSet;
+
+class Person {
+	
+	private String name; 
+	private int age;
+	
+	public Person(String name, int age) {
+		this.name = name;
+		this.age = age;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+}
+
+
+public class Ex02 {
+
+	public static void main(String[] args) {
+
+		Person hong = new Person("홍길동", 25);
+		Person park = new Person("박보검", 25);
+		
+		// HashSet 생성
+		HashSet<Person> hashSet = new HashSet<Person>();
+		
+		// 요소 추가
+		hashSet.add(hong);
+		hashSet.add(park);
+		hashSet.add(new Person("이미자", 52));
+		
+		// 전체 요소 출력
+		System.out.println("hashSet >> " + hashSet);
+		System.out.println();
+		
+		// 전체 요소 출력 : 이름
+		System.out.println("<< 전체 요소 출력 : 이름 >>");
+		for(Person p : hashSet) {
+			System.out.println(p.getName());
+		}
+		
+		// 새 요소 추가
+		System.out.println("홍길동 추가 전 : 전체 요소 개수 >> " + hashSet.size());
+		
+		Person newHong = new Person("홍길동", 25);
+		
+//		boolean addResult = hashSet.add(new Person("홍길동", 25));
+		boolean addResult = hashSet.add(newHong);
+		System.out.println("요소 추가 여부 >> " + addResult); // true
+	
+		System.out.println("홍길동 추가 후 : 전체 요소 개수 >> " + hashSet.size());
+		System.out.println();
+		
+		/*
+		 * 중복 제거가 안된 이유 : 참조 변수 주소가 달라서
+		 */
+		
+		System.out.println("<< 전체 요소 출력 : 이름 >>");
+		for(Person p : hashSet) {
+			System.out.println(p.getName());
+		}
+		
+		System.out.println("hong >> " + hong);       // collection.hashset.Person@2f92e0f4  이거랑
+		System.out.println("newHong >> " + newHong); // collection.hashset.Person@19469ea2
+		System.out.println();
+		
+		System.out.println("홍길동".hashCode()); // 54150062
+		System.out.println(Integer.toHexString(hong.hashCode())); // 16진수 : 2f92e0f4      이거랑 같음
+		
+		
+		
+		
+	}
+}

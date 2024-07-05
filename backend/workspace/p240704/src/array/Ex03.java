@@ -1,0 +1,49 @@
+package array;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class Ex03 {
+
+	public static void main(String[] args) {
+
+		// ArrayList 객체 생성
+		ArrayList<String> arrayList = new ArrayList<String>();
+		
+		// 요소 추가
+		arrayList.add("하나");
+		arrayList.add("둘");
+		arrayList.add("셋");
+		arrayList.add("넷");
+		
+		// 출력
+		System.out.println(arrayList);
+		
+		// [복사]
+		// 1. 얕은 복사 : shallow copy
+		Object shallowCopy = arrayList.clone();
+		
+		System.out.println("\n<< 얕은 복사 >>>");
+		System.out.println("shallowCopy >> " + shallowCopy);
+		
+		System.out.println("\n==> arrayList 의 요소 중 '둘'을 two 로 변경");
+		arrayList.set(1, "two");
+		System.out.println("shallowCopy >> " + shallowCopy);
+		System.out.println("arrayList   >> " + arrayList);
+		
+		// 2. 깊은 복사 : deep copy
+		System.out.println("\n<< 깊은 복사 >>>");
+		Object[] copyList = arrayList.toArray();
+		System.out.println("shallowCopy >> " + shallowCopy);
+		System.out.println("copyList >> " + Arrays.toString(copyList));
+		
+		System.out.println("\n==> arrayList 의 요소 중 '하나'을 one 로 변경");
+		arrayList.set(0, "one");
+		System.out.println("shallowCopy >> " + shallowCopy);
+		System.out.println("copyList    >> " + Arrays.toString(copyList));
+		
+		
+		
+		
+	}
+}

@@ -1,0 +1,47 @@
+package collection.map;
+
+import java.util.HashMap;
+
+public class Ex01 {
+
+	public static void main(String[] args) {
+
+		HashMap<String, Integer> hashMap = new HashMap<String, Integer>();
+		
+		// 요소 개수
+		System.out.println("[요소 추가 전] 개수 >> " + hashMap.size());
+		
+		// 요소 추가
+		hashMap.put("하나", 1);
+		hashMap.put("둘", 2);
+		hashMap.put("셋", 3);
+		hashMap.put("하나", 100); // 마지막 요소가 들어감
+		System.out.println("hashMap >> " + hashMap.toString());
+		
+		hashMap.put("넷", 4);
+		
+		
+		// 요소 전체 출력
+		// {} 형태
+		// System.out.println("hashMap >> " + hashMap);
+		System.out.println("hashMap >> " + hashMap.toString());
+		
+		// 요소 개수
+		System.out.println("[요소 추가 후] 개수 >> " + hashMap.size());
+		
+		// 저장된 key 들의 집합 : 키만 추출
+		// 키는 중복 허용 x
+		System.out.println("\n<< 저장된 모든 key 추출 >>");
+		System.out.println(hashMap.keySet());
+		
+		// 저장된 값들의 집합 : 값만 추출
+		// 값은 중복 허용 o, 배열 형태로 출력
+		System.out.println("\n<< 저장된 모든 value 추출 >>");
+		System.out.println(hashMap.values());
+		
+		// key 를 통합 값 추출 : 특정 key 의 값 
+		System.out.println("\ㅜ키가 '하나'인 요소의 값 >> " + hashMap.get("하나"));
+		
+		
+	}
+}

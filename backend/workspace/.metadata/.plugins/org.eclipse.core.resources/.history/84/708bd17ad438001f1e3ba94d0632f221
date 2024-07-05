@@ -1,0 +1,23 @@
+package generic;
+
+class Thing {
+	
+	private String id;
+	private String name;
+	
+	public Thing() {}
+	
+	public Thing(String id, String name) {
+		this.id = id;
+		this.name = name;
+	}
+}
+
+public class Ex09 {
+
+	public static void main(String[] args) {
+
+		
+		
+	}
+}

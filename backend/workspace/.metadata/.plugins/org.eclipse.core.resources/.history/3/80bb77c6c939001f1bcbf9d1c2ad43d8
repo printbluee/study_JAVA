@@ -1,0 +1,38 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class Ex04 {
+    public static void main(String[] args) throws CloneNotSupportedException {
+
+        Person hong = new Person("홍길동", 25);
+        Person park = new Person("박보검", 35);
+        Person lee = new Person("이미자", 52);
+
+        ArrayList<Person> array = new ArrayList<Person>();
+
+        array.add(hong);
+        array.add(park);
+        array.add(lee);
+        System.out.println("[array] ->> " + array);
+
+        // [shallow copy: 얕은 복사] ===========================================
+        Object shallowCopy = array.clone();
+        System.out.println("[shallowCopy] -->" + shallowCopy);
+
+
+
+        // [deep copy: 깊은 복사] ==============================================
+        // Object[] deepCopy = array.toArray();
+        ArrayList<Person> deepCopy = new ArrayList<Person>();
+        for(Person p: array) {
+            deepCopy.add(p.clone());
+        }
+
+        System.out.println("[deepCopy] -->" + deepCopy);
+//        System.out.println("[deepCopy] -->" + Arrays.toString(deepCopy));
+
+
+
+    }
+
+}

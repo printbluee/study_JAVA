@@ -1,0 +1,43 @@
+package inner;
+
+interface Yahoo {
+	public void showNum() {
+		
+	}
+}
+
+class OuterFour {
+	
+	public 반환형 getInner(int num) {
+		return new InnerFour(num);
+	}
+	
+	private class InnerFour {
+		int num;
+		
+		public InnerFour(int num) {
+			this.num = num;
+		}
+		
+		public void showNum() {
+			System.out.println("[Inner class] num >> " + this.num);
+		}
+		
+	}
+}
+
+public class Ex04 {
+
+	public static void main(String[] args) {
+
+		OuterFour outer = new OuterFour();
+		
+		OuterFour.InnerFour in = outer.new InnerFour(5);
+		in.showNum();
+		
+		
+		
+		
+		
+	}
+}

@@ -1,0 +1,26 @@
+package array;
+
+import java.util.ArrayList;
+
+public class Ex03 {
+
+	public static void main(String[] args) {
+
+		// ArrayList 객체 생성
+		ArrayList<String> arrayList = new ArrayList<String>();
+		
+		// 요소 추가
+		arrayList.add("하나");
+		arrayList.add("둘");
+		arrayList.add("셋");
+		arrayList.add("넷");
+		
+		// 출력
+		System.out.println(arrayList);
+		
+		// [복사]
+		// 1. 얕은 복사 : shallow copy
+		// 2. 깊은 복사 : deep copy
+		
+	}
+}

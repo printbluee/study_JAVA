@@ -1,0 +1,29 @@
+package collection.list;
+
+import java.util.HashSet;
+
+public class HashSetEx01 {
+
+	public static void main(String[] args) {
+		
+		// Java.util.HashSet 공식 문서 보기
+		HashSet<String> hashSet = new HashSet<String>();
+		
+		// 저장된 요소 존재 여부
+		System.out.println("비어있나요 ? >> " + hashSet.isEmpty()); // true
+		
+		// 요소 추가
+		hashSet.add("하나");
+		hashSet.add("둘");
+		hashSet.add("셋");
+		hashSet.add("하나");
+		
+		// 저장된 요소 존재 여부
+		System.out.println("비어있나요 ? >> " + hashSet.isEmpty()); // false
+		
+		
+		
+		
+		
+	}
+}

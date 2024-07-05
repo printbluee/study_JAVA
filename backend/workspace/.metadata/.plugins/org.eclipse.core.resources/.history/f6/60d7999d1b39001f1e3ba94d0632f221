@@ -1,0 +1,28 @@
+package generic;
+
+class Cool<T> {
+	private T count;
+	
+	// error ! : Cannot create a generic array of T
+	// [과제] : 
+	// T[] array = new T[10];
+	
+	public Cool() {}
+	
+	public Cool(T count) {
+		this.count = count;
+	}
+	
+}
+
+public class Ex04 {
+
+	public static void main(String[] args) {
+		Cool<String> one = new Cool<String>();
+		
+		// Cool<Object> two = new Cool<String>(); error ! : Type mismatch: cannot convert from Cool<String> to Cool<Object>
+		
+		// 다형성
+		Thing t = new Tv();
+	}
+}

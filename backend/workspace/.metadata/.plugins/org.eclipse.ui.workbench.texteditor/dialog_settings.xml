@@ -2,27 +2,27 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item key="wrap" value="true"/>
-		<item key="casesensitive" value="false"/>
+		<item key="casesensitive" value="true"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
-		<item key="isRegEx" value="false"/>
-		<item key="selection" value="indexDelete &gt;&gt;"/>
+		<item key="isRegEx" value="true"/>
+		<item key="selection" value="remove"/>
 		<list key="findhistory">
+			<item value="remove"/>
+			<item value="get()"/>
+			<item value="add()"/>
+			<item value="add"/>
+			<item value="341"/>
+			<item value="search"/>
+			<item value="index"/>
+			<item value="포함"/>
+			<item value="비어있나"/>
+			<item value="Iterator"/>
+			<item value="Tv"/>
 			<item value="indexDelete &gt;&gt;"/>
 			<item value="찾은 인덱스 i &gt;&gt;"/>
 			<item value="store[i].getId() &gt;&gt;"/>
 			<item value="현재 store 인덱스 수"/>
-			<item value="Item()"/>
-			<item value="instanceof"/>
-			<item value="자료"/>
-			<item value="input.close();"/>
-			<item value="primitive"/>
-			<item value="integer"/>
-			<item value="ㅎ"/>
-			<item value="drive"/>
-			<item value="Vehicle"/>
-			<item value="a"/>
-			<item value="p3"/>
 		</list>
 		<list key="replacehistory">
 			<item value="play"/>

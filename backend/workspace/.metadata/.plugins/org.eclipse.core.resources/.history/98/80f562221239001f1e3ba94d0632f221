@@ -1,0 +1,70 @@
+package collection.list;
+
+import java.util.ArrayList;
+
+class Person {
+	private String name;
+	private int age;
+	
+	public Person(String name, int age) {
+		this.name = name;
+		this.age = age;
+	}
+
+	// setter / getter 추가
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+	
+	public int getAge() {
+		return age;
+	}
+}
+
+public class ArrayListQuiz {
+
+	public static void main(String[] args) {
+
+		Person hong = new Person("홍길동", 25);
+		Person park = new Person("박보검", 35);
+		Person lee = new Person("이미자", 52);
+		
+		// [문제] ArrayList 에 hong, park, lee 를 저장(요소 추가) 하시오.
+		ArrayList<Person> person = new ArrayList<Person>();
+
+		person.add(hong);
+		person.add(park);
+		person.add(lee);
+		
+		System.out.println("<< 저장된 이름 전체 출력 >>");
+		for (Person p : person) {
+			System.out.println(p);
+		}
+		
+		
+//		System.out.println(hong.getName());
+//		System.out.println(park.getName());
+//		System.out.println(lee.getName());
+//		
+//		System.out.println("\n<< 저장된 전체 요소 추가 >>");
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+}

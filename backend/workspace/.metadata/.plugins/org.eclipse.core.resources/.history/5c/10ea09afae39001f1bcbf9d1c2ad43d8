@@ -1,0 +1,74 @@
+package array;
+
+class Person {
+	private String name;
+	private int age;
+	
+	public Person(String name, int age) {
+		this.name = name;
+		this.age = age;
+	}
+
+	// setter / getter 추가
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+	
+	public int getAge() {
+		return age;
+	}
+	
+	public void show() {
+		System.out.printf("이름 : %s, 나이 : %d\n", name, age );
+	}
+}
+
+public class Ex02 {
+
+	public static void main(String[] args) {
+		
+		Person p = new Person("홍길동", 25);
+		System.out.println("[ 원본 p ]");
+		p.show();
+		
+		// 1. shallow copy : 얕은 복사
+		Person copy_one = p;
+		System.out.println("[ copy_one ]");
+		copy_one.show();
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		// 2.  deep 	copy : 깊은 복사
+		
+	}
+}
