@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th= "http://www.thymelaf.org/">
+<head>
+<meta charset="UTF-8">
+<title>join-form.html</title>
+</head>
+<body>
+	<h1>회원 가입</h1>
+
+	<form action="/join">
+		<p>이름 : <input th:input="${name}"></p> 
+		<p>나이 : <input th:input="${age}"></p> 
+		<button>가입</button>
+	</form>
+</body>
+</html>

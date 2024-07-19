@@ -1,0 +1,67 @@
+package himedia.spring.ver3.repository;
+
+import org.springframework.stereotype.Repository;
+import himedia.spring.ver3.domain.Member;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+
+// 구현체
+// MemberRepository 상속 받고 오버로딩 하기
+// Repository 라는 것을 알려주기 위해 어노테이션으로 빈 만들어주기
+@Repository
+public class MemoryMemberRepository implements MemberRepository {
+
+	private static Map<Long, Member> store = new HashMap<Long, Member>();
+	private static Long sequence = 0L;
+	
+	public MemoryMemberRepository() {
+		// System.out.println("[MemoryMemberRepository] 생성자 실행됨");
+	}
+	
+	@Override
+	public Member save(Member member) { // 저장하는 메서드
+		// System.out.println("[repository] save() 실행");
+		// System.out.printf("id : %s, name : %s\n", member.getId(), member.getName());
+		
+		// 1씩 증가하는 것을 코드로 나타낸 것은 좋은 형태 x
+		// DB 연동을 안했고, 공부 단계라 쓴 것
+		member.setId(++sequence);
+		store.put(sequence, member);
+		
+		// System.out.printf("id : %s, name : %s\n", member.getId(), member.getName());
+		// System.out.println("[repository] save() 종료");
+		return member;
+	}
+
+	@Override
+	public Optional<Member> findById(Long id) { // id 찾는 메서드
+		
+		boolean boolId = store.containsKey(id);
+		
+		if (boolId) {
+			Optional<Member> opId = Optional.of(store.get(id));
+			return opId;
+		}
+		
+		return Optional.empty();
+	}
+
+	@Override
+	public Optional<Member> findByName(String name) { // name 찾는 메서드
+		
+		for (Member member : store.values()) {
+			if (member.getName().equals(name)) {
+				return Optional.of(member);
+			}
+		}
+		return Optional.empty();
+	}
+
+	@Override
+	public List<Member> findAll() {
+		return new ArrayList<Member>(store.values());
+	}
+}

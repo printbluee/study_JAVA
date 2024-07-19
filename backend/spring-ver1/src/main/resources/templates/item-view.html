@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<!-- 
+[Thymeleaf 기본 문법]
+xmlns:th : 타임리프를 적용할 HTML문서에 네임스페이스 추가
+-->
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<meta charset="UTF-8">
+<title>item-view.html</title>
+</head>
+<body>
+	<h1>item-view.html 페이지입니다.</h1>
+	<div>
+		<label>상품명 : </label>
+		<span th:text="${title}"></span>
+	</div>
+	<div>
+		<label>가격 : </label>
+		<span th:text="${price}"></span>
+	</div>
+</body>
+</html>

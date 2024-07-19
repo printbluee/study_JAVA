@@ -1,0 +1,30 @@
+package himedia.alone.ver2.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+@Controller
+public class BasicController {
+
+	@GetMapping("/")
+	public String index() {
+		return "index";
+	}
+	
+	@GetMapping("/join-form")
+	public String joinForm() {
+		return "join-form";
+	}
+	
+	@GetMapping("/join")
+	public String join(@RequestParam("name") String name,
+			@RequestParam("age") int age, Model model) {
+		model.addAttribute("count", count);
+		
+		return "join";
+	}
+	
+	
+}

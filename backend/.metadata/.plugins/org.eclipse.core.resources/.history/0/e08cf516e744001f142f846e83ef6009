@@ -1,0 +1,277 @@
+package himedia.spring.ver3.controller;
+
+import java.util.List;
+import java.util.Optional;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import himedia.spring.ver3.domain.Member;
+import himedia.spring.ver3.domain.MemberForm;
+import himedia.spring.ver3.service.MemberService;
+
+/* ===============================================================
+ * 		     [단순 페이지 요청]        [데이터 추가(저장)]
+ * 			 : GET					   : POST
+ * 			 : /members/new            : /members/new 
+ * home.html --------------> new.html ----------------> home.html
+ *                         <회원가입 폼>
+ * ===============================================================
+ */
+
+/*
+ * [@RequestMapping("/공통 URL")]
+ * : Member 컨트롤러이다 보니 메서드마다 /member 로 공통된 URL 이 있기 때문에
+ *   어노테이션을 써서 따로 컨트롤러 메서드 앞에 빼줄 수 있음
+ * : MemberController 클래스의 모든 매핑에서 get / post 이든 member 로 시작하는 경로에 대해 매핑 처리
+ * : 스프링 부트는 애플리케이션이 시작될 때 이러한 어노테이션 설정을 스캔하여 빈을 등록하고, 요청을 처리할 준비함
+ */
+@Controller
+@RequestMapping("/members")
+public class MemberController {
+	
+	// << field >> 
+	// [방법 1-1] 직접 bean(객체, 인스턴스) 생성
+	// private final MemberRepository repository = new MemoryMemberRepository();
+	
+	/* 
+	 * ===========================================================================================
+	 * MemberController 는 MemberService 에 의존한다 !
+	 * ===========================================================================================
+	 * [방법 1-2] 직접 bean(객체, 인스턴스) 생성
+	 * private final MemberService service = new MemberService();
+	 * -> Spring 의 IoC 컨테이너에 의해 관리되지 않고, 클래스 내부에서 새로운 객체가 생성
+	 * 
+	 * [방법 1-1, 방법 1-2] 직접 객체 생성 - DTO (Direct Object Creation : 데이터를 전달/전송 목적으로 하는 객체)
+	 * : 클래스 내에 멤버 필드로 new 생성자로 인스턴스가 들어옴
+	 * 
+	 * 스프링 부트를 사용하고 있으니, 컨테이너를 통해 관리할 것
+	 * (스프링의 IoC 컨테이너는 자동적으로 객체의 생성과 관리 담당)
+	 * MemberService 빈은 스프링 부트가 실행이 되면서 자동적으로 생성이 됨
+	 * 그래서 굳이 또 생성할 필요 없다 ! 이미 만들어졌으니 가져다 쓰자 (-> [방법 2] 이동)
+	 * 
+	 * [방법 2] DI (Dependency Injection : 의존성 주입) 
+	 * 1) 생성자 주입 : constructor injection  * 권장
+	 * 2) field	 주입 : field  injection
+	 * 3) setter 주입 : setter injection
+	 * 
+	 * [IOC] Inversion of Control : 제어의 역전
+	 * : 제어의 흐름을 바꿈
+	 * : 객체의 의존성 역전
+	 * -> 역전은 뜻은 개발자가 아닌 컨테이너가 관리를 하기 때문에 역전 됐다 말함
+	 * 장점 : 객체의 의존성이 역전이 되면, 개발자가 직접 객체 생성 또는 관리를 하지 않아도 됨
+	 * 
+	 * 이렇게 구조를 짠다면 
+	 * 순서는 MemoryMemberRepository -> MemberService -> MemberController (생성자의 print 확인)
+	 * 
+	 * <console 창> --------------------------
+	 * [MemoryMemberRepository] 생성자 실행됨
+	 * [MemberService] 생성자 실행됨
+	 * [MemberController] 생성자 실행됨
+	 * ---------------------------------------
+	 * -> 스프링 부트가 실행이 되면서 자동적으로 빈이 생성이 되면서 
+	 *    생성자를 통해 print 가 찍힌 것을 보고 알 수 있음
+	 * ===========================================================================================
+	 */
+	
+//////////////////////////////////////////////////////////////////////////////////////////////////
+//	// [방법 2-1] 생성자 주입 : constructor injection * 권장
+//	// 2-1) 이미 만들어진 서비스 빈을 참조 변수를 만들어 주고,
+//	private final MemberService service; 
+//	
+//	// 2-2) 매개변수로 쏙 넣어주기, 자동성 의존성 주입 (개입 x)
+//	// 외부에서 생성
+//	// [@Autowired]
+//	// 생성자로 통해 자동성 의존성 주입된다 라는 것을 알려주는 어노테이션
+//	// 생성자가 하나가 있을 경우 생략되지만, 생성자가 여러 개인 경우 정의해야 함
+//	// @Autowired
+//	public MemberController(MemberService service) { 
+//		this.service = service;
+//		System.out.println("[MemberController] 생성자 실행됨"); 
+//	}
+//////////////////////////////////////////////////////////////////////////////////////////////////
+	
+//////////////////////////////////////////////////////////////////////////////////////////////////
+	// [방법 2-2] field	를 통한 DI
+	// field 는 final 못씀
+	@Autowired
+	private MemberService service;
+//////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	@GetMapping("/new")
+	public String form() {
+		return "members/new";
+	}
+	
+	/*
+	 * @RequestParam String name : http://localhost:8080/members/new?name=홍길동
+	 * @RequestBody String name  : http://localhost:8080/members/new?name=%ED%99%8D%EA%B8%B8%EB%8F%99
+	 * 현재 클라이언트에서 데이터를 서버에 넘겨주는 작업 -> 계층 작업
+	 * 
+	 * [코드 실행 흐름]
+	 * 1. 클라이언트가 HTTP POST 요청을 /members/new 경로로 보냄
+	 * 2. 이 요청은 create 메서드에서 처리
+	 * 3. 스프링 MVC는 요청 본문에서 전송된 데이터를 읽어와 MemberForm 객체로 변환
+	 * 4. MemberForm 객체에서 getName() 메서드를 호출하여 사용자가 입력한 이름을 가져옴
+	 * 5. 가져온 이름을 Member 객체의 setName() 메서드를 사용하여 설정
+	 */
+	
+	/* 
+	 * [과제] @ModelAttribute 와 @RequestBody 차이점 ==================================================
+	 * @ModelAttribute 와 @RequestBody 는 클라이언트 측에서 보낸 데이터를 
+	 * JAVA 에서 사용할 수 있는 오브젝트로 만들어주는 공통점이 있지만,
+	 * 세부 수행 동작에서 큰 차이를 보인다.
+	 * 
+	 * @ModelAttribute 는 클라이언트가 HTTP 파라미터들을 특정 Java 오브젝트에 매핑하는 것
+	 * @RequestBody    는 클라이언트가 HTTP 요청 본문(JSON, XML 등)을 Java 오브젝트로 변환하는 것
+	 * =================================================================================================
+	 * POST 자체에 수정을 한다는 의미가 있어서 URL 요청시 계속 POST 요청이 됨 (이러한 로직은 수정 필요함)
+	 * 마지막 세션이 저장되어 있는데(서버마다 다름) 마지막 세션이 POST 이기 때문
+	 * -> 리다이렉트(무조건 GET 방식) 로 변경
+	 */
+	
+	@PostMapping("/new")
+	// public String create(@ModelAttribute MemberForm form) { // @ModelAttribute 생략됨
+	public String create(MemberForm form) {
+		
+		// System.out.println("[Controller] form.getName() >> " + form.getName());
+		
+		Member member = new Member();
+		member.setName(form.getName());
+		
+		// [repository code] 
+		//repository.save(member);
+		
+		// [service code] 
+		// 실행 순서 : Controller(create()) -> Service(join()) -> MemoryMemberRepository(save())
+		service.join(member);
+		// Long id = service.join(member);
+		// System.out.println("[Controller] 가입된 회원의 id >> " + id);
+		
+		//return "home"; // 홈으로 하는 것이 아닌 리다이렉트로 변경 (논리뷰)
+		// 현재 최상위 경로라 / 붙인거고, 원하는 경로 쓰기 ("redirect:/new")
+		// 회원가입 후 index 로 렌더링할 때 URL 깨끗
+		// http://localhost:8080/members/new -> http://localhost:8080
+		return "redirect:/"; 
+	}
+	
+	/*
+	 * [PRG 패턴] POST -> Redirect -> GET
+	 * : 사용자의 뒤로 가기, 새로 고침으로 인한 중복 입력을 방지
+	 * -> 사용자가 새로 고침을 수행할 때마다 DB 에 저장되는 문제가 발생될 수 있음
+	 * : 사용자가 새로 고침하더라도 마지막 요청이 GET 이기 때문에 수정 사항 x 
+	 * : 실생활 예시로 결제 서비스 같은 경우 많이 사용
+	 */
+	
+	@GetMapping("/list")
+	public String memberList(Model model) {
+		
+		// [repository code] 
+//		List <Member> members = repository.findAll();
+//		model.addAttribute("members", members); // <tr th:each="member : ${members}">
+
+//		String memberName = repository.findName("홍길동").get().getName();
+//		model.addAttribute("memberName", memberName);
+		
+		// [service code]
+		List<Member> members = service.findAllMembers();
+		model.addAttribute("members", members);
+		
+		return "members/member-list";
+	}
+	
+	// [방법 1] @RequestParam
+//	@GetMapping("/search")
+//	public String memberSearch(@RequestParam(name = "id", required = false) Long id,
+//			String name, Model model) {
+//		
+//		Optional<Member> member = Optional.empty();
+//		
+//		if (id != null) {
+//			member = service.findId(id);
+//		} else if (! name.isEmpty()) {
+//			member = service.findName(name);
+//		}
+//		
+//		if (member.isPresent()) {
+//			model.addAttribute("member", member.get());
+//		} 
+//		
+//		return "members/search";
+//	}
+	
+	/*
+	 * [방법 2] @ModelAttribute
+	 * 
+	 * [리플렉션 기법] Reflection
+	 * : view -> controller
+	 * : 자동으로 setter 실행 -> 데이터 자동 처리
+	 * 
+	 * [parameter 에 사용되는 @ModelAttribute 와 Model 차이 ]
+	 * @ModelAttribute : view -> controller 로 데이터 넘어올 때
+	 * Model 		   : controller -> view 로 데이터 넘  길 때
+	 * 
+	 * @ModelAttribute Member member, Model model
+	 * 에서 Member 가 소문자로 바뀌면서
+	 * model.addAttribute("member", member) 형태로 바뀌게 됨
+	 */
+//	@GetMapping("/search")
+//	public String memberSearch(@ModelAttribute(binding=false) Member member, Model model) {
+//		
+//		System.out.println("\n[방법 2] @ModelAttribute");
+//		
+//		System.out.println("<< view -> controller 로 넘어온 데이터 >>");
+//		System.out.println("member >> " + member);
+//		System.out.println("member.getId >> " + member.getId());
+//		System.out.println("member.getName >> " + member.getName());
+////		System.out.println("member.getName 빈 문자열 ? >> " + member.getName().isEmpty());
+//		
+//		// 직접 binding
+//		member.setId(200L);
+//		member.setName("허허");
+//		
+//		System.out.println("<< model 로 바인딩된 데이터 >>");
+//		System.out.println("model.getAttribute(\"member\") >> " + model.getAttribute("member"));
+//		System.out.println("model.getAttribute(member) : getClass >> " + model.getAttribute("member").getClass());
+//		System.out.println("model.getAttribute(member) : id >> " + ((Member) model.getAttribute("member")).getId());
+//		System.out.println("model.getAttribute(member) : name >> " + ((Member) model.getAttribute("member")).getName());
+//		
+//		// model.addAttribute("member", member);
+//		
+//		return "members/search";
+//	}
+	
+	
+	@GetMapping("/search")
+	public String memberSearch(@ModelAttribute Member member, Model model) {
+		
+		System.out.println("<< view -> controller 로 넘어온 데이터 >>");
+		System.out.println("member >> " + member);
+		System.out.println("member.getId >> " + member.getId());
+		System.out.println("member.getName >> " + member.getName());
+		
+		Optional<Member> serachMember = Optional.empty();
+		
+		if (member.getId() != null) {
+			serachMember = service.findId(member.getId());
+		} else if (! member.getName().isEmpty()) {
+			serachMember = service.findName(member.getName());
+		}
+		
+		if (serachMember.isPresent()) {
+			model.addAttribute("member", serachMember.get());	
+		}
+		
+		System.out.println("<< model 로 바인딩된 데이터 >>");
+		System.out.println("model.getAttribute(\"member\") >> " + model.getAttribute("member"));
+		System.out.println("model.getAttribute(member) : getClass >> " + model.getAttribute("member").getClass());
+		System.out.println("model.getAttribute(member) : id >> " + ((Member) model.getAttribute("member")).getId());
+		System.out.println("model.getAttribute(member) : name >> " + ((Member) model.getAttribute("member")).getName());
+		
+		 
+		return "members/search";
+	}
+}

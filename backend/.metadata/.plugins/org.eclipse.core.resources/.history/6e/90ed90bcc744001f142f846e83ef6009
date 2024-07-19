@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>검색 결과 (search.html))</title>
+</head>
+<body>
+	<!-- 
+	[null 처리] ====================================================
+	<span th:text="${member.id}"></span>
+	
+	1. 조건에 null 이 아닌 경우만 조회하도록 설정
+		<span th:text="${member != null ? member.id : null}"></span>
+
+	2. ? 연산자 사용
+	   ? 사용하면, null 이 아닌 경우에만 해당 property 실행
+	   <span th:text="${member ?.id}"></span>
+	================================================================
+	 -->
+
+	<h1>검색 결과</h1>
+	<div>
+		<div>
+			<span>아이디 : </span>
+			<!-- <span th:text="${member.id}"></span> -->
+			<span th:text="${member != null ? member.id : null}"></span>
+		</div>
+		<div>
+			<span>이름 : </span>
+			<!-- <span th:text="${member.name}"></span> -->
+			<span th:text="${member ? member.name}"></span>
+		</div>
+	</div>
+</body>
+</html>

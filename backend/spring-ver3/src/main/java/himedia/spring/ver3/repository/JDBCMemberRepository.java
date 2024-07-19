@@ -1,0 +1,160 @@
+package himedia.spring.ver3.repository;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+import javax.sql.DataSource;
+//import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Repository;
+import himedia.spring.ver3.domain.Member;
+
+//@Primary
+@Repository
+public class JDBCMemberRepository implements MemberRepository {
+
+	private final DataSource dataSource;
+	
+	// @Autowired
+	public JDBCMemberRepository(DataSource dataSource) {
+		this.dataSource = dataSource;
+		System.out.println("[JDBCMemberRepository] 생성자 실행");
+	}
+	
+	@Override
+	public Member save(Member member) {
+		// 동적 쿼리
+		// '?' : 변수, 파라미터, 변수 파라미터
+		// Java 는 쿼리문을 모르니 문자열로 취급한 것
+		String sql = "insert into member(name) values(?)"; 
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try {
+			// 연결
+			conn = dataSource.getConnection();
+			// 쿼리문 준비
+			pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS); // 자동 증가 
+			pstmt.setString(1, member.getName()); // 여기서 1 은 첫 번째 '?'
+			// 쿼리문 실행
+			pstmt.executeUpdate();
+			// 실행 결과
+			rs = pstmt.getGeneratedKeys();
+			
+			if(rs.next()) {
+				member.setId(rs.getLong(1)); // rs.getLong(첫 번째 컬럼)
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally { // 여기서 예외가 발생할 수 있어서 또 예외 처리할 것
+			try {
+				if (pstmt != null)  pstmt.close();
+				if (conn != null)   conn.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}			
+		}
+		return member;
+	}	
+	
+	@Override
+	public Optional<Member> findById(Long id) {
+		String sql = "select * from member where id = ?";
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null; // 테이블에 있는 값을 알아서 ResultSet 으로 변환
+		try {
+			conn = dataSource.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setLong(1, id);
+			rs = pstmt.executeQuery();
+			
+			if (rs.next()) { // 이 작업을 반복적으로 해야 함 
+				Member member = new Member();
+				// rs 를 통해서 id/name 을 찾아서 해당 타입으로 뽑아서 가져오는 것
+				member.setId(rs.getLong("id"));
+				member.setName(rs.getString("name")); 
+				return Optional.of(member);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null) 		rs.close();
+				if (pstmt != null) 	pstmt.close();
+				if (conn != null) 	conn.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+		return Optional.empty();
+	}
+	
+	@Override
+	public Optional<Member> findByName(String name) {
+		String sql = "select * from member where name = ?";
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try {
+			conn = dataSource.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, name);
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				Member member = new Member();
+				member.setId(rs.getLong("id"));
+				member.setName(rs.getString("name"));
+				return Optional.of(member);
+			}			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null)     rs.close();
+				if (pstmt != null)  pstmt.close();
+				if (conn != null)   conn.close();
+			} catch(Exception e2) {
+				e2.printStackTrace();
+			}			
+		}
+		return Optional.empty();
+	}
+	@Override
+	public List<Member> findAll() {
+		String sql = "select * from member"; // 정적 쿼리
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		List<Member> members = null;
+		try {
+			conn = dataSource.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			members = new ArrayList<>();
+			while (rs.next()) {
+				Member member = new Member();         // 객체 새로 만들기
+				member.setId(rs.getLong("id"));       // re 를 통해 id   가져오기
+				member.setName(rs.getString("name")); // re 를 통해 name 가져오기
+				members.add(member);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally { // 메모리 해제, 연결 끊기
+			try {
+				if (rs != null)    rs.close();
+				if (pstmt != null) pstmt.close();
+				if (conn != null)  conn.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}			
+		}
+		return members;
+	}
+}

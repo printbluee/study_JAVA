@@ -1,0 +1,14 @@
+package himedia.spring.ver3.repository;
+
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Repository;
+
+@Primary // 첫 번째로 쓰겠다 !
+@Repository
+public class jdbcTemplateMemberRepository implements MemberRepository {
+
+	// 순수 jdbc -> 자바에서 만든 것
+	
+	
+	
+}

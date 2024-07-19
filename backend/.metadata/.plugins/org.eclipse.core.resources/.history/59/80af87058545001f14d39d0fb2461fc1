@@ -1,0 +1,5 @@
+package himedia.spring.ver3.repository;
+
+public class jdbcTemplateMemberRepository {
+
+}

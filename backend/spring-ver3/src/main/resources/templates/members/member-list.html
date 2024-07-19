@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>회원 목록(member-list.html)</title>
+<style type="text/css">
+table { border-collapse: collapse; }
+tr, td, th { border: 2px solid #999; }
+</style>
+</head>
+<body>
+	<h1>회원 목록</h1>
+	
+	<table>
+		<thead>
+			<tr>
+				<th>번호</th>
+				<th>이름</th>
+			</tr>
+		</thead>
+		<tbody>
+			<!-- forEach : <tr th:each="변수명: ${members}"> -->
+			<!-- [property] : 보이는 건 필드지만 getter 을 호출해서 비슷한 성질이라 프로퍼티라 부름 -->
+			<tr th:each="member : ${members}">
+				<td th:text="${member.id}"></td>			
+				<td th:text="${member.name}"></td>			
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

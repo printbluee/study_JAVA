@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<meta charset="UTF-8">
+<title>second.html</title>
+</head>
+<body>
+	<h1>second.html 페이지 입니다.</h1>
+	<p th:text="${name}">님, 안녕하세요 !</p>	
+	<p th:text="${name} + '님, 안녕하세요 !'"></p>
+	<p th:text="|${name}님, 안녕하세요 !|"></p>
+	
+</body>
+</html>

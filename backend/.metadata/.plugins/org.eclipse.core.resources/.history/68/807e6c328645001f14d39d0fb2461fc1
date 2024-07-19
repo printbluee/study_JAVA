@@ -1,0 +1,22 @@
+package himedia.spring.ver3.repository;
+
+import javax.sql.DataSource;
+
+import org.springframework.context.annotation.Primary;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
+
+@Primary // 첫 번째로 쓰겠다 !
+@Repository
+public class jdbcTemplateMemberRepository implements MemberRepository {
+
+	private final JdbcTemplate JdbcTemplate;
+	
+	public jdbcTemplateMemberRepository(DataSource dataSource) {
+		this.JdbcTemplate = new JdbcTemplate(dataSource);
+		System.out.println("[jdbcTemplateMemberRepository] 생성자 실행");
+	}
+	
+	
+	
+}

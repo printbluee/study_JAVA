@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th= "http://www.thymelaf.org/">
+<head>
+<meta charset="UTF-8">
+<title>join.html</title>
+</head>
+<body>
+	<h1>회원가입이 완료되었습니다.</h1>
+	
+	<div>
+		<div>
+			<span th:text="|이름 : ${name}|">가입지 이름</span>
+		</div>
+		<div>
+			<span th:text="|나이 : ${age}|">가입지 나이</span>
+		</div>
+	</div>
+</body>
+</html>

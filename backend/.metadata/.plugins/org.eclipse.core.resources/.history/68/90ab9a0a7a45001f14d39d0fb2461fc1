@@ -1,0 +1,42 @@
+package himedia.spring.ver3.repository;
+
+import java.util.List;
+import java.util.Optional;
+import javax.sql.DataSource;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Repository;
+import himedia.spring.ver3.domain.Member;
+
+@Primary
+@Repository
+public class JDBCMemberRepository implements MemberRepository {
+
+	private final DataSource dataSource;
+	
+	// @Autowired
+	public JDBCMemberRepository(DataSource dataSource) {
+		this.dataSource = dataSource;
+		System.out.println("[JDBCMemberRepository] 생성자 실행");
+	}
+	
+    @Override
+    public Member save(Member member) {
+        return null;
+    }
+
+    @Override
+    public Optional<Member> findById(Long id) {
+        return Optional.empty();
+    }
+
+    @Override
+    public Optional<Member> findByName(String name) {
+        return Optional.empty();
+    }
+
+    @Override
+    public List<Member> findAll() {
+        return null;
+    }
+}

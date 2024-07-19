@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>join-form.html</title>
+</head>
+<body>
+	<h1>회원 가입</h1>
+
+	<form action="/join">
+		<p>이름 : <input type="text" name="userName"></p> 
+		<p>나이 : <input type="text" name="userAge"></p> 
+		<button type="submit">가입</button>
+	</form>
+</body>
+</html>
